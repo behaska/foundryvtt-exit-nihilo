@@ -1,0 +1,48 @@
+{
+    "id": "exit-nihilo",
+    "title": "Exit Nihilo game system",
+    "description": "A game system for Exit Nihilo TTRPG",
+    "license": "./LICENSE",
+    "version": "0.1.0",
+    "compatibility": {
+        "minimum": "10.286",
+        "verified": "10.290",
+        "maximum": "10"
+    },
+    "authors": [
+        {
+            "name": "Hervé Darritchon",
+            "discord": "herveDarritchon#7262",
+            "email": "herve.darritchon@gmail.com"
+          }
+    ],
+    "esmodules": [
+        "vendor.bundle.js",
+        "main.bundle.js"
+    ],
+    "scripts": [
+        "lib/tooltipster.bundle.min.js"
+    ],
+    "styles": [
+        "styles/main.css"
+    ],
+    "packs": [],
+    "languages": [
+        {
+            "lang": "fr",
+            "name": "Principal (Français)",
+            "path": "lang/fr.json",
+            "flags": {}
+        }
+    ],
+    "socket": true,
+    "initiative": null,
+    "gridDistance": 5,
+    "gridUnits": "m",
+    "primaryTokenAttribute": "attributes.hp",
+    "url": "https://github.com/foundryvtt/exit-nihilo",
+    "bugs": "https://github.com/foundryvtt/exit-nihilo/issues",
+    "changelog": "https://github.com/foundryvtt/exit-nihilo/blob/release/CHANGELOG.md",
+    "manifest": "https://github.com/foundryvtt/exit-nihilo/releases/latest/download/system.json",
+    "download": "https://github.com/foundryvtt/exit-nihilo/releases/latest/download/exit-nihilo.zip"
+}
