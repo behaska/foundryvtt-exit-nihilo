@@ -1,0 +1,36 @@
+<div class="sidebar_title">
+    <h2>{{localize "EXITNIHILO.HitPointsHeader"}}</h2>
+    <button type="button" class="modifiers_button hover" data-tooltip-content="#{{options.id}}-hp-modifiers">
+        <i class="fas fa-eye"></i> {{localize "EXITNIHILO.ModifiersTitle"}}
+    </button>
+</div>
+<div class="hitpoints">
+    <div class="hp-big">
+        <div class="container temp-hp">
+            <label for="{{options.id}}-pc-hp-temp" class="sidebar_label">{{localize "EXITNIHILO.TempHitPointsShortLabel"}}</label>
+            <div class="data-value" title="{{localize 'EXITNIHILO.TempHPTitle'}}">
+                <input name="system.attributes.hp.temp" id="{{options.id}}-pc-hp-temp" type="number" value="{{data.attributes.hp.temp}}" placeholder="0" />
+            </div>
+        </div>
+        <div class="container current-hp">
+            <label for="{{options.id}}-pc-hp" class="sidebar_label">{{localize "EXITNIHILO.CurrentHitPointsShortLabel"}}</label>
+            <div class="data-value" title="{{localize 'EXITNIHILO.CurrentHPTitle'}}">
+                <input name="system.attributes.hp.value" id="{{options.id}}-pc-hp" type="number" value="{{data.attributes.hp.value}}" placeholder="10" />
+            </div>
+        </div>
+        <div class="container max-hp">
+            <span class="sidebar_label">{{localize 'EXITNIHILO.MaxHitPointsShortLabel'}}</span>
+            <div class="data-value">
+                <h2>{{data.attributes.hp.max}}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="hp-small">
+        <a class="dots wounded" title="{{localize 'EXITNIHILO.condition.wounded.summary'}}">
+            <span class="sidebar_label">{{localize "EXITNIHILO.condition.wounded.name"}}</span>
+        </a>
+        <a class="roll-icon rest" data-action="rest" title="{{localize 'EXITNIHILO.Actor.Character.Rest.Label'}}">
+            <i class="fas fa-bed"></i>
+        </a>
+    </div>
+</div>

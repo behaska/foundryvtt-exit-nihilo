@@ -1,2 +1,19 @@
 {
+    "EXITNIHILO": {
+        "ListPartsOr": {
+            "two": "{first} or {second}",
+            "start": "{first}, {second}",
+            "middle": "{first}, {second}",
+            "end": "{first}, or {second}"
+        },
+        "OrdinalSuffixes": {
+            "zero": "",
+            "one": "er",
+            "two": "ème",
+            "few": "ème",
+            "other": "ème",
+            "many": "ème"
+        },
+        "SheetLabel": "Feuille de {type}"
+    }
 }

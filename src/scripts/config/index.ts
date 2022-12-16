@@ -1,6 +1,8 @@
 import { CharacterExitNihilo } from "@actor/character";
 import { ActorType } from "@actor/data";
+import { ConditionExitNihilo } from "@item/condition/document";
 import { EquipmentExitNihilo } from "@item/equipment/document";
+import { JournalSheetExitNihilo } from "@module/journal-entry/sheet";
 import { actionTraits } from "./traits";
 
 export type StatusEffectIconTheme = "default" | "blackWhite";
@@ -466,7 +468,7 @@ export const EXITNIHILOCONFIG = {
     },
 
     actorTypes,
-    
+
     levels: {
         1: "EXITNIHILO.Level1",
         2: "EXITNIHILO.Level2",
@@ -1586,6 +1588,7 @@ export const EXITNIHILOCONFIG = {
     Item: {
         documentClasses: {
             equipment: EquipmentExitNihilo,
+            condition: ConditionExitNihilo,
         },
         traits: {
             action: actionTraits,

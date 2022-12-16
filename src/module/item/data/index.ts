@@ -1,5 +1,6 @@
 export type NonPhysicalItemType =
-    | "equipment";
+    | "equipment"
+    | "condition";
 
 export type ItemType = NonPhysicalItemType;
 

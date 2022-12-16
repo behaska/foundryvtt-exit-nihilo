@@ -1,10 +1,188 @@
 {
     "Actor": {
         "types": [
+            "adversary",
             "character"
         ],
+
+        "adversary": {
+        },
         "character": {
-            "abilities": {}
+            "biography": {
+                "age": {
+                    "value": 18,
+                    "type": "Number",
+                    "label": "exit-nihilo.actors.biography.age"
+                },
+                "profession": {
+                    "value": "",
+                    "type": "String",
+                    "label": "exit-nihilo.actors.biography.profession"
+                },
+                "role": {
+                    "value": "",
+                    "type": "String",
+                    "label": "exit-nihilo.actors.biography.role"
+                }
+            },
+            "attributs": {
+                "physique": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.physique",
+                    "puissance": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.puissance"
+                    },
+                    "vitalite": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.vitalite"
+                    }
+                },
+                "adresse": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.adresse",
+                    "agilite": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.agilite"
+                    },
+                    "precision": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.precision"
+                    }
+                },
+                "social": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.social",
+                    "communication": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.communication"
+                    },
+                    "empathie": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.empathie"
+                    }
+                },
+                "intellect": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.intellect",
+                    "raisonnement": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.raisonnement"
+                    },
+                    "apprentissage": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.apprentissage"
+                    }
+                },
+                "caractere": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.caractere",
+                    "volonte": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.volonte"
+                    },
+                    "intuition": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.intuition"
+                    }
+                }
+            },
+            "competences": {
+                "argumenter": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.argumenter"
+                },
+                "athletisme": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.athletisme"
+                },
+                "baratin": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.baratin"
+                },
+                "bricolage": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.bricolage"
+                },
+                "chercher": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.chercher"
+                },
+                "cuisine": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.cuisine"
+                }
+            },
+            "competences-de-combat": {
+                "corps-a-corps": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.corps-a-corps"
+                },
+                "corps-a-corps-arme": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.corps-a-corps-arme"
+                },
+                "arme-a-projectile": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.arme-a-projectile"
+                },
+                "arme-de-poing": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.arme-de-poing"
+                },
+                "fusil": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.fusil"
+                },
+                "fusil-d-assaut": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.fusil-d-assaut"
+                }
+            },
+            "sante": {
+                "niveau-de-vie": {
+                    "value": 0,
+                    "type": "Number",
+                    "label": "tor2e.stats.niveau-de-vie"
+                },
+                "malade": {
+                    "value": false,
+                    "type": "Boolean",
+                    "label": "tor2e.stats.malade"
+                },
+                "inconscient": {
+                    "value": 0,
+                    "type": "Boolean",
+                    "label": "tor2e.stats.inconscient"
+                }
+            }
         }
     }
 }
