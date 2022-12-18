@@ -8,6 +8,14 @@ import { ActorSheetDataExitNihilo } from "./data-types";
  * @category Actor
  */
 abstract class ActorSheetExitNihilo<TActor extends ActorExitNihilo> extends ActorSheet<TActor, ItemExitNihilo> {
+    static override get defaultOptions(): ActorSheetOptions {
+        const options = super.defaultOptions;
+        options.dragDrop.push({ dragSelector: ".drag-handle" }, { dragSelector: ".item[draggable=true]" });
+        return mergeObject(options, {
+            classes: ["default", "sheet", "actor"],
+            scrollY: [".sheet-sidebar", ".tab.active", ".inventory-list"],
+        });
+    }
 }
 
 interface ActorSheetExitNihilo<TActor extends ActorExitNihilo> extends ActorSheet<TActor, ItemExitNihilo> {

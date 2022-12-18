@@ -1,9 +1,11 @@
 import { CharacterExitNihilo } from "@actor/character";
 import { ActorType } from "@actor/data";
+import { ArmorExitNihilo } from "@item/armor/document";
 import { ConditionExitNihilo } from "@item/condition/document";
 import { EquipmentExitNihilo } from "@item/equipment/document";
+import { WeaponExitNihilo } from "@item/weapon/document";
 import { JournalSheetExitNihilo } from "@module/journal-entry/sheet";
-import { actionTraits } from "./traits";
+import { actionTraits, armorTraits, consumableTraits, creatureTraits, equipmentTraits, weaponTraits } from "./traits";
 
 export type StatusEffectIconTheme = "default" | "blackWhite";
 
@@ -778,7 +780,14 @@ export const EXITNIHILOCONFIG = {
     },
 
     traitsDescriptions,
-
+    actionTraits,    
+    armorTraits,
+    creatureTraits,
+    consumableTraits,
+    equipmentTraits,
+    monsterTraits: creatureTraits,
+    weaponTraits,
+    
     weaponHands: {
         1: "EXITNIHILO.WeaponHands1",
         "1+": "EXITNIHILO.WeaponHands1Plus",
@@ -1587,11 +1596,24 @@ export const EXITNIHILOCONFIG = {
 
     Item: {
         documentClasses: {
+            armor: ArmorExitNihilo,
+            backpack: ContainerExitNihilo,
+            book: BookExitNihilo,
+            consumable: ConsumableExitNihilo,
+            treasure: TreasureExitNihilo,
+            weapon: WeaponExitNihilo,
             equipment: EquipmentExitNihilo,
             condition: ConditionExitNihilo,
         },
         traits: {
             action: actionTraits,
+            armor: armorTraits,
+            ancestry: creatureTraits,
+            backpack: equipmentTraits,
+            book: equipmentTraits,
+            consumable: consumableTraits,
+            equipment: equipmentTraits,
+            weapon: weaponTraits,            
         },
     },
 

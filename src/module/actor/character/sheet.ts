@@ -1,5 +1,6 @@
 import { CreatureSheetExitNihilo } from "@actor/creature/sheet";
 import { CharacterExitNihilo } from ".";
+import { CharacterSheetData } from "./data/sheet";
 
 class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
 
@@ -10,7 +11,7 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         options.height = 800;
         options.scrollY.push(".tab.active .tab-content");
         options.tabs = [
-            { navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "character" },
+            { navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "general" },
             { navSelector: ".actions-nav", contentSelector: ".actions-panels", initial: "encounter" },
         ];
         return options;
@@ -19,6 +20,13 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
     override get template(): string {
         const template = this.actor.limited && !game.user.isGM ? "limited" : "sheet";
         return `systems/exit-nihilo/templates/actors/character/${template}.html`;
+    }
+
+    override async getData(options?: ActorSheetOptions): Promise<CharacterSheetData> {
+        const sheetData = (await super.getData(options)) as CharacterSheetData;
+
+        // Return data for rendering
+        return sheetData;
     }
 
 }

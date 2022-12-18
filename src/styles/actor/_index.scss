@@ -3,7 +3,8 @@
     overflow: hidden;
 }
 
-$header-height: 89px;   /* Adjust height of the header */
+$header-height: 89px;
+/* Adjust height of the header */
 
 .actor.sheet {
     .image-container {
@@ -17,13 +18,10 @@ $header-height: 89px;   /* Adjust height of the header */
         }
     }
 
-    .crb-style {
+    .en-style {
         display: grid;
         grid:
-            "sidebar header" 75px
-                             "sidebar nav" minmax(min-content, max-content)
-                             "sidebar content" 1fr
-                             / 230px 1fr;
+            "sidebar header" 75px "sidebar nav" minmax(min-content, max-content) "sidebar content" 1fr / 230px 1fr;
 
         font-family: var(--body-serif);
 
@@ -33,12 +31,12 @@ $header-height: 89px;   /* Adjust height of the header */
         background-attachment: local;
         height: 100%;
 
-        .d20-svg {
+        .d6-svg {
             width: 19px;
             height: 19px;
         }
 
-        @import "sidebar";
+        @import "sidebar", "header";
 
         .char-header {
             grid-area: header;
@@ -70,6 +68,7 @@ $header-height: 89px;   /* Adjust height of the header */
 
                 &.tab[data-tab] {
                     display: none;
+
                     &.active {
                         display: initial;
                     }
@@ -79,12 +78,14 @@ $header-height: 89px;   /* Adjust height of the header */
             .sheet-content {
                 color: var(--body);
 
-                > .tab {
+                >.tab {
                     padding: 0.6rem 0.6rem 0;
                 }
 
                 ol.directory-list {
-                    > h3, > li > h3 {
+
+                    >h3,
+                    >li>h3 {
                         font-size: 1rem;
                         font-weight: 500;
                         font-family: var(--serif);
@@ -115,7 +116,7 @@ $header-height: 89px;   /* Adjust height of the header */
                             margin-top: 0;
                         }
 
-                        & + li {
+                        &+li {
                             border-top: none;
                         }
 
@@ -123,8 +124,10 @@ $header-height: 89px;   /* Adjust height of the header */
                             cursor: move;
                         }
 
-                        & > a {
-                            .fas, > .fa {
+                        &>a {
+
+                            .fas,
+                            >.fa {
                                 flex-basis: 0;
                                 color: white;
                                 margin-right: 0.25em;
@@ -196,9 +199,4 @@ $header-height: 89px;   /* Adjust height of the header */
             background-color: var(--color-text-dark-inactive);
         }
     }
-}
-
-/* Mystification data revealed to GMs */
-.gm-mystified-data {
-    opacity: 0.75;
 }
