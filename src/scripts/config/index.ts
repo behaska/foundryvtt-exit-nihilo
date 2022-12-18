@@ -2,6 +2,7 @@ import { CharacterExitNihilo } from "@actor/character";
 import { ActorType } from "@actor/data";
 import { ArmorExitNihilo } from "@item/armor/document";
 import { ConditionExitNihilo } from "@item/condition/document";
+import { ContainerExitNihilo } from "@item/container/document";
 import { EquipmentExitNihilo } from "@item/equipment/document";
 import { WeaponExitNihilo } from "@item/weapon/document";
 import { JournalSheetExitNihilo } from "@module/journal-entry/sheet";
@@ -1598,12 +1599,9 @@ export const EXITNIHILOCONFIG = {
         documentClasses: {
             armor: ArmorExitNihilo,
             backpack: ContainerExitNihilo,
-            book: BookExitNihilo,
-            consumable: ConsumableExitNihilo,
-            treasure: TreasureExitNihilo,
-            weapon: WeaponExitNihilo,
-            equipment: EquipmentExitNihilo,
             condition: ConditionExitNihilo,
+            equipment: EquipmentExitNihilo,
+            weapon: WeaponExitNihilo,
         },
         traits: {
             action: actionTraits,

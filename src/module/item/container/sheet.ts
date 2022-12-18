@@ -5,7 +5,6 @@ export class ContainerSheetExitNihilo extends PhysicalItemSheetExitNihilo<Contai
     override async getData(options?: Partial<DocumentSheetOptions>): Promise<PhysicalItemSheetData<ContainerExitNihilo>> {
         return {
             ...(await super.getData(options)),
-            hasSidebar: true,
             hasDetails: true,
         };
     }

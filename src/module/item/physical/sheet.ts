@@ -1,10 +1,7 @@
 import { ItemSheetExitNihilo } from "@item/sheet/base";
 import { ItemSheetDataExitNihilo } from "@item/sheet/data-types";
-import { objectHasKey } from "@util/misc";
-import { ItemActivation, BasePhysicalItemSource } from "./data";
+import { ItemActivation } from "./data";
 import { PhysicalItemExitNihilo } from "./document";
-import { PreciousMaterialGrade } from "./types";
-import { PRECIOUS_MATERIAL_GRADES } from "./values";
 
 class PhysicalItemSheetExitNihilo<TItem extends PhysicalItemExitNihilo = PhysicalItemExitNihilo> extends ItemSheetExitNihilo<TItem> {
     /** Show the identified data for editing purposes */
@@ -12,18 +9,6 @@ class PhysicalItemSheetExitNihilo<TItem extends PhysicalItemExitNihilo = Physica
         const sheetData: ItemSheetDataExitNihilo<TItem> = await super.getData(options);
         return {
             ...sheetData,
-            itemType: game.i18n.localize("EXITNIHILO.ItemTitle"),
-            basePriceString: "",
-            priceString: "",
-            actionTypes: CONFIG.EXITNIHILO.actionTypes,
-            actionsNumber: CONFIG.EXITNIHILO.actionsNumber,
-            bulkTypes: CONFIG.EXITNIHILO.bulkTypes,
-            frequencies: CONFIG.EXITNIHILO.frequencies,
-            stackGroups: CONFIG.EXITNIHILO.stackGroups,
-            usage: CONFIG.EXITNIHILO.usageTraits,
-            isPhysical: true,
-            // Do not let user set bulk if in a stack group because the group determines bulk
-            bulkDisabled: !!sheetData.data?.stackGroup?.trim(),            
         };
     }
 }

@@ -15,7 +15,7 @@ type WeaponData = Omit<WeaponSource, "system" | "effects" | "flags"> &
     };
 
 type WeaponFlags = ItemFlagsExitNihilo & {
-    pf2e: {
+    exitNihilo: {
         comboMeleeUsage: boolean;
     };
 };
