@@ -27,18 +27,12 @@ interface BaseActorDataExitNihilo<
     readonly _source: TSource;
 }
 
-interface ActorSystemSource {
-    details?: {
-        level?: { value: number };
-        creature?: unknown;
-    };
-}
+interface ActorSystemSource {}
 
 interface ActorSystemData extends ActorSystemSource {
     details: {
         level: { value: number };
     };
-    actions?: StrikeData[];
     attributes: BaseActorAttributes;
     traits: BaseTraitsData<string>;
     /** Icons appearing in the Effects Tracker application */
@@ -71,26 +65,8 @@ interface BaseHitPointsData {
 }
 
 interface BaseActorAttributes {
-    hp?: Required<BaseHitPointsData>;
-    flanking: {
-        /** Whether the actor can flank at all */
-        canFlank: boolean;
-        /** Given the actor can flank, the conditions under which it can do so without an ally opposite the target */
-        canGangUp: GangUpCircumstance[];
-        /** Whether the actor can be flanked at all */
-        flankable: boolean;
-        /** Given the actor is flankable, whether it is flat-footed when flanked */
-        flatFootable: FlatFootableCircumstance;
-    };
 }
 
-type FlatFootableCircumstance =
-    /** Flat-footable in all flanking situations */
-    | true
-    /** Flat-footable if the flanker's level is less than or equal to the actor's own */
-    | number
-    /** Never flat-footable */
-    | false;
 
 type GangUpCircumstance =
     /** Requires at least `number` allies within melee reach of the target */

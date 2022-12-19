@@ -95,22 +95,6 @@ type CreatureSaves = null;
 
 /** Miscallenous but mechanically relevant creature attributes.  */
 interface CreatureAttributes extends BaseActorAttributes {
-    ac: { value: number };
-    hardness?: { value: number };
-    perception: { value: number };
-
-    /** The creature's natural reach */
-    reach: {
-        /** The reach for any unqualified purpose */
-        general: number;
-        /** Its reach for the purpose of manipulate actions, usually the same as its general reach */
-        manipulate: number;
-    };
-
-    senses: { value: string };
-
-    /** Whether this creature emits sound */
-    emitsSound: boolean;
 }
 
 type MovementType = "land" | "burrow" | "climb" | "fly" | "swim";
@@ -156,6 +140,7 @@ export {
     Attitude,
     BaseCreatureData,
     BaseCreatureSource,
+    CreatureDetails,
     CreatureAttributes,
     CreatureInitiative,
     CreatureSaves,

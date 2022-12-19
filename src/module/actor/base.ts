@@ -1,10 +1,5 @@
-import { ItemExitNihilo } from "@item/base";
 import { ItemType } from "@item/data";
-import { ActiveEffectExitNihilo } from "@module/active-effect";
 import { TokenDocumentExitNihilo } from "@scene/token-document/document";
-import { ActorDataExitNihilo } from "./data";
-import { PrototypeTokenExitNihilo, ActorFlagsExitNihilo } from "./data/base";
-import { ActorSheetExitNihilo } from "./sheet/base";
 
 /**
  * Extend the base Actor class to implement additional logic specialized for ExitNihilo.
@@ -28,19 +23,7 @@ class ActorExitNihilo extends Actor<TokenDocumentExitNihilo, ItemTypeMap> {
     }
 }
 
-interface ActorExitNihilo extends Actor<TokenDocumentExitNihilo, ItemTypeMap> {
-    readonly data: ActorDataExitNihilo;
-
-    readonly items: foundry.abstract.EmbeddedCollection<ItemExitNihilo>;
-
-    readonly effects: foundry.abstract.EmbeddedCollection<ActiveEffectExitNihilo>;
-
-    prototypeToken: PrototypeTokenExitNihilo;
-
-    flags: ActorFlagsExitNihilo;
-
-    get sheet(): ActorSheetExitNihilo<this>;
-}
+interface ActorExitNihilo extends Actor<TokenDocumentExitNihilo, ItemTypeMap> {}
 
 type ItemTypeMap = {
     [K in ItemType]: InstanceType<ConfigExitNihilo["EXITNIHILO"]["Item"]["documentClasses"][K]>;

@@ -1,6 +1,6 @@
 export const ATTRIBUTE_ABBREVIATIONS = new Set(["phy", "adr", "int", "psy", "soc"] as const);
 
-export const CREATURE_ACTOR_TYPES = ["character", "npc", "familiar"] as const;
+export const CREATURE_ACTOR_TYPES = ["character", "npc"] as const;
 
 export const SKILL_ABBREVIATIONS = new Set([
     "arg",

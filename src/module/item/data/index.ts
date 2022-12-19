@@ -1,4 +1,3 @@
-import { ActionItemData } from "@item/action/data";
 import { ArmorData } from "@item/armor/data";
 import { ContainerData } from "@item/container/data";
 import { EquipmentData } from "@item/equipment/data";
@@ -13,15 +12,15 @@ export type ItemType = NonPhysicalItemType | PhysicalItemType;
 
 /** Actual physical items which you carry (as opposed to feats, lore, proficiencies, statuses, etc). */
 export type PhysicalItemData = { system: { traits: PhysicalItemTraits } } & (
+    | EquipmentData
     | ArmorData
     | ContainerData
     | EquipmentData
-    | WeaponData
+    | WeaponData    
 );
 
 export type ItemDataExitNihilo =
-    | PhysicalItemData
-    | ActionItemData;
+    | PhysicalItemData;
 
 export type PhysicalItemSource = PhysicalItemData["_source"];;
 export type ItemSourceExitNihilo = ItemDataExitNihilo["_source"];

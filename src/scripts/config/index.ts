@@ -12,11 +12,7 @@ export type StatusEffectIconTheme = "default" | "blackWhite";
 
 const actorTypes: Record<ActorType, string> = {
     character: "ACTOR.TypeCharacter",
-    familiar: "ACTOR.TypeFamiliar",
-    hazard: "ACTOR.TypeHazard",
-    loot: "ACTOR.TypeLoot",
     npc: "ACTOR.TypeNpc",
-    vehicle: "ACTOR.TypeVehicle",
 };
 
 

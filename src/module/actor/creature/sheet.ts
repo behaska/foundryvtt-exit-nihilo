@@ -13,9 +13,7 @@ export abstract class CreatureSheetExitNihilo<TActor extends CreatureExitNihilo>
 
         return {
             ...sheetData,
-            abilities: CONFIG.EXITNIHILO.abilities,
             skills: CONFIG.EXITNIHILO.skills,
-            rarity: CONFIG.EXITNIHILO.rarityTraits,
             frequencies: CONFIG.EXITNIHILO.frequencies,
             attitude: CONFIG.EXITNIHILO.attitude,
             pfsFactions: CONFIG.EXITNIHILO.pfsFactions,

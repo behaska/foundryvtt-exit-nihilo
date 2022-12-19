@@ -3,7 +3,7 @@ import type { CharacterData } from "@actor/character/data";
 
 
 type CreatureData = CharacterData;
-type ActorType = CreatureType | "hazard" | "loot" | "vehicle";
+type ActorType = CreatureType;
 
 type ActorDataExitNihilo = CreatureData;
 type ActorSourceExitNihilo = ActorDataExitNihilo["_source"];

@@ -11,8 +11,6 @@ class ArmorExitNihilo extends PhysicalItemExitNihilo {
     }
 }
 
-interface ArmorExitNihilo {
-    readonly data: ArmorData;
-}
+interface ArmorExitNihilo {}
 
 export { ArmorExitNihilo };
