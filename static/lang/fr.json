@@ -1,16 +1,5 @@
 {
     "EXITNIHILO": {
-        "Character": {
-            "NamePlaceholder": "Nom du Personnage",
-            "Profession": {
-                "PlaceHolder": "Profession du Personnage",
-                "Title": "Profession"
-            },
-            "Role": {
-                "PlaceHolder": "Rôle du Personnage",
-                "Title": "Rôle"
-            }
-        },
         "Item": {
             "Activation": {
                 "Label": "Activation",
@@ -601,6 +590,17 @@
             "other": "ème",
             "many": "ème"
         },
+        "Personnage": {
+            "NamePlaceholder": "Nom du Personnage",
+            "Profession": {
+                "PlaceHolder": "Profession du Personnage",
+                "Title": "Profession"
+            },
+            "Role": {
+                "PlaceHolder": "Rôle du Personnage",
+                "Title": "Rôle"
+            }
+        },        
         "SheetLabel": "Feuille de {type}",
         "SideBar": {
             "AttributsHeader": "Attributs",
