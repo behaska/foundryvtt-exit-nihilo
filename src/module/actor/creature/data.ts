@@ -24,8 +24,6 @@ type CreatureSkills = null;
 
 interface CreatureSystemSource extends ActorSystemSource {
     details?: {
-        level?: { value: number };
-        /** Present on familiars */
         creature?: unknown;
     };
 
@@ -35,21 +33,16 @@ interface CreatureSystemSource extends ActorSystemSource {
 
 type CreatureDetails = {
     /** The creature level for this actor */
-    level: { value: number };
+    creature?: unknown;
 };
 
 interface CreatureSystemData extends CreatureSystemSource, ActorSystemData {
-    abilities?: Abilities;
-
     details: CreatureDetails;
 
     /** Traits, languages, and other information. */
     traits: CreatureTraitsData;
 
     attributes: CreatureAttributes;
-
-    /** Saving throw data */
-    saves: CreatureSaves;
 
     actions?: StrikeData[];
 }

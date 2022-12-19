@@ -1,6 +1,6 @@
-import { BaseCreatureSource, BaseCreatureData, CreatureSystemSource, Abilities, CreatureTraitsSource, CreatureSystemData, CreatureTraitsData, SaveData, SkillData, CreatureDetails } from "@actor/creature/data";
+import { BaseCreatureSource, BaseCreatureData, CreatureSystemSource, CreatureTraitsSource, CreatureSystemData, CreatureTraitsData, SaveData, SkillData, CreatureDetails } from "@actor/creature/data";
 import { ActorFlagsExitNihilo, StrikeData, PerceptionData } from "@actor/data/base";
-import { ActorAlliance, AbilityString } from "@actor/types";
+import { AbilityString } from "@actor/types";
 import { ValueAndMax, Rarity, Size } from "@module/data";
 import { NPCExitNihilo } from ".";
 
@@ -19,9 +19,6 @@ type NPCFlags = ActorFlagsExitNihilo & {
 };
 
 interface NPCSystemSource extends CreatureSystemSource {
-    /** The six primary ability scores. */
-    abilities: Abilities;
-
     /** Any special attributes for this NPC, such as AC or health. */
     attributes: NPCAttributesSource;
 
@@ -47,8 +44,6 @@ interface NPCTraitsSource extends CreatureTraitsSource {
 
 /** The raw information contained within the actor data object for NPCs. */
 interface NPCSystemData extends Omit<CreatureSystemData, "senses">, NPCSystemSource {
-    /** The six primary ability scores. */
-    abilities: Abilities;
 
     /** Details about this actor, such as alignment or ancestry. */
     details: NPCDetails;
@@ -71,15 +66,7 @@ interface NPCTraitsData extends Omit<CreatureTraitsData, "senses">, NPCTraitsSou
 }
 
 interface NPCDetailsSource extends Omit<CreatureDetails, "creature"> {
-    level: {
-        value: number;
-    };
-
-    /** Which sourcebook this creature comes from. */
-    source: {
-        value: string;
-        author: string;
-    };
+    creature?: unknown;
 
     /** The type of this creature (such as 'undead') */
     creatureType: string;
@@ -92,13 +79,7 @@ interface NPCDetailsSource extends Omit<CreatureDetails, "creature"> {
 }
 
 interface NPCDetails extends NPCDetailsSource {
-    level: {
-        value: number;
-        /** The presence of a `base` that is different from the `value` indicates the level was adjusted. */
-        base: number;
-    };
-
-    alliance: ActorAlliance;
+    creature?: unknown;
 }
 
 /** The full data for a NPC action (used primarily for strikes.) */

@@ -1,8 +1,7 @@
 import { ActorUpdateContext } from "@actor/base";
 import { ActorSheetDataExitNihilo } from "@actor/sheet/data-types";
-import { AbilityString } from "@actor/types";
 import { CreatureExitNihilo } from ".";
-import { CreatureSystemData, AbilityData, SkillData } from "./data";
+import { CreatureSystemData } from "./data";
 
 type ModeOfBeing = "living" | "undead" | "construct" | "object";
 
@@ -10,12 +9,8 @@ interface CreatureUpdateContext<T extends CreatureExitNihilo> extends ActorUpdat
     allowHPOverage?: boolean;
 }
 
-type WithRank = { icon?: string; hover?: string; rank: null };
-
 interface CreatureSheetData<TActor extends CreatureExitNihilo = CreatureExitNihilo> extends ActorSheetDataExitNihilo<TActor> {
     data: CreatureSystemData & {
-        abilities: Record<AbilityString, AbilityData & { label?: string }>;
-        skills: Record<string, SkillData & WithRank>;
     };
     skills: ConfigExitNihilo["EXITNIHILO"]["skills"];
     frequencies: ConfigExitNihilo["EXITNIHILO"]["frequencies"];

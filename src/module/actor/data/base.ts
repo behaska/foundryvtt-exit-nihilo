@@ -31,7 +31,7 @@ interface ActorSystemSource {}
 
 interface ActorSystemData extends ActorSystemSource {
     details: {
-        level: { value: number };
+        creature?: unknown;
     };
     attributes: BaseActorAttributes;
     traits: BaseTraitsData<string>;

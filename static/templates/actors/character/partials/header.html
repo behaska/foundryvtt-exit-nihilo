@@ -1,13 +1,23 @@
+{{log "Actor" this}}
 <header class="char-header">
     <section class="char-details">
         <h1 class="char-name">
-            <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'EXITNIHILO.Character.NamePlaceholder'}}" spellcheck="false" />
+            <input name="name" type="text" value="{{actor.name}}"
+                placeholder="{{localize 'EXITNIHILO.Character.NamePlaceholder'}}" spellcheck="false" />
         </h1>
     </section>
     <section class="char-role">
         <div class="role">
-            <label>{{localize "EXITNIHILO.Role.Title"}}</label>
-            <input name="system.biography.role.value" type="text" value="{{data.biography.role.value}}" placeholder="{{localize 'EXITNIHILO.Role.PlaceHolder'}}" size="10" />
+            <label>{{localize "EXITNIHILO.Character.Role.Title"}}</label>
+            <input name="system.details.role.value" type="text" data-dtype="{{actor.system.details.role.type}}"
+                value="{{actor.system.details.role.value}}" placeholder="{{localize 'EXITNIHILO.Character.Role.PlaceHolder'}}"
+                size="10" />
         </div>
+        <div class="profession">
+            <label>{{localize "EXITNIHILO.Character.Profession.Title"}}</label>
+            <input name="system.details.biographie.profession.value" type="text" data-dtype="{{actor.system.details.biographie.profession.type}}"
+                value="{{actor.system.details.biographie.profession.value}}" placeholder="{{localize 'EXITNIHILO.Character.Profession.PlaceHolder'}}"
+                size="10" />
+        </div>        
     </section>
 </header>
