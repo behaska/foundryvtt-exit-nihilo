@@ -7,17 +7,8 @@
         </h1>
     </section>
     <section class="char-role">
-        <div class="pentagon-container">
-            <div class="pentagon-wrapper">
-                <div class="pentagon">
-                    <div class="role-container">
-                        <img src="systems/exit-nihilo/assets/icons/roles/{{actor.system.details.role.value}}.svg"
-                            title="{{localize 'tor2e.sheet.actions.rest.prolonged.description'}}"
-                            alt="{{localize 'tor2e.sheet.actions.rest.prolonged.label'}}">
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        {{> "systems/exit-nihilo/templates/partials/pentagon-component.html" displayRole }}
     </section>
 
 </header>

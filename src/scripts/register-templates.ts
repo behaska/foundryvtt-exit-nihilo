@@ -9,7 +9,10 @@ export function registerTemplates(): void {
         "systems/exit-nihilo/templates/actors/character/tabs/competences.html",
         "systems/exit-nihilo/templates/actors/character/sidebar/sante.html",
         "systems/exit-nihilo/templates/actors/character/sidebar/jauges.html",
-        "systems/exit-nihilo/templates/actors/character/sidebar/attributs.html"
+        "systems/exit-nihilo/templates/actors/character/sidebar/attributs.html",
+
+        // Partials utilitaire
+        "systems/exit-nihilo/templates/partials/pentagon-component.html",
     ];
 
     loadTemplates(templatePaths);

@@ -12,6 +12,28 @@ type CharacterSystemSheetData = CharacterSystemData & {}
 interface CharacterSheetData extends CreatureSheetData<CharacterExitNihilo> {
         data: CharacterSystemSheetData;
         roles: typeof CONFIG.EXITNIHILO.roles;
+        displayRole: ExitNihiloDisplayRole;
 }
 
-export { CharacterSheetData, CharacterSheetTabVisibility };
+
+class ExitNihiloDisplayRole {
+        private constructor() {
+        }
+
+        static from(sheetData: CharacterSheetData): ExitNihiloDisplayRole {
+                const role = sheetData.actor.system.details.role.value;
+                return {
+                        imgSrc: `systems/exit-nihilo/assets/icons/roles/${role}.svg`,
+                        title: `EXITNIHILO.Personnage.Roles.${role}.Titre`,
+                        alt: `EXITNIHILO.Personnage.Roles.${role}.Alt`
+                }
+        }
+}
+
+interface ExitNihiloDisplayRole {
+        imgSrc: string,
+        title: string,
+        alt: string
+}
+
+export { CharacterSheetData, CharacterSheetTabVisibility, ExitNihiloDisplayRole };
