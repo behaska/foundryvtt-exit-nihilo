@@ -24,7 +24,8 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
 
     override async getData(options?: ActorSheetOptions): Promise<CharacterSheetData> {
         const sheetData = (await super.getData(options)) as CharacterSheetData;
-        // Return data for rendering
+        sheetData.roles = CONFIG.EXITNIHILO.roles;
+        console.log("Role:", sheetData.actor.system.details.role);
         return sheetData;
     }
 

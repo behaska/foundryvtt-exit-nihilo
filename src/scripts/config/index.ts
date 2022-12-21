@@ -15,7 +15,6 @@ const actorTypes: Record<ActorType, string> = {
     npc: "ACTOR.TypeNpc",
 };
 
-
 /** Non-detection- and attitude- related conditions added to the Token HUD */
 const tokenHUDConditions = {
     blinded: "EXITNIHILO.ConditionTypeBlinded",
@@ -459,6 +458,16 @@ const traitsDescriptions = {
 
 export const EXITNIHILOCONFIG = {
     chatDamageButtonShieldToggle: false,
+
+    roles : {
+        protecteur: "EXITNIHILO.Personnage.Roles.Protecteur.Titre",
+        approvisionneur: "EXITNIHILO.Personnage.Roles.Approvisionneur.Titre",
+        dirigeant: "EXITNIHILO.Personnage.Roles.Dirigeant.Titre",
+        animateur: "EXITNIHILO.Personnage.Roles.Animateur.Titre",
+        soigneur: "EXITNIHILO.Personnage.Roles.Soigneur.Titre",
+        sachant: "EXITNIHILO.Personnage.Roles.Sachant.Titre",
+        bricoleur: "EXITNIHILO.Personnage.Roles.Bricoleur.Titre",
+    },
 
     statusEffects: {
         lastIconTheme: "default" as StatusEffectIconTheme,

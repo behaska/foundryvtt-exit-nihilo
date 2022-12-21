@@ -22,36 +22,44 @@
 /* Typography                                */
 /* ----------------------------------------- */
 
-.pf2e, .app.sheet.actor {
-  font-family: var(--sans-serif);
-    h1, h2, h3, h4 {
+.exit-nihilo,
+.app.sheet.actor {
+    font-family: var(--sans-serif);
+
+    h1,
+    h2,
+    h3,
+    h4 {
         font-weight: 600;
     }
+
     p {
         font-weight: 500;
     }
 }
 
 // ensure higher specificity than the sheet styles
-.pf2e.sheet form span.pf2-icon,
-.pf2e.sheet form span[data-pf2-action],
-.pf2e.sheet form span[data-pf2-action] *,
-.pf2e.sheet form span[data-pf2-check],
-.pf2e.sheet form span[data-pf2-check] *,
+.exit-nihilo.sheet form span.pf2-icon,
+.exit-nihilo.sheet form span[data-pf2-action],
+.exit-nihilo.sheet form span[data-pf2-action] *,
+.exit-nihilo.sheet form span[data-pf2-check],
+.exit-nihilo.sheet form span[data-pf2-check] *,
 .pf2-icon {
     display: inline;
 }
 
-.pf2e.sheet form span.pf2-icon,
+.exit-nihilo.sheet form span.pf2-icon,
 .pf2-icon {
     font-family: "Pathfinder2eActions";
     font-size: 1.2em;
+
     &.larger {
         font-size: 1.5em;
     }
 }
 
-section.roll-note, p.compact-text {
+section.roll-note,
+p.compact-text {
     display: inline-block;
     font-weight: normal;
     line-height: 1.4em;
@@ -79,7 +87,11 @@ table.pf2-table {
     color: #191813;
     user-select: text;
 
-    thead, tbody, tr, th, td {
+    thead,
+    tbody,
+    tr,
+    th,
+    td {
         box-sizing: border-box;
         user-select: text;
     }
@@ -87,6 +99,7 @@ table.pf2-table {
     tr:nth-child(odd) {
         background-color: #eee5c8;
     }
+
     tr:nth-child(even) {
         background-color: #f6f1e1;
     }
@@ -97,7 +110,8 @@ table.pf2-table {
         background-color: #522e2c;
     }
 
-    th, td {
+    th,
+    td {
         border: solid 1px #808080;
         padding: 6px 15px;
         text-align: center;
@@ -105,7 +119,8 @@ table.pf2-table {
 }
 
 
-a.inline-roll, a.content-link {
+a.inline-roll,
+a.content-link {
     font-weight: 500;
     line-height: 1.6em;
 }
@@ -130,7 +145,7 @@ a.foundry-href {
 }
 
 /* ----------------------------------------- */
-/* PF2E Action Custom Element                */
+/* EXIT-NIHILO Action Custom Element                */
 /* ----------------------------------------- */
 
 [data-pf2-action] {
@@ -163,27 +178,31 @@ a.foundry-href {
 [data-pf2-action][data-pf2-glyph="1"]::before {
     content: "A";
 }
+
 [data-pf2-action][data-pf2-glyph="D"]::before,
 [data-pf2-action][data-pf2-glyph="d"]::before,
 [data-pf2-action][data-pf2-glyph="2"]::before {
     content: "D";
 }
+
 [data-pf2-action][data-pf2-glyph="T"]::before,
 [data-pf2-action][data-pf2-glyph="t"]::before,
 [data-pf2-action][data-pf2-glyph="3"]::before {
     content: "T";
 }
+
 [data-pf2-action][data-pf2-glyph="F"]::before,
 [data-pf2-action][data-pf2-glyph="f"]::before {
     content: "F";
 }
+
 [data-pf2-action][data-pf2-glyph="R"]::before,
 [data-pf2-action][data-pf2-glyph="r"]::before {
     content: "R";
 }
 
 /* ----------------------------------------- */
-/* PF2E Check Custom Element                 */
+/* EXIT-NIHILO Check Custom Element                 */
 /* ----------------------------------------- */
 
 span[data-pf2-check] {
@@ -220,7 +239,7 @@ span[data-pf2-check] {
 }
 
 /* ----------------------------------------- */
-/* PF2E Inline Template Custom Element       */
+/* EXIT-NIHILO Inline Template Custom Element       */
 /* ----------------------------------------- */
 
 span[data-pf2-effect-area] {
@@ -255,7 +274,7 @@ span[data-pf2-effect-area] {
 }
 
 /* ----------------------------------------- */
-/* PF2E Inline Repost Element                */
+/* EXIT-NIHILO Inline Repost Element                */
 /* ----------------------------------------- */
 
 i[data-pf2-repost] {
@@ -318,4 +337,36 @@ i[data-pf2-repost] {
 
 a[href]:hover {
     text-shadow: 0 0 8px var(--color-text-hyperlink);
+}
+
+.pentagon-container {
+    height: 100%;
+    filter: drop-shadow(2px 6px 2px rgba(25, 25, 0, 0.75));
+
+
+    .pentagon-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: $white-color;
+        clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+
+        .pentagon {
+            position: absolute;
+            top: 2px;
+            /* equal to border thickness */
+            left: 2px;
+            width: 94%;
+            height: 94%;
+            background: $text-dark-color;
+            clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
+
+            img {
+                height: 100%;
+                border: none;
+                padding: 10px 0px 5px 0px;
+                border-radius: unset;
+            }
+        }
+    }
 }

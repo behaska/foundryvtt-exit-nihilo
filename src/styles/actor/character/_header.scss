@@ -1,0 +1,15 @@
+header.char-header {
+
+    .char-role {
+        height: 75%;
+        padding-bottom: 2px;
+        width: 70px;
+        
+        .role-container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}

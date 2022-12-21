@@ -18,6 +18,17 @@ $header-height: 89px;
         }
     }
 
+    @import "../reset";
+//    @import "inventory";
+
+    &.character .en-style {
+        @import "character";
+    }
+
+//    &.vehicle .en-style {
+        //@import "vehicle";
+  //  }
+
     .en-style {
         display: grid;
         grid:

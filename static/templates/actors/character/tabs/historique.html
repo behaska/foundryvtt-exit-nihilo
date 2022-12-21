@@ -3,6 +3,26 @@
     <section class="character-details">
         <div class="frame-container">
             <p>Un peu d'historique ....</p>
+            <div class="form-group">
+                <div class="profession">
+                    <label>{{localize "EXITNIHILO.Personnage.Profession.Titre"}}</label>
+                    <input name="system.details.biographie.profession.value" type="text"
+                        data-dtype="{{actor.system.details.biographie.profession.type}}"
+                        value="{{actor.system.details.biographie.profession.value}}"
+                        placeholder="{{localize 'EXITNIHILO.Personnage.Profession.PlaceHolder'}}" size="10" />
+                </div>
+            </div>
+            <div class="role-select-container">
+                <label>{{localize "EXITNIHILO.Personnage.Role.Titre"}}</label>
+                <select class="{{actor.system.details.role.value}} role-select" name="system.details.role.value"
+                    data-dtype="String">
+                    {{#select actor.system.details.role.value}}
+                    {{#each roles as |value key|}}
+                    <option value="{{key}}">{{localize value}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
         </div>
     </section>
 </div>

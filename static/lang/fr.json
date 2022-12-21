@@ -594,11 +594,41 @@
             "NamePlaceholder": "Nom du Personnage",
             "Profession": {
                 "PlaceHolder": "Profession du Personnage",
-                "Title": "Profession"
+                "Titre": "Profession"
             },
             "Role": {
                 "PlaceHolder": "Rôle du Personnage",
-                "Title": "Rôle"
+                "Titre": "Rôle"
+            },
+            "Roles": {
+                "Animateur": {
+                    "Titre": "Animateur",
+                    "Valeur": 0
+                },
+                "Approvisionneur": {
+                    "Titre": "Approvisionneur",
+                    "Valeur": 1
+                },
+                "Bricoleur": {
+                    "Titre": "Bricoleur",
+                    "Valeur": 2
+                },
+                "Dirigeant": {
+                    "Titre": "Dirigeant",
+                    "Valeur": 3
+                },
+                "Protecteur": {
+                    "Titre": "Protecteur",
+                    "Valeur": 4
+                },
+                "Sachant": {
+                    "Titre": "Sachant",
+                    "Valeur": 5
+                },
+                "Soigneur": {
+                    "Titre": "Soigneur",
+                    "Valeur": 6
+                }
             }
         },        
         "SheetLabel": "Feuille de {type}",

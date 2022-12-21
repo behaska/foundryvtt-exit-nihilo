@@ -7,17 +7,17 @@
         </h1>
     </section>
     <section class="char-role">
-        <div class="role">
-            <label>{{localize "EXITNIHILO.Personnage.Role.Title"}}</label>
-            <input name="system.details.role.value" type="text" data-dtype="{{actor.system.details.role.type}}"
-                value="{{actor.system.details.role.value}}" placeholder="{{localize 'EXITNIHILO.Personnage.Role.PlaceHolder'}}"
-                size="10" />
+        <div class="pentagon-container">
+            <div class="pentagon-wrapper">
+                <div class="pentagon">
+                    <div class="role-container">
+                        <img src="systems/exit-nihilo/assets/icons/roles/{{actor.system.details.role.value}}.svg"
+                            title="{{localize 'tor2e.sheet.actions.rest.prolonged.description'}}"
+                            alt="{{localize 'tor2e.sheet.actions.rest.prolonged.label'}}">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="profession">
-            <label>{{localize "EXITNIHILO.Personnage.Profession.Title"}}</label>
-            <input name="system.details.biographie.profession.value" type="text" data-dtype="{{actor.system.details.biographie.profession.type}}"
-                value="{{actor.system.details.biographie.profession.value}}" placeholder="{{localize 'EXITNIHILO.Personnage.Profession.PlaceHolder'}}"
-                size="10" />
-        </div>        
     </section>
+
 </header>

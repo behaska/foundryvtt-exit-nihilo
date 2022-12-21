@@ -25,15 +25,22 @@ header.char-header {
                 }
             }
             input[type='text'], span.non-editable {
+                background: none;
                 font-family: var(--serif);
                 font-weight: 500;
                 font-size: var(--font-size-24);
                 color: var(--text-light);
                 line-height: calc(1em + 1px);
+                border-top: none;
+                border-right: none;
+                border-left: none;
                 border-bottom: 1px solid transparent;
                 height: 26px;
                 &:focus {
                     box-shadow: none;
+                    border-bottom: 1px solid var(--text-light);
+                }
+                &:hover{
                     border-bottom: 1px solid var(--text-light);
                 }
             }
@@ -51,6 +58,7 @@ header.char-header {
             font-size: var(--font-size-10);
             h4 {
                 color: var(--sidebar-label);
+                @include micro;
                 margin-right: 8px;
                 font-weight: 700;
             }
@@ -76,7 +84,6 @@ header.char-header {
             padding-top: 2px;
             label {
                 color: var(--sidebar-label);
-                @include micro;
                 line-height: 1.5;
             }
             input {
