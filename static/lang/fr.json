@@ -591,10 +591,39 @@
             "many": "ème"
         },
         "Personnage": {
+            "Age": {
+                "PlaceHolder": "Âge du Personnage",
+                "Suffixe": "ans",
+                "Titre": "Âge"
+            },
+            "Allies": {
+                "PlaceHolder": "Alliés du Personnage",
+                "Titre": "Alliés"
+            },            
+            "Apparence": {
+                "PlaceHolder": "Apparence du Personnage",
+                "Titre": "Apparence"
+            },
+            "Aversions": {
+                "PlaceHolder": "Aversions du Personnage",
+                "Titre": "Aversions"
+            },
+            "Croyances": {
+                "PlaceHolder": "Croyances du Personnage",
+                "Titre": "Croyances"
+            },
+            "Ennemis": {
+                "PlaceHolder": "Ennemis du Personnage",
+                "Titre": "Ennemis"
+            },            
+            "Ethnie": {
+                "PlaceHolder": "Ethnie du Personnage",
+                "Titre": "Ethnie"
+            },
             "Genre": {
                 "PlaceHolder": "Genre du Personnage",
                 "Titre": "Genre"
-            },            
+            },
             "Genres": {
                 "Male": {
                     "Titre": "Male",
@@ -608,11 +637,40 @@
                     "Titre": "Autres",
                     "Valeur": 2
                 }
-            },            
+            },
+            "Gouts": {
+                "PlaceHolder": "Goûts du Personnage",
+                "Titre": "Goûts"
+            },
+            "Histoire": {
+                "PlaceHolder": "Histoire du Personnage",
+                "Titre": "Histoire"
+            },
+            "Lieu-De-Naissance": {
+                "PlaceHolder": "Lieu de Naissance du Personnage",
+                "Titre": "Lieu de Naissance"
+            },
             "NamePlaceholder": "Nom du Personnage",
+            "Nationalite": {
+                "PlaceHolder": "Nationalité du Personnage",
+                "Titre": "Nationalité"
+            },
+            "Notes": {
+                "PlaceHolder": "Notes du Personnage",
+                "Titre": "Notes"
+            },
+            "Organisation": {
+                "PlaceHolder": "Organisation du Personnage",
+                "Titre": "Organisation"
+            },            
             "Profession": {
                 "PlaceHolder": "Profession du Personnage",
                 "Titre": "Profession"
+            },
+            "Poids": {
+                "PlaceHolder": "Poids du Personnage",
+                "Suffixe": "kg",
+                "Titre": "Poids"
             },
             "Role": {
                 "PlaceHolder": "Rôle du Personnage",
@@ -647,8 +705,17 @@
                     "Titre": "Soigneur",
                     "Valeur": 6
                 }
+            },
+            "Slogans": {
+                "PlaceHolder": "Slogans du Personnage",
+                "Titre": "Slogans"
+            },               
+            "Taille": {
+                "PlaceHolder": "Taille du Personnage",
+                "Suffixe": "cm",
+                "Titre": "Taille"
             }
-        },        
+        },
         "SheetLabel": "Feuille de {type}",
         "SideBar": {
             "AttributsHeader": "Attributs",
@@ -902,7 +969,7 @@
                 "wooden-taws": "Wooden Taws",
                 "zulfikar": "Zulfikar"
             }
-        },        
+        },
         "ZZZZZZZZ": "zzzzz"
     }
 }

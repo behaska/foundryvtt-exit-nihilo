@@ -1,4 +1,5 @@
 import { ActorExitNihilo } from "@actor/base";
+import { ActorDataExitNihilo } from "@actor/data";
 import { ItemExitNihilo } from "@item/base";
 import { ActorSheetDataExitNihilo } from "./data-types";
 
@@ -15,6 +16,29 @@ abstract class ActorSheetExitNihilo<TActor extends ActorExitNihilo> extends Acto
             classes: ["default", "sheet", "actor"],
             scrollY: [".sheet-sidebar", ".tab.active", ".inventory-list"],
         });
+    }
+
+    override async getData(options: ActorSheetOptions = this.options): Promise<ActorSheetDataExitNihilo<TActor>> {
+        // The Actor and its Items
+        const actorData = this.actor.toObject(false) as RawObject<ActorDataExitNihilo>;
+
+        const sheetData: ActorSheetDataExitNihilo<TActor> = {
+            cssClass: this.actor.isOwner ? "editable" : "locked",
+            editable: this.isEditable,
+            document: this.actor,
+            limited: this.actor.limited,
+            options,
+            owner: this.actor.isOwner,
+            title: this.title,
+            actor: actorData,
+            data: actorData.system,
+            effects: [],
+            items: actorData.items,
+            user: { isGM: game.user.isGM },
+            enrichedContent: {},
+        };
+
+        return sheetData;
     }
 }
 

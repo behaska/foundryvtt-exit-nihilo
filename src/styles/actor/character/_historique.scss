@@ -1,0 +1,78 @@
+.apparence-container,
+.notes-container,
+.histoire-container {
+
+    .apparence,
+    .notes-diverses,
+    .histoire {
+        .editor {
+            min-height: 75px;
+            border: 1px solid var(--color-border-light-tertiary);
+            background: rgba(0, 0, 0, 0.05);
+
+            .editor-container {
+                background: rgba(0, 0, 0, 0.05);
+                min-height: 75px;
+            }
+        }
+    }
+}
+
+.character-details {
+    display: flex;
+    flex-wrap: wrap;
+
+    .age-container,
+    .taille-container,
+    .poids-container,
+    .genre-select-container,
+    .ethnie-container,
+    .nationalite-container {
+        align-items: start;
+        display: flex;
+        flex: 20%;
+        flex-direction: column;
+        justify-content: start;
+        margin-bottom: 8px;
+
+        label {
+            color: var(--primary);
+            font-family: var(--sans-serif);
+            font-size: .625rem;
+            font-weight: 800;
+            line-height: 1;
+            margin-right: 2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        input {
+            background-color: rgba(28, 28, 28, .1);
+            border-bottom: 1px solid #d3ccbc;
+            color: var(--text-dark);
+            font-family: var(--body-serif);
+            font-weight: 700;
+            width: calc(100% - 6px);
+        }
+
+        .complexe-value {
+            display: flex;
+            flex-direction: row;
+
+            input {
+                width: calc(75% - 6px);
+            }
+
+            p {
+                color: black;
+                font-family: var(--sans-serif);
+                font-size: .625rem;
+                line-height: 1;
+                margin-right: 2px;
+                text-transform: uppercase;
+                white-space: nowrap;
+                font-weight: 500;
+            }
+        }
+    }
+}

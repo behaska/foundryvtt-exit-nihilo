@@ -7,8 +7,8 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
     static override get defaultOptions(): ActorSheetOptions {
         const options = super.defaultOptions;
         options.classes = [...options.classes, "character"];
-        options.width = 750;
-        options.height = 800;
+        options.width = 800;
+        options.height = 850;
         options.scrollY.push(".tab.active .tab-content");
         options.tabs = [
             { navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "general" },
@@ -28,8 +28,16 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         sheetData.genres = CONFIG.EXITNIHILO.genres;
         sheetData.displayRole = ExitNihiloDisplayRole.from(sheetData);
         sheetData.displayGenre = ExitNihiloDisplayGenre.from(sheetData);
-        console.log("Display Genre:", sheetData.displayGenre);
-        console.log("Genres:", sheetData.genres);
+        const { biographie } = sheetData.actor.system.details;
+        sheetData.enrichedContent.apparence = await TextEditor.enrichHTML(biographie.apparence.value, {
+            async: true,
+        });
+        sheetData.enrichedContent.histoire = await TextEditor.enrichHTML(biographie.histoire.value, {
+            async: true,
+        });
+        sheetData.enrichedContent.notes = await TextEditor.enrichHTML(biographie.notes.value, {
+            async: true,
+        });
         return sheetData;
     }
 
