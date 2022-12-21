@@ -6,9 +6,19 @@
                 placeholder="{{localize 'EXITNIHILO.Personnage.NamePlaceholder'}}" spellcheck="false" />
         </h1>
     </section>
-    <section class="char-role">
 
-        {{> "systems/exit-nihilo/templates/partials/pentagon-component.html" displayRole }}
+    <section class="char-genre">
+        <div class="role-container">
+            <p class="title">{{localize 'EXITNIHILO.Personnage.Genre.Titre'}}</p>
+            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html" displayGenre }}
+        </div>
+    </section>
+
+    <section class="char-role">
+        <div class="role-container">
+            <p class="title">{{localize 'EXITNIHILO.Personnage.Role.Titre'}}</p>
+            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html" displayRole }}
+        </div>
     </section>
 
 </header>

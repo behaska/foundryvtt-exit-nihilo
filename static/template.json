@@ -23,7 +23,7 @@
                     "label": "exit-nihilo.actors.details.poids"
                 },
                 "genre": {
-                    "value": "",
+                    "value": "femelle",
                     "type": "String",
                     "label": "exit-nihilo.actors.details.genre"
                 },                
@@ -38,7 +38,7 @@
                     "label": "exit-nihilo.actors.details.nationalite"
                 },
                 "role": {
-                    "value": "",
+                    "value": "animateur",
                     "type": "String",
                     "label": "exit-nihilo.actors.details.biographie.role"
                 },

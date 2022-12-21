@@ -591,6 +591,24 @@
             "many": "ème"
         },
         "Personnage": {
+            "Genre": {
+                "PlaceHolder": "Genre du Personnage",
+                "Titre": "Genre"
+            },            
+            "Genres": {
+                "Male": {
+                    "Titre": "Male",
+                    "Valeur": 0
+                },
+                "Femelle": {
+                    "Titre": "Femelle",
+                    "Valeur": 1
+                },
+                "Autres": {
+                    "Titre": "Autres",
+                    "Valeur": 2
+                }
+            },            
             "NamePlaceholder": "Nom du Personnage",
             "Profession": {
                 "PlaceHolder": "Profession du Personnage",

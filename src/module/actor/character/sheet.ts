@@ -1,6 +1,6 @@
 import { CreatureSheetExitNihilo } from "@actor/creature/sheet";
 import { CharacterExitNihilo } from ".";
-import { CharacterSheetData, ExitNihiloDisplayRole } from "./data/sheet";
+import { CharacterSheetData, ExitNihiloDisplayGenre, ExitNihiloDisplayRole } from "./data/sheet";
 
 class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
 
@@ -25,8 +25,11 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
     override async getData(options?: ActorSheetOptions): Promise<CharacterSheetData> {
         const sheetData = (await super.getData(options)) as CharacterSheetData;
         sheetData.roles = CONFIG.EXITNIHILO.roles;
+        sheetData.genres = CONFIG.EXITNIHILO.genres;
         sheetData.displayRole = ExitNihiloDisplayRole.from(sheetData);
-        console.log("Display Role:", sheetData.displayRole);
+        sheetData.displayGenre = ExitNihiloDisplayGenre.from(sheetData);
+        console.log("Display Genre:", sheetData.displayGenre);
+        console.log("Genres:", sheetData.genres);
         return sheetData;
     }
 

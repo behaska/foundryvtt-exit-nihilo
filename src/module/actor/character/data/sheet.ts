@@ -12,15 +12,31 @@ type CharacterSystemSheetData = CharacterSystemData & {}
 interface CharacterSheetData extends CreatureSheetData<CharacterExitNihilo> {
         data: CharacterSystemSheetData;
         roles: typeof CONFIG.EXITNIHILO.roles;
-        displayRole: ExitNihiloDisplayRole;
+        genres: typeof CONFIG.EXITNIHILO.genres;
+        displayRole: ExitNihiloPentagonDisplayElement;
+        displayGenre: ExitNihiloPentagonDisplayElement;
 }
 
+
+class ExitNihiloDisplayGenre {
+        private constructor() {
+        }
+
+        static from(sheetData: CharacterSheetData): ExitNihiloPentagonDisplayElement {
+                const genre = sheetData.actor.system.details.genre.value;
+                return {
+                        imgSrc: `systems/exit-nihilo/assets/icons/genres/${genre}.svg`,
+                        title: `EXITNIHILO.Personnage.Genres.${genre}.Titre`,
+                        alt: `EXITNIHILO.Personnage.Genres.${genre}.Alt`
+                }
+        }
+}
 
 class ExitNihiloDisplayRole {
         private constructor() {
         }
 
-        static from(sheetData: CharacterSheetData): ExitNihiloDisplayRole {
+        static from(sheetData: CharacterSheetData): ExitNihiloPentagonDisplayElement {
                 const role = sheetData.actor.system.details.role.value;
                 return {
                         imgSrc: `systems/exit-nihilo/assets/icons/roles/${role}.svg`,
@@ -30,10 +46,10 @@ class ExitNihiloDisplayRole {
         }
 }
 
-interface ExitNihiloDisplayRole {
+interface ExitNihiloPentagonDisplayElement {
         imgSrc: string,
         title: string,
         alt: string
 }
 
-export { CharacterSheetData, CharacterSheetTabVisibility, ExitNihiloDisplayRole };
+export { CharacterSheetData, CharacterSheetTabVisibility, ExitNihiloPentagonDisplayElement, ExitNihiloDisplayRole, ExitNihiloDisplayGenre };

@@ -459,7 +459,13 @@ const traitsDescriptions = {
 export const EXITNIHILOCONFIG = {
     chatDamageButtonShieldToggle: false,
 
-    roles : {
+    genres: {
+        "male": "EXITNIHILO.Personnage.Genres.Male.Titre",
+        "femelle": "EXITNIHILO.Personnage.Genres.Femelle.Titre",
+        "autres": "EXITNIHILO.Personnage.Genres.Autres.Titre",
+    },
+
+    roles: {
         protecteur: "EXITNIHILO.Personnage.Roles.Protecteur.Titre",
         approvisionneur: "EXITNIHILO.Personnage.Roles.Approvisionneur.Titre",
         dirigeant: "EXITNIHILO.Personnage.Roles.Dirigeant.Titre",
@@ -786,14 +792,14 @@ export const EXITNIHILOCONFIG = {
     },
 
     traitsDescriptions,
-    actionTraits,    
+    actionTraits,
     armorTraits,
     creatureTraits,
     consumableTraits,
     equipmentTraits,
     monsterTraits: creatureTraits,
     weaponTraits,
-    
+
     weaponHands: {
         1: "EXITNIHILO.WeaponHands1",
         "1+": "EXITNIHILO.WeaponHands1Plus",
@@ -1616,7 +1622,7 @@ export const EXITNIHILOCONFIG = {
             book: equipmentTraits,
             consumable: consumableTraits,
             equipment: equipmentTraits,
-            weapon: weaponTraits,            
+            weapon: weaponTraits,
         },
     },
 

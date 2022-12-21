@@ -3,7 +3,7 @@
     <section class="character-details">
         <div class="frame-container">
             <p>Un peu d'historique ....</p>
-            <div class="form-group">
+            <div class="form-group profession-container">
                 <div class="profession">
                     <label>{{localize "EXITNIHILO.Personnage.Profession.Titre"}}</label>
                     <input name="system.details.biographie.profession.value" type="text"
@@ -12,12 +12,21 @@
                         placeholder="{{localize 'EXITNIHILO.Personnage.Profession.PlaceHolder'}}" size="10" />
                 </div>
             </div>
-            <div class="role-select-container">
+            <div class="form-group role-select-container">
                 <label>{{localize "EXITNIHILO.Personnage.Role.Titre"}}</label>
-                <select class="{{actor.system.details.role.value}} role-select" name="system.details.role.value"
-                    data-dtype="String">
+                <select class="role-select" name="system.details.role.value" data-dtype="String">
                     {{#select actor.system.details.role.value}}
                     {{#each roles as |value key|}}
+                    <option value="{{key}}">{{localize value}}</option>
+                    {{/each}}
+                    {{/select}}
+                </select>
+            </div>
+            <div class="form-group genre-select-container">
+                <label>{{localize "EXITNIHILO.Personnage.Genre.Titre"}}</label>
+                <select class="genre-select" name="system.details.genre.value" data-dtype="String">
+                    {{#select actor.system.details.genre.value}}
+                    {{#each genres as |value key|}}
                     <option value="{{key}}">{{localize value}}</option>
                     {{/each}}
                     {{/select}}
