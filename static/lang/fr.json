@@ -577,6 +577,7 @@
         "NavBar": {
             "Tabs": {
                 "CompetencesLabel": "Compétences",
+                "CombatLabel": "Combat",
                 "EquipementLabel": "Équipement",
                 "GeneralLabel": "Général",
                 "HistoriqueLabel": "Historique"

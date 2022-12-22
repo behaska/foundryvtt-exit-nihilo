@@ -1,59 +1,6 @@
 <div class="tab historique item-container" data-container-type="actorHistorique" data-group="primary"
     data-tab="historique">
-    <section class="character-details">
-        <div class="age-container">
-            <div class="age">
-                <label>{{localize "EXITNIHILO.Personnage.Age.Titre"}}</label>
-                <div class="complexe-value">
-                    <input name="system.details.age.value" type="number" data-dtype="{{actor.system.details.age.type}}"
-                        value="{{actor.system.details.age.value}}"
-                        placeholder="{{localize 'EXITNIHILO.Personnage.Age.PlaceHolder'}}" size="3" />
-                    <p class="suffixe">{{localize "EXITNIHILO.Personnage.Age.Suffixe"}}</p>
-                </div>
-
-            </div>
-        </div>
-        <div class="taille-container">
-            <div class="taille">
-                <label class="titre">{{localize "EXITNIHILO.Personnage.Taille.Titre"}}</label>
-                <div class="complexe-value">
-                    <input name="system.details.taille.value" type="number"
-                        data-dtype="{{actor.system.details.taille.type}}" value="{{actor.system.details.taille.value}}"
-                        placeholder="{{localize 'EXITNIHILO.Personnage.Age.PlaceHolder'}}" size="3" />
-                    <p class="suffixe">{{localize "EXITNIHILO.Personnage.Taille.Suffixe"}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="poids-container">
-            <div class="poids">
-                <label class="titre">{{localize "EXITNIHILO.Personnage.Poids.Titre"}}</label>
-                <div class="complexe-value">
-                    <input name="system.details.poids.value" type="number"
-                        data-dtype="{{actor.system.details.poids.type}}" value="{{actor.system.details.poids.value}}"
-                        placeholder="{{localize 'EXITNIHILO.Personnage.Age.PlaceHolder'}}" size="3" />
-                    <p class="suffixe">{{localize "EXITNIHILO.Personnage.Poids.Suffixe"}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="genre-select-container">
-            <label>{{localize "EXITNIHILO.Personnage.Genre.Titre"}}</label>
-            <select class="genre-select" name="system.details.genre.value" data-dtype="String">
-                {{#select actor.system.details.genre.value}}
-                {{#each genres as |value key|}}
-                <option value="{{key}}">{{localize value}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
-        </div>
-        <div class="ethnie-container">
-            <div class="ethnie">
-                <label>{{localize "EXITNIHILO.Personnage.Ethnie.Titre"}}</label>
-                <input name="system.details.biographie.ethnie.value" type="text"
-                    data-dtype="{{actor.system.details.biographie.ethnie.type}}"
-                    value="{{actor.system.details.biographie.ethnie.value}}"
-                    placeholder="{{localize 'EXITNIHILO.Personnage.Ethnie.PlaceHolder'}}" size="10" />
-            </div>
-        </div>
+    <section class="personnage-biographie">
         <div class="nationalite-container">
             <div class="nationalite">
                 <label>{{localize "EXITNIHILO.Personnage.Nationalite.Titre"}}</label>
@@ -62,26 +9,7 @@
                     value="{{actor.system.details.biographie.nationalite.value}}"
                     placeholder="{{localize 'EXITNIHILO.Personnage.Nationalite.PlaceHolder'}}" size="10" />
             </div>
-        </div>
-    </section>
-    <section>
-        <div class="profession-container">
-            <div class="profession">
-                <label>{{localize "EXITNIHILO.Personnage.Profession.Titre"}}</label>
-                <input name="system.details.biographie.profession.value" type="text"
-                    data-dtype="{{actor.system.details.biographie.profession.type}}"
-                    value="{{actor.system.details.biographie.profession.value}}"
-                    placeholder="{{localize 'EXITNIHILO.Personnage.Profession.PlaceHolder'}}" size="10" />
-            </div>
-        </div>
-
-        <div class="apparence-container">
-            <label>{{localize "EXITNIHILO.Personnage.Apparence.Titre"}}</label>
-            <div class="apparence">
-                {{editor enrichedContent.apparence target="system.details.biographie.apparence.value"
-                engine="prosemirror" button=true owner=owner editable=editable collaborate=true}}
-            </div>
-        </div>
+        </div>        
         <div class="lieu-de-naissance-container">
             <div class="lieu-de-naissance">
                 <label>{{localize "EXITNIHILO.Personnage.Lieu-De-Naissance.Titre"}}</label>
@@ -91,7 +19,15 @@
                     placeholder="{{localize 'EXITNIHILO.Personnage.Lieu-De-Naissance.PlaceHolder'}}" size="10" />
             </div>
         </div>
-
+        <div class="slogans-container">
+            <div class="slogans">
+                <label>{{localize "EXITNIHILO.Personnage.Slogans.Titre"}}</label>
+                <input name="system.details.biographie.slogans.value" type="text"
+                    data-dtype="{{actor.system.details.biographie.slogans.type}}"
+                    value="{{actor.system.details.biographie.slogans.value}}"
+                    placeholder="{{localize 'EXITNIHILO.Personnage.Slogans.PlaceHolder'}}" size="10" />
+            </div>
+        </div>
         <div class="croyances-container">
             <div class="croyances">
                 <label>{{localize "EXITNIHILO.Personnage.Croyances.Titre"}}</label>
@@ -117,15 +53,6 @@
                     data-dtype="{{actor.system.details.biographie.aversions.type}}"
                     value="{{actor.system.details.biographie.aversions.value}}"
                     placeholder="{{localize 'EXITNIHILO.Personnage.Aversions.PlaceHolder'}}" size="10" />
-            </div>
-        </div>
-        <div class="slogans-container">
-            <div class="slogans">
-                <label>{{localize "EXITNIHILO.Personnage.Slogans.Titre"}}</label>
-                <input name="system.details.biographie.slogans.value" type="text"
-                    data-dtype="{{actor.system.details.biographie.slogans.type}}"
-                    value="{{actor.system.details.biographie.slogans.value}}"
-                    placeholder="{{localize 'EXITNIHILO.Personnage.Slogans.PlaceHolder'}}" size="10" />
             </div>
         </div>
         <div class="allies-container">
@@ -155,7 +82,13 @@
                     placeholder="{{localize 'EXITNIHILO.Personnage.Organisation.PlaceHolder'}}" size="10" />
             </div>
         </div>
-
+        <div class="apparence-container">
+            <label>{{localize "EXITNIHILO.Personnage.Apparence.Titre"}}</label>
+            <div class="apparence">
+                {{editor enrichedContent.apparence target="system.details.biographie.apparence.value"
+                engine="prosemirror" button=true owner=owner editable=editable collaborate=true}}
+            </div>
+        </div>
         <div class="histoire-container">
             <div class="histoire">
                 <label>{{localize "EXITNIHILO.Personnage.Histoire.Titre"}}</label>
@@ -163,24 +96,12 @@
                 engine="prosemirror" button=true owner=owner editable=editable collaborate=true}}
             </div>
         </div>
-
         <div class="notes-container">
             <label>{{localize "EXITNIHILO.Personnage.Notes.Titre"}}</label>
             <div class="notes-diverses">
                 {{editor enrichedContent.notes target="system.details.biographie.notes.value"
                 engine="prosemirror" button=true owner=owner editable=editable collaborate=true}}
             </div>
-        </div>
-
-        <div class="role-select-container">
-            <label>{{localize "EXITNIHILO.Personnage.Role.Titre"}}</label>
-            <select class="role-select" name="system.details.role.value" data-dtype="String">
-                {{#select actor.system.details.role.value}}
-                {{#each roles as |value key|}}
-                <option value="{{key}}">{{localize value}}</option>
-                {{/each}}
-                {{/select}}
-            </select>
         </div>
     </section>
 </div>

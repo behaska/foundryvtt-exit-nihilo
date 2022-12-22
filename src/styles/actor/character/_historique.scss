@@ -18,8 +18,13 @@
     }
 }
 
-.character-details {
-    display: flex;
+.personnage-details,
+.personnage-biographie {
+    display: grid;
+    grid:
+        "img alignment deity" 46px "img details details" auto / 120px 130px 1fr;
+    margin-top: 4px;
+    //display: flex;
     flex-wrap: wrap;
 
     .age-container,
@@ -27,14 +32,28 @@
     .poids-container,
     .genre-select-container,
     .ethnie-container,
-    .nationalite-container {
-        align-items: start;
-        display: flex;
+    .profession-container,
+    .role-select-container,
+    .apparence-container,
+    .nationalite-container,
+    .lieu-de-naissance-container,
+    .slogans-container,
+    .croyances-container,
+    .gouts-container,
+    .aversions-container,
+    .allies-container,
+    .ennemis-container,
+    .organisation-container,
+    .histoire-container,
+    .notes-container {
+
+        /*         align-items: start;
         flex: 20%;
+        display: flex;
         flex-direction: column;
         justify-content: start;
         margin-bottom: 8px;
-
+ */
         label {
             color: var(--primary);
             font-family: var(--sans-serif);
@@ -55,7 +74,7 @@
             width: calc(100% - 6px);
         }
 
-        .complexe-value {
+        .valeur-a-suffixe {
             display: flex;
             flex-direction: row;
 
@@ -75,4 +94,145 @@
             }
         }
     }
+}
+
+
+
+.personnage-details {
+    display: grid;
+    grid:
+        "img age taille poids genre" 46px 
+        "img role-p . ethnie ethnie " auto 
+        "img profession profession profession ." auto / 150px 100px 100px 100px 1fr;
+    ;
+    margin-top: 4px;
+    flex-wrap: wrap;
+
+    .frame-container {
+        border: none;
+        grid-area: img;
+        margin-left: 5px;
+        margin-right: 10px;
+
+        .frame {
+            position: relative;
+            z-index: 3;
+
+            .player-image {
+                object-fit: cover;
+                object-position: top;
+                border: none;
+                border-radius: 0;
+                max-height: 178px;
+                width: 100%;
+                cursor: pointer;
+                @include brown-border;
+            }
+
+            [data-action=show-image] {
+                position: absolute;
+                bottom: 5px;
+                right: 0;
+            }
+        }
+    }
+
+    .age-container {
+        grid-area: age;
+    }
+
+    .taille-container {
+        grid-area: taille;
+    }
+
+    .poids-container {
+        grid-area: poids;
+    }
+
+    .genre-select-container {
+        grid-area: genre;
+    }
+
+    .ethnie-container {
+        grid-area: ethnie;
+    }
+
+    .profession-container {
+        grid-area: profession;
+    }
+
+    .role-select-container {
+        // je ne sais pas pourquoi mais si je rajoute le grid-area ce block n'est plus en mode column
+        //grid-area: role-p;
+    }
+}
+
+.personnage-biographie {
+    display: grid;
+    grid:
+        "nationalite lieu-de-naissance" auto 
+        "slogans croyances" auto 
+        "gouts aversions" auto 
+        "allies ennemis" auto 
+        "organisation ." auto 
+        " apparence apparence" auto 
+        " apparence apparence" auto 
+        " apparence apparence" auto 
+        " histoire histoire" auto 
+        " histoire histoire" auto 
+        " histoire histoire" auto 
+        " notes notes" auto 
+        " notes notes" auto
+        " notes notes" auto ;
+    
+    margin-top: 4px;
+    flex-wrap: wrap;
+
+    .nationalite-container {
+        grid-area: nationalite;
+    }
+
+    .lieu-de-naissance-container {
+        grid-area: lieu-de-naissance;
+    }
+
+    .slogans-container {
+        grid-area: slogans;
+    }
+
+    .croyances-container {
+        grid-area: croyances;
+    }
+
+    .gouts-container {
+        grid-area: gouts;
+    }
+
+    .aversions-container {
+        grid-area: aversions;
+    }
+
+    .allies-container {
+        grid-area: allies;
+    }
+
+    .ennemis-container {
+        grid-area: ennemis;
+    }
+
+    .organisation-container {
+        grid-area: organisation;
+    }
+
+    .apparence-container {
+        grid-area: apparence;
+    }
+
+    .histoire-container {
+        grid-area: histoire;
+    }
+
+    .notes-container {
+        grid-area: notes;
+    }    
 }
