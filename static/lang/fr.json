@@ -606,6 +606,9 @@
                 "Titre": "Apparence"
             },
             "Attributs": {
+                "Choix": {
+                    "Titre": "Caractéristique principale"
+                },
                 "Physique": {
                     "PlaceHolder": "Attribut Physique du Personnage",
                     "Titre": "Physique",
@@ -614,8 +617,56 @@
                         "Titre": "Puissance"
                     },
                     "Vitalite": {
-                        "PlaceHolder": "Caractéristique Adresse du Personnage",
-                        "Titre": "Adresse"
+                        "PlaceHolder": "Caractéristique Vitalité du Personnage",
+                        "Titre": "Vitalité"
+                    }
+                },
+                "Adresse": {
+                    "PlaceHolder": "Attribut Adresse du Personnage",
+                    "Titre": "Adresse",
+                    "Agilite": {
+                        "PlaceHolder": "Caractéristique Agilité du Personnage",
+                        "Titre": "Agilité"
+                    },
+                    "Dexterite": {
+                        "PlaceHolder": "Caractéristique Dextérité du Personnage",
+                        "Titre": "Dextérité"
+                    }
+                },
+                "Intellect": {
+                    "PlaceHolder": "Attribut Intellect du Personnage",
+                    "Titre": "Intellect",
+                    "Raisonnement": {
+                        "PlaceHolder": "Caractéristique Raisonnement du Personnage",
+                        "Titre": "Raisonnement"
+                    },
+                    "Apprentissage": {
+                        "PlaceHolder": "Caractéristique Apprentissage du Personnage",
+                        "Titre": "Apprentissage"
+                    }
+                },
+                "Caractere": {
+                    "PlaceHolder": "Attribut Caractère du Personnage",
+                    "Titre": "Caractère",
+                    "Volonte": {
+                        "PlaceHolder": "Caractéristique Volonté du Personnage",
+                        "Titre": "Volonté"
+                    },
+                    "Intuition": {
+                        "PlaceHolder": "Caractéristique Intuition du Personnage",
+                        "Titre": "Intuition"
+                    }
+                },
+                "Social": {
+                    "PlaceHolder": "Attribut Social du Personnage",
+                    "Titre": "Social",
+                    "Communication": {
+                        "PlaceHolder": "Caractéristique Communication du Personnage",
+                        "Titre": "Communication"
+                    },
+                    "Empathie": {
+                        "PlaceHolder": "Caractéristique Empathie du Personnage",
+                        "Titre": "Empathie"
                     }
                 }
             },

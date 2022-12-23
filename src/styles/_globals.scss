@@ -395,8 +395,10 @@ a[href]:hover {
             clip-path: polygon(50% 100%, 100% 38%, 81% 0, 19% 0, 0% 38%);
 
             img {
-                height: 100%;
                 width: 100%;
+                position: relative;
+                top: 15px;
+                height: 60%;
                 border: none;
                 padding: 10px 0px 5px 0px;
                 border-radius: unset;

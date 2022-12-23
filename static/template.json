@@ -10,63 +10,63 @@
                 "age": {
                     "value": 18,
                     "type": "Number",
-                    "label": "exit-nihilo.actors.details.age"
+                    "label": "EXITNIHILO.actors.details.age"
                 },
                 "taille": {
                     "value": 170,
                     "type": "Number",
-                    "label": "exit-nihilo.actors.details.taille"
+                    "label": "EXITNIHILO.actors.details.taille"
                 },
                 "poids": {
                     "value": 70,
                     "type": "Number",
-                    "label": "exit-nihilo.actors.details.poids"
+                    "label": "EXITNIHILO.actors.details.poids"
                 },
                 "genre": {
                     "value": "femelle",
                     "type": "String",
-                    "label": "exit-nihilo.actors.details.genre"
+                    "label": "EXITNIHILO.actors.details.genre"
                 },                
                 "ethnie": {
                     "value": "",
                     "type": "String",
-                    "label": "exit-nihilo.actors.details.ethnie"
+                    "label": "EXITNIHILO.actors.details.ethnie"
                 },
                 "nationalite": {
                     "value": "",
                     "type": "String",
-                    "label": "exit-nihilo.actors.details.nationalite"
+                    "label": "EXITNIHILO.actors.details.nationalite"
                 },
                 "role": {
                     "value": "animateur",
                     "type": "String",
-                    "label": "exit-nihilo.actors.details.biographie.role"
+                    "label": "EXITNIHILO.actors.details.biographie.role"
                 },
                 "biographie": {
                     "apparence": {
                         "value": "",
                         "type": "String",
-                        "label": "exit-nihilo.actors.details.biographie.apparence"
+                        "label": "EXITNIHILO.actors.details.biographie.apparence"
                     }, 
                     "histoire": {
                         "value": "",
                         "type": "String",
-                        "label": "exit-nihilo.actors.details.biographie.histoire"
+                        "label": "EXITNIHILO.actors.details.biographie.histoire"
                     },                     
                     "lieu-de-naissance": {
                         "value": "",
                         "type": "String",
-                        "label": "exit-nihilo.actors.details.biographie.lieu-de-naissance"
+                        "label": "EXITNIHILO.actors.details.biographie.lieu-de-naissance"
                     },
                     "croyances": {
                         "value": "",
                         "type": "String",
-                        "label": "exit-nihilo.actors.details.biographie.croyances"
+                        "label": "EXITNIHILO.actors.details.biographie.croyances"
                     }, 
                     "gouts": {
                         "value": "",
                         "type": "String",
-                        "label": "exit-nihilo.actors.details.biographie.gouts"
+                        "label": "EXITNIHILO.actors.details.biographie.gouts"
                     },                     
                     "aversions": {
                         "value": "",
@@ -127,78 +127,43 @@
                     "physique": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.physique",
-                        "puissance": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.puissance"
-                        },
-                        "vitalite": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.vitalite"
-                        }
+                        "label": "EXITNIHILO.Personnage.Attributs.Physique",
+                        "label-premiere": "EXITNIHILO.Personnage.Attributs.Physique.Puissance.Titre",
+                        "label-deuxieme": "EXITNIHILO.Personnage.Attributs.Physique.Vitalite.Titre",
+                        "premierEstPrincipal": "true"
                     },
                     "adresse": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.adresse",
-                        "agilite": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.agilite"
-                        },
-                        "precision": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.precision"
-                        }
-                    },
-                    "social": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "tor2e.stats.social",
-                        "communication": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.communication"
-                        },
-                        "empathie": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.empathie"
-                        }
+                        "label": "EXITNIHILO.Personnage.Attributs.Adresse",
+                        "label-premiere": "EXITNIHILO.Personnage.Attributs.Adresse.Agilite.Titre",
+                        "label-deuxieme": "EXITNIHILO.Personnage.Attributs.Adresse.Dexterite.Titre",
+                        "premierEstPrincipal": "true"
                     },
                     "intellect": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.intellect",
-                        "raisonnement": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.raisonnement"
-                        },
-                        "apprentissage": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.apprentissage"
-                        }
+                        "label": "EXITNIHILO.Personnage.Attributs.Intellect",
+                        "label-premiere": "EXITNIHILO.Personnage.Attributs.Intellect.Raisonnement.Titre",
+                        "label-deuxieme": "EXITNIHILO.Personnage.Attributs.Intellect.Apprentissage.Titre",
+                        "premierEstPrincipal": "true"
                     },
                     "caractere": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.caractere",
-                        "volonte": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.volonte"
-                        },
-                        "intuition": {
-                            "value": 0,
-                            "type": "Number",
-                            "label": "tor2e.stats.intuition"
-                        }
-                    }
+                        "label": "EXITNIHILO.Personnage.Attributs.Caractere",
+                        "label-premiere": "EXITNIHILO.Personnage.Attributs.Caractere.Volonte.Titre",
+                        "label-deuxieme": "EXITNIHILO.Personnage.Attributs.Caractere.Intuition.Titre",
+                        "premierEstPrincipal": "true"
+                    },
+                    "social": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "EXITNIHILO.Personnage.Attributs.Social",
+                        "label-premiere": "EXITNIHILO.Personnage.Attributs.Social.Communication.Titre",
+                        "label-deuxieme": "EXITNIHILO.Personnage.Attributs.Social.Empathie.Titre",
+                        "premierEstPrincipal": "true"
+                    }                    
                 }
             },
             "competences": {

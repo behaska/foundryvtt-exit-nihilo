@@ -1,4 +1,5 @@
 import { EXITNIHILOCONFIG } from "./config";
+import { registerHandlebarsHelpers } from "./register-handlebars";
 import { registerTemplates } from "./register-templates";
 import { SetGameExitNihilo } from "./set-game-exit-nihilo";
 
@@ -97,6 +98,7 @@ export const Init = {
             // schema.displayName.default = schema.displayBars.default = CONST.TOKEN_DISPLAY_MODES.OWNER_HOVER;
 
             // Register stuff with the Foundry client
+            registerHandlebarsHelpers();
             registerTemplates();
 
             // Create and populate initial game.exit-nihilo interface

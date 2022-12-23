@@ -47,7 +47,7 @@
     .organisation-container,
     .histoire-container,
     .notes-container,
-    .physique-container {
+    .attribut-container {
         label {
             color: var(--primary);
             font-family: var(--sans-serif);
@@ -147,29 +147,115 @@
     }
 }
 
+.attribut-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    align-items: center;
+
+
+    .radio-principal {
+        display: flex;
+        flex-direction: row;
+        margin: 2px;
+        padding: 2px;
+        border-radius: 5px;
+        width: 165px;
+
+        .valeur {
+            flex: 1;
+            text-align: center;
+        }
+    }
+
+    .attribut {
+        text-align: center;
+
+        label {
+            font-size: 1rem;
+            z-index: 5;
+        }
+
+        input {
+            @include inset-gold-border;
+            font-size: 1.75rem;
+            border-radius: 25px;
+            width: 40px;
+            height: 40px;
+            background: whitesmoke;
+        }
+    }
+
+    legend{
+        font-size: .625rem;
+    }
+}
+
+.attribut-container.gauche {
+    align-items: flex-end;
+}
+
+.attribut-container.droite {
+    align-items: flex-start;
+}
+
 .personnage-attributs {
     display: grid;
     grid:
-        "physique physique . adresse adresse" 150px ". pentagon pentagon pentagon ." 75px "intellect pentagon pentagon pentagon caractere" 75px "intellect pentagon pentagon pentagon caractere" 75px ". social social social ." 150px / 110px 90px 110px 90px 110px;
+        "physique physique . adresse adresse" 95px ". pentagon pentagon pentagon ." 55px "intellect pentagon pentagon pentagon caractere" 100px "intellect pentagon pentagon pentagon caractere" 70px ". social social social ." auto/140px 70px 70px 70px 140px;
+
 
     .physique-container {
         grid-area: physique;
+        position: relative;
+        top: 0px;
+        right: -10px;
     }
 
     .adresse-container {
         grid-area: adresse;
+        position: relative;
+        top: 0px;
+        right: 5px;
     }
 
     .intellect-container {
         grid-area: intellect;
+        position: relative;
+        top: 4px;
+        right: -20px;
+
+        .intellect {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     .caractere-container {
         grid-area: caractere;
+        position: relative;
+        top: 4px;
+        left: -20px;
+
+        .caractere {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     .social-container {
         grid-area: social;
+        position: relative;
+        top: -20px;
+        left: -2px;
+
+        .social {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     }
 
     .central-container {

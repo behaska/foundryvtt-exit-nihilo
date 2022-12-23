@@ -85,47 +85,152 @@
     </section>
     <hr />
     <section class="personnage-attributs">
-        <div class="attribut physique-container">
-            <div class="physique">
+        <div class="attribut-container physique-container gauche">
+            <fieldset class="radio-principal">
+                <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.physique.valeur1"
+                        name="system.attributs.caracteristiques.physique.premierEstPrincipal" value="true" {{#isTrue
+                        actor.system.attributs.caracteristiques.physique.premierEstPrincipal}}{{/isTrue}} />
+                    <label for="system.attributs.caracteristiques.physique.valeur1">{{localize
+                        actor.system.attributs.caracteristiques.physique.label-premiere}}</label>
+                </div>
+
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.physique.valeur2"
+                        name="system.attributs.caracteristiques.physique.premierEstPrincipal" value="false" {{#isFalse
+                        actor.system.attributs.caracteristiques.physique.premierEstPrincipal}}{{/isFalse}} />
+                    <label for="system.attributs.caracteristiques.physique.valeur2">{{localize
+                        actor.system.attributs.caracteristiques.physique.label-deuxieme}}</label>
+                </div>
+            </fieldset>
+            <div class="attribut physique">
                 <label>{{localize "EXITNIHILO.Personnage.Attributs.Physique.Titre"}}</label>
                 <div class="physique-input">
                     <input name="system.attributs.caracteristiques.physique.value" type="number"
                         data-dtype="{{actor.system.attributs.caracteristiques.physique.type}}"
                         value="{{actor.system.attributs.caracteristiques.physique.value}}" size="2" />
                 </div>
-                <div class="puissance">
-                    <label>{{localize "EXITNIHILO.Personnage.Attributs.Physique.Puissance.Titre"}}</label>
-
-                    <input name="system.attributs.caracteristiques.physique.puissance.value" type="number"
-                        data-dtype="{{actor.system.attributs.caracteristiques.physique.puissance.type}}"
-                        value="{{actor.system.attributs.caracteristiques.physique.puissance.value}}" size="2" />
-                </div>
-                <div class="vitalite">
-                    <label>{{localize "EXITNIHILO.Personnage.Attributs.Physique.Vitalite.Titre"}}</label>
-
-                    <input name="system.attributs.caracteristiques.physique.vitalite.value" type="number"
-                        data-dtype="{{actor.system.attributs.caracteristiques.physique.vitalite.type}}"
-                        value="{{actor.system.attributs.caracteristiques.physique.vitalite.value}}" size="2" />
-                </div>
-
             </div>
         </div>
-        <div class="attribut adresse-container">
-            ADRESSE
+        <div class="attribut-container adresse-container droite">
+            <fieldset class="radio-principal">
+                <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.adresse.valeur1"
+                        name="system.attributs.caracteristiques.adresse.premierEstPrincipal" value="true" {{#isTrue
+                        actor.system.attributs.caracteristiques.adresse.premierEstPrincipal}}{{/isTrue}} />
+                    <label for="system.attributs.caracteristiques.adresse.valeur1">{{localize
+                        actor.system.attributs.caracteristiques.adresse.label-premiere}}</label>
+                </div>
+
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.adresse.valeur2"
+                        name="system.attributs.caracteristiques.adresse.premierEstPrincipal" value="false" {{#isFalse
+                        actor.system.attributs.caracteristiques.adresse.premierEstPrincipal}}{{/isFalse}} />
+                    <label for="system.attributs.caracteristiques.adresse.valeur2">{{localize
+                        actor.system.attributs.caracteristiques.adresse.label-deuxieme}}</label>
+                </div>
+            </fieldset>
+            <div class="attribut adresse">
+                <label>{{localize "EXITNIHILO.Personnage.Attributs.Adresse.Titre"}}</label>
+                <div class="adresse-input">
+                    <input name="system.attributs.caracteristiques.adresse.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.adresse.type}}"
+                        value="{{actor.system.attributs.caracteristiques.adresse.value}}" size="2" />
+                </div>
+            </div>
         </div>
-        <div class="attribut intellect-container">
-            INTELLECT
+        <div class="attribut-container intellect-container gauche">
+            <div class="attribut intellect">
+                <label>{{localize "EXITNIHILO.Personnage.Attributs.Intellect.Titre"}}</label>
+                <div class="intellect-input">
+                    <input name="system.attributs.caracteristiques.intellect.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.intellect.type}}"
+                        value="{{actor.system.attributs.caracteristiques.intellect.value}}" size="2" />
+                </div>
+            </div>
+            <fieldset class="radio-principal">
+                <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.intellect.valeur1"
+                        name="system.attributs.caracteristiques.intellect.premierEstPrincipal" value="true" {{#isTrue
+                        actor.system.attributs.caracteristiques.intellect.premierEstPrincipal}}{{/isTrue}} />
+                    <label for="system.attributs.caracteristiques.intellect.valeur1">{{localize
+                        actor.system.attributs.caracteristiques.intellect.label-premiere}}</label>
+                </div>
+
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.intellect.valeur2"
+                        name="system.attributs.caracteristiques.intellect.premierEstPrincipal" value="false" {{#isFalse
+                        actor.system.attributs.caracteristiques.intellect.premierEstPrincipal}}{{/isFalse}} />
+                    <label for="system.attributs.caracteristiques.intellect.valeur2">{{localize
+                        actor.system.attributs.caracteristiques.intellect.label-deuxieme}}</label>
+                </div>
+            </fieldset>
         </div>
-        <div class="attribut caractere-container">
-            CARACTERE
+        <div class="attribut-container caractere-container droite">
+            <div class="attribut caractere">
+                <div class="caractere-input">
+                    <input name="system.attributs.caracteristiques.caractere.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.caractere.type}}"
+                        value="{{actor.system.attributs.caracteristiques.caractere.value}}" size="2" />
+                </div>
+                <label>{{localize "EXITNIHILO.Personnage.Attributs.Caractere.Titre"}}</label>
+            </div>
+            <fieldset class="radio-principal">
+                <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.caractere.valeur1"
+                        name="system.attributs.caracteristiques.caractere.premierEstPrincipal" value="true" {{#isTrue
+                        actor.system.attributs.caracteristiques.caractere.premierEstPrincipal}}{{/isTrue}} />
+                    <label for="system.attributs.caracteristiques.caractere.valeur1">{{localize
+                        actor.system.attributs.caracteristiques.caractere.label-premiere}}</label>
+                </div>
+
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.caractere.valeur2"
+                        name="system.attributs.caracteristiques.caractere.premierEstPrincipal" value="false" {{#isFalse
+                        actor.system.attributs.caracteristiques.caractere.premierEstPrincipal}}{{/isFalse}} />
+                    <label for="system.attributs.caracteristiques.caractere.valeur2">{{localize
+                        actor.system.attributs.caracteristiques.caractere.label-deuxieme}}</label>
+                </div>
+            </fieldset>
         </div>
-        <div class="attribut social-container">
-            SOCIAL
+        <div class="attribut-container social-container">
+            <div class="attribut social">
+                <div class="social-input">
+                    <input name="system.attributs.caracteristiques.social.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.social.type}}"
+                        value="{{actor.system.attributs.caracteristiques.social.value}}" size="2" />
+                </div>
+                <label>{{localize "EXITNIHILO.Personnage.Attributs.Social.Titre"}}</label>
+            </div>
+            <fieldset class="radio-principal">
+                <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.social.valeur1"
+                        name="system.attributs.caracteristiques.social.premierEstPrincipal" value="true" {{#isTrue
+                        actor.system.attributs.caracteristiques.social.premierEstPrincipal}}{{/isTrue}} />
+                    <label for="system.attributs.caracteristiques.social.valeur1">{{localize
+                        actor.system.attributs.caracteristiques.social.label-premiere}}</label>
+                </div>
+
+                <div class="valeur">
+                    <input type="radio" id="system.attributs.caracteristiques.social.valeur2"
+                        name="system.attributs.caracteristiques.social.premierEstPrincipal" value="false" {{#isFalse
+                        actor.system.attributs.caracteristiques.social.premierEstPrincipal}}{{/isFalse}} />
+                    <label for="system.attributs.caracteristiques.social.valeur2">{{localize
+                        actor.system.attributs.caracteristiques.social.label-deuxieme}}</label>
+                </div>
+            </fieldset>
+
         </div>
-        <div class="attribut central-container">
+        <div class="central-container">
             <div class="pentagon-container-down">
                 <div class="pentagon-wrapper-down">
                     <div class="pentagon-down">
+                        <img src="systems/exit-nihilo/assets/icons/personnage/attributs.svg" title="" alt="">
                     </div>
                 </div>
             </div>
