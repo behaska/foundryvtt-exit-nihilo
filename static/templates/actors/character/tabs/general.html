@@ -16,7 +16,6 @@
                         placeholder="{{localize 'EXITNIHILO.Personnage.Age.PlaceHolder'}}" size="3" />
                     <p class="suffixe">{{localize "EXITNIHILO.Personnage.Age.Suffixe"}}</p>
                 </div>
-
             </div>
         </div>
         <div class="taille-container">
@@ -85,4 +84,51 @@
         </div>
     </section>
     <hr />
+    <section class="personnage-attributs">
+        <div class="attribut physique-container">
+            <div class="physique">
+                <label>{{localize "EXITNIHILO.Personnage.Attributs.Physique.Titre"}}</label>
+                <div class="physique-input">
+                    <input name="system.attributs.caracteristiques.physique.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.physique.type}}"
+                        value="{{actor.system.attributs.caracteristiques.physique.value}}" size="2" />
+                </div>
+                <div class="puissance">
+                    <label>{{localize "EXITNIHILO.Personnage.Attributs.Physique.Puissance.Titre"}}</label>
+
+                    <input name="system.attributs.caracteristiques.physique.puissance.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.physique.puissance.type}}"
+                        value="{{actor.system.attributs.caracteristiques.physique.puissance.value}}" size="2" />
+                </div>
+                <div class="vitalite">
+                    <label>{{localize "EXITNIHILO.Personnage.Attributs.Physique.Vitalite.Titre"}}</label>
+
+                    <input name="system.attributs.caracteristiques.physique.vitalite.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.physique.vitalite.type}}"
+                        value="{{actor.system.attributs.caracteristiques.physique.vitalite.value}}" size="2" />
+                </div>
+
+            </div>
+        </div>
+        <div class="attribut adresse-container">
+            ADRESSE
+        </div>
+        <div class="attribut intellect-container">
+            INTELLECT
+        </div>
+        <div class="attribut caractere-container">
+            CARACTERE
+        </div>
+        <div class="attribut social-container">
+            SOCIAL
+        </div>
+        <div class="attribut central-container">
+            <div class="pentagon-container-down">
+                <div class="pentagon-wrapper-down">
+                    <div class="pentagon-down">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

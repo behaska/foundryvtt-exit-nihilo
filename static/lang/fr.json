@@ -605,6 +605,20 @@
                 "PlaceHolder": "Apparence du Personnage",
                 "Titre": "Apparence"
             },
+            "Attributs": {
+                "Physique": {
+                    "PlaceHolder": "Attribut Physique du Personnage",
+                    "Titre": "Physique",
+                    "Puissance": {
+                        "PlaceHolder": "Caractéristique Puissance du Personnage",
+                        "Titre": "Puissance"
+                    },
+                    "Vitalite": {
+                        "PlaceHolder": "Caractéristique Adresse du Personnage",
+                        "Titre": "Adresse"
+                    }
+                }
+            },
             "Aversions": {
                 "PlaceHolder": "Aversions du Personnage",
                 "Titre": "Aversions"

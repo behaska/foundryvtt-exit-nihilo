@@ -6,26 +6,27 @@
     .notes-diverses,
     .histoire {
         .editor {
-            min-height: 75px;
+            min-height: 130px;
+            max-height: 130px;
             border: 1px solid var(--color-border-light-tertiary);
             background: rgba(0, 0, 0, 0.05);
 
+            p {
+                margin: 0.2em 0;
+            }
+
             .editor-container {
-                background: rgba(0, 0, 0, 0.05);
-                min-height: 75px;
+                min-height: 79px;
+                max-height: 79px;
+                margin: 0.2em 0.5em 0.2em 0.5em;
             }
         }
     }
 }
 
 .personnage-details,
-.personnage-biographie {
-    display: grid;
-    grid:
-        "img alignment deity" 46px "img details details" auto / 120px 130px 1fr;
-    margin-top: 4px;
-    //display: flex;
-    flex-wrap: wrap;
+.personnage-biographie,
+.personnage-attributs {
 
     .age-container,
     .taille-container,
@@ -45,15 +46,8 @@
     .ennemis-container,
     .organisation-container,
     .histoire-container,
-    .notes-container {
-
-        /*         align-items: start;
-        flex: 20%;
-        display: flex;
-        flex-direction: column;
-        justify-content: start;
-        margin-bottom: 8px;
- */
+    .notes-container,
+    .physique-container {
         label {
             color: var(--primary);
             font-family: var(--sans-serif);
@@ -96,14 +90,98 @@
     }
 }
 
+.personnage-biographie {
+    display: grid;
+    grid:
+        "nationalite lieu-de-naissance" 46px "slogans croyances" 46px "gouts aversions" 46px "allies ennemis" 46px "organisation ." 46px " apparence apparence" 53px " apparence apparence" 53px " apparence apparence" 53px " histoire histoire" 53px " histoire histoire" 53px " histoire histoire" 53px " notes notes" 53px " notes notes" 53px " notes notes" 53px;
 
+    margin-top: 4px;
+    flex-wrap: wrap;
+
+    .nationalite-container {
+        grid-area: nationalite;
+    }
+
+    .lieu-de-naissance-container {
+        grid-area: lieu-de-naissance;
+    }
+
+    .slogans-container {
+        grid-area: slogans;
+    }
+
+    .croyances-container {
+        grid-area: croyances;
+    }
+
+    .gouts-container {
+        grid-area: gouts;
+    }
+
+    .aversions-container {
+        grid-area: aversions;
+    }
+
+    .allies-container {
+        grid-area: allies;
+    }
+
+    .ennemis-container {
+        grid-area: ennemis;
+    }
+
+    .organisation-container {
+        grid-area: organisation;
+    }
+
+    .apparence-container {
+        grid-area: apparence;
+    }
+
+    .histoire-container {
+        grid-area: histoire;
+    }
+
+    .notes-container {
+        grid-area: notes;
+    }
+}
+
+.personnage-attributs {
+    display: grid;
+    grid:
+        "physique physique . adresse adresse" 150px ". pentagon pentagon pentagon ." 75px "intellect pentagon pentagon pentagon caractere" 75px "intellect pentagon pentagon pentagon caractere" 75px ". social social social ." 150px / 110px 90px 110px 90px 110px;
+
+    .physique-container {
+        grid-area: physique;
+    }
+
+    .adresse-container {
+        grid-area: adresse;
+    }
+
+    .intellect-container {
+        grid-area: intellect;
+    }
+
+    .caractere-container {
+        grid-area: caractere;
+    }
+
+    .social-container {
+        grid-area: social;
+    }
+
+    .central-container {
+        grid-area: pentagon;
+    }
+
+}
 
 .personnage-details {
     display: grid;
     grid:
-        "img age taille poids genre" 46px 
-        "img role-p . ethnie ethnie " auto 
-        "img profession profession profession ." auto / 150px 100px 100px 100px 1fr;
+        "img age taille poids genre" 46px "img role-p role-p ethnie ethnie " auto "img profession profession profession ." auto / 150px 100px 100px 100px 1fr;
     ;
     margin-top: 4px;
     flex-wrap: wrap;
@@ -162,77 +240,11 @@
     }
 
     .role-select-container {
+
         // je ne sais pas pourquoi mais si je rajoute le grid-area ce block n'est plus en mode column
         //grid-area: role-p;
+        .role-select {
+            width: unset;
+        }
     }
-}
-
-.personnage-biographie {
-    display: grid;
-    grid:
-        "nationalite lieu-de-naissance" auto 
-        "slogans croyances" auto 
-        "gouts aversions" auto 
-        "allies ennemis" auto 
-        "organisation ." auto 
-        " apparence apparence" auto 
-        " apparence apparence" auto 
-        " apparence apparence" auto 
-        " histoire histoire" auto 
-        " histoire histoire" auto 
-        " histoire histoire" auto 
-        " notes notes" auto 
-        " notes notes" auto
-        " notes notes" auto ;
-    
-    margin-top: 4px;
-    flex-wrap: wrap;
-
-    .nationalite-container {
-        grid-area: nationalite;
-    }
-
-    .lieu-de-naissance-container {
-        grid-area: lieu-de-naissance;
-    }
-
-    .slogans-container {
-        grid-area: slogans;
-    }
-
-    .croyances-container {
-        grid-area: croyances;
-    }
-
-    .gouts-container {
-        grid-area: gouts;
-    }
-
-    .aversions-container {
-        grid-area: aversions;
-    }
-
-    .allies-container {
-        grid-area: allies;
-    }
-
-    .ennemis-container {
-        grid-area: ennemis;
-    }
-
-    .organisation-container {
-        grid-area: organisation;
-    }
-
-    .apparence-container {
-        grid-area: apparence;
-    }
-
-    .histoire-container {
-        grid-area: histoire;
-    }
-
-    .notes-container {
-        grid-area: notes;
-    }    
 }
