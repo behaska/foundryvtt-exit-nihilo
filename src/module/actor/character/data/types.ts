@@ -159,52 +159,78 @@ type CharacterDetails = Omit<CreatureDetails, "level"> & {
 };
 
 interface AttributsDuPersonnage extends CreatureAttributes {
-    caracteristiques: CaracteristiquesDuPersonnage;
+    caracteristiques: Caracteristiques;
+    caracteristiquesCalculees: CaracteristiquesDuPersonnage;
     niveauDeVie: NiveauDeVie;
 }
 
-interface CaracteristiquesDuPersonnage {
-    physique: CaracteristiquesPhysique;
-    adresse: CaracteristiquesAdresse;
-    social: CaracteristiquesSocial;
-    intellect: CaracteristiquesIntellect;
-    caractere: CaracteristiquesCaractere;
-}
-
-interface CaracteristiquesPhysique {
-    label: string;
-    base: number;
-    puissance: Caracteristique;
-    vitalite: Caracteristique;
-}
-interface CaracteristiquesAdresse {
-    label: string;
-    base: number;
-    agilite: Caracteristique;
-    precision: Caracteristique;
-}
-interface CaracteristiquesSocial {
-    label: string;
-    base: number;
-    communication: Caracteristique;
-    empathie: Caracteristique;
-}
-interface CaracteristiquesIntellect {
-    label: string;
-    base: number;
-    raisonnement: Caracteristique;
-    apprentissage: Caracteristique;
-}
-interface CaracteristiquesCaractere {
-    label: string;
-    base: number;
-    volonte: Caracteristique;
-    intuition: Caracteristique;
+interface Caracteristiques {
+    physique: Caracteristique;
+    adresse: Caracteristique;
+    social: Caracteristique;
+    intellect: Caracteristique;
+    caractere: Caracteristique;
 }
 
 interface Caracteristique {
-    label: string;
     value: number;
+    type: string;
+    label: string;
+    labelPremiere: string;
+    labelDeuxieme: string;
+    premierEstPrincipal: boolean;
+}
+
+interface CaracteristiquesDuPersonnage {
+    puissance: number;
+    vitalite: number;
+    dexterite: number;
+    agilite: number;
+    raisonnement: number;
+    apprentissage: number;
+    volonte: number;
+    intuition: number;
+    communication: number;
+    empathie: number;
+}
+
+class CaracteristiquesDuPersonnage {
+
+    private constructor() {
+    }
+
+    static from(systemData: CharacterSystemData): CaracteristiquesDuPersonnage {
+        const caracteristiques = systemData.attributs.caracteristiques;
+        const physique = caracteristiques.physique;
+        const adresse = caracteristiques.adresse;
+        const intellect = caracteristiques.intellect;
+        const caractere = caracteristiques.caractere;
+        const social = caracteristiques.social;
+
+        return {
+            puissance:
+                physique.premierEstPrincipal ? physique.value + 1 : physique.value,
+            vitalite:
+                !physique.premierEstPrincipal ? physique.value + 1 : physique.value,
+            dexterite:
+                adresse.premierEstPrincipal ? adresse.value + 1 : adresse.value,
+            agilite:
+                !adresse.premierEstPrincipal ? adresse.value + 1 : adresse.value,
+            raisonnement:
+                intellect.premierEstPrincipal ? intellect.value + 1 : intellect.value,
+            apprentissage:
+                !intellect.premierEstPrincipal ? intellect.value + 1 : intellect.value,
+            volonte:
+                caractere.premierEstPrincipal ? caractere.value + 1 : caractere.value,
+            intuition:
+                !caractere.premierEstPrincipal ? caractere.value + 1 : caractere.value,
+            communication:
+                social.premierEstPrincipal ? social.value + 1 : social.value,
+            empathie:
+                !social.premierEstPrincipal ? social.value + 1 : social.value,
+        }
+    }
+
 }
 
 type NiveauDeVie = SetElement<typeof NIVEAUX_DE_VIE>;
@@ -219,6 +245,7 @@ export {
     AttributsDuPersonnage as CharacterAttributes,
     CharacterData,
     CharacterDetails,
+    CaracteristiquesDuPersonnage,
     CharacterFlags,
     CharacterResources,
     CharacterSource,

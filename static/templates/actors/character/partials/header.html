@@ -1,4 +1,3 @@
-{{log "Actor" this}}
 <header class="char-header">
     <section class="char-details">
         <h1 class="char-name">
@@ -10,14 +9,22 @@
     <section class="char-genre">
         <div class="role-container">
             <p class="title">{{localize 'EXITNIHILO.Personnage.Genre.Titre'}}</p>
-            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html" displayGenre }}
+            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
+            imgSrc = displayGenre.imgSrc
+            title = displayGenre.title
+            alt = displayGenre.alt
+            extraCss = "up" }}
         </div>
     </section>
 
     <section class="char-role">
         <div class="role-container">
             <p class="title">{{localize 'EXITNIHILO.Personnage.Role.Titre'}}</p>
-            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html" displayRole }}
+            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
+            imgSrc = displayRole.imgSrc
+            title = displayRole.title
+            alt = displayRole.alt
+            extraCss = "up" }}
         </div>
     </section>
 

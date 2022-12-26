@@ -1,0 +1,18 @@
+.caracteristiques {
+    .caracteristique {
+        display: flex;
+        flex-direction: row;
+
+        .titre {
+            padding-left: 5px;;
+        }
+
+        p {
+            flex: 1;
+        }
+
+        .titre{
+            flex: 3;
+        }
+    }
+}

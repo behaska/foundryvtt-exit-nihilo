@@ -1,3 +1,4 @@
+{{log "Actor" this}}
 <div class="tab general" data-group="primary" data-tab="general">
     <section class="personnage-details">
         <div class="frame-container">
@@ -93,15 +94,14 @@
                         name="system.attributs.caracteristiques.physique.premierEstPrincipal" value="true" {{#isTrue
                         actor.system.attributs.caracteristiques.physique.premierEstPrincipal}}{{/isTrue}} />
                     <label for="system.attributs.caracteristiques.physique.valeur1">{{localize
-                        actor.system.attributs.caracteristiques.physique.label-premiere}}</label>
+                        actor.system.attributs.caracteristiques.physique.labelPremiere}}</label>
                 </div>
-
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.physique.valeur2"
                         name="system.attributs.caracteristiques.physique.premierEstPrincipal" value="false" {{#isFalse
                         actor.system.attributs.caracteristiques.physique.premierEstPrincipal}}{{/isFalse}} />
                     <label for="system.attributs.caracteristiques.physique.valeur2">{{localize
-                        actor.system.attributs.caracteristiques.physique.label-deuxieme}}</label>
+                        actor.system.attributs.caracteristiques.physique.labelDeuxieme}}</label>
                 </div>
             </fieldset>
             <div class="attribut physique">
@@ -121,7 +121,7 @@
                         name="system.attributs.caracteristiques.adresse.premierEstPrincipal" value="true" {{#isTrue
                         actor.system.attributs.caracteristiques.adresse.premierEstPrincipal}}{{/isTrue}} />
                     <label for="system.attributs.caracteristiques.adresse.valeur1">{{localize
-                        actor.system.attributs.caracteristiques.adresse.label-premiere}}</label>
+                        actor.system.attributs.caracteristiques.adresse.labelPremiere}}</label>
                 </div>
 
                 <div class="valeur">
@@ -129,7 +129,7 @@
                         name="system.attributs.caracteristiques.adresse.premierEstPrincipal" value="false" {{#isFalse
                         actor.system.attributs.caracteristiques.adresse.premierEstPrincipal}}{{/isFalse}} />
                     <label for="system.attributs.caracteristiques.adresse.valeur2">{{localize
-                        actor.system.attributs.caracteristiques.adresse.label-deuxieme}}</label>
+                        actor.system.attributs.caracteristiques.adresse.labelDeuxieme}}</label>
                 </div>
             </fieldset>
             <div class="attribut adresse">
@@ -157,15 +157,14 @@
                         name="system.attributs.caracteristiques.intellect.premierEstPrincipal" value="true" {{#isTrue
                         actor.system.attributs.caracteristiques.intellect.premierEstPrincipal}}{{/isTrue}} />
                     <label for="system.attributs.caracteristiques.intellect.valeur1">{{localize
-                        actor.system.attributs.caracteristiques.intellect.label-premiere}}</label>
+                        actor.system.attributs.caracteristiques.intellect.labelPremiere}}</label>
                 </div>
-
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.intellect.valeur2"
                         name="system.attributs.caracteristiques.intellect.premierEstPrincipal" value="false" {{#isFalse
                         actor.system.attributs.caracteristiques.intellect.premierEstPrincipal}}{{/isFalse}} />
                     <label for="system.attributs.caracteristiques.intellect.valeur2">{{localize
-                        actor.system.attributs.caracteristiques.intellect.label-deuxieme}}</label>
+                        actor.system.attributs.caracteristiques.intellect.labelDeuxieme}}</label>
                 </div>
             </fieldset>
         </div>
@@ -185,15 +184,14 @@
                         name="system.attributs.caracteristiques.caractere.premierEstPrincipal" value="true" {{#isTrue
                         actor.system.attributs.caracteristiques.caractere.premierEstPrincipal}}{{/isTrue}} />
                     <label for="system.attributs.caracteristiques.caractere.valeur1">{{localize
-                        actor.system.attributs.caracteristiques.caractere.label-premiere}}</label>
+                        actor.system.attributs.caracteristiques.caractere.labelPremiere}}</label>
                 </div>
-
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.caractere.valeur2"
                         name="system.attributs.caracteristiques.caractere.premierEstPrincipal" value="false" {{#isFalse
                         actor.system.attributs.caracteristiques.caractere.premierEstPrincipal}}{{/isFalse}} />
                     <label for="system.attributs.caracteristiques.caractere.valeur2">{{localize
-                        actor.system.attributs.caracteristiques.caractere.label-deuxieme}}</label>
+                        actor.system.attributs.caracteristiques.caractere.labelDeuxieme}}</label>
                 </div>
             </fieldset>
         </div>
@@ -213,27 +211,24 @@
                         name="system.attributs.caracteristiques.social.premierEstPrincipal" value="true" {{#isTrue
                         actor.system.attributs.caracteristiques.social.premierEstPrincipal}}{{/isTrue}} />
                     <label for="system.attributs.caracteristiques.social.valeur1">{{localize
-                        actor.system.attributs.caracteristiques.social.label-premiere}}</label>
+                        actor.system.attributs.caracteristiques.social.labelPremiere}}</label>
                 </div>
-
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.social.valeur2"
                         name="system.attributs.caracteristiques.social.premierEstPrincipal" value="false" {{#isFalse
                         actor.system.attributs.caracteristiques.social.premierEstPrincipal}}{{/isFalse}} />
                     <label for="system.attributs.caracteristiques.social.valeur2">{{localize
-                        actor.system.attributs.caracteristiques.social.label-deuxieme}}</label>
+                        actor.system.attributs.caracteristiques.social.labelDeuxieme}}</label>
                 </div>
             </fieldset>
 
         </div>
         <div class="central-container">
-            <div class="pentagon-container-down">
-                <div class="pentagon-wrapper-down">
-                    <div class="pentagon-down">
-                        <img src="systems/exit-nihilo/assets/icons/personnage/attributs.svg" title="" alt="">
-                    </div>
-                </div>
-            </div>
+            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
+            imgSrc = "systems/exit-nihilo/assets/icons/personnage/attributs.svg"
+            title = displayRole.title
+            alt = displayRole.alt
+            extraCss = "down" }}
         </div>
     </section>
 </div>

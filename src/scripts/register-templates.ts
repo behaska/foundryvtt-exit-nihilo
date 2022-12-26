@@ -10,6 +10,7 @@ export function registerTemplates(): void {
         "systems/exit-nihilo/templates/actors/character/tabs/combat.html",
         "systems/exit-nihilo/templates/actors/character/sidebar/sante.html",
         "systems/exit-nihilo/templates/actors/character/sidebar/jauges.html",
+        "systems/exit-nihilo/templates/actors/character/sidebar/caracteristiques.html",
         "systems/exit-nihilo/templates/actors/character/sidebar/attributs.html",
 
         // Partials utilitaire

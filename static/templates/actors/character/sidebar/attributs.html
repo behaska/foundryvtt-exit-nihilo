@@ -2,9 +2,24 @@
     <h2>{{localize "EXITNIHILO.SideBar.AttributsHeader"}}</h2>
 </div>
 <div class="attributs">
-    <p>{{localize "EXITNIHILO.SideBar.Attributs.PhysiqueTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Attributs.AdresseTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Attributs.IntellectTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Attributs.PsychologieTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Attributs.SocialTitle"}}</p>
+    <div class="attribut">
+        <p>{{localize "EXITNIHILO.SideBar.Attributs.PhysiqueTitle"}}: </p>
+        <p>{{this.actor.system.attributs.caracteristiques.physique.value}}</p>
+    </div>
+    <div class="attribut">
+        <p>{{localize "EXITNIHILO.SideBar.Attributs.AdresseTitle"}}: </p>
+        <p>{{this.actor.system.attributs.caracteristiques.adresse.value}}</p>
+    </div>
+    <div class="attribut">
+        <p>{{localize "EXITNIHILO.SideBar.Attributs.IntellectTitle"}}: </p>
+        <p>{{this.actor.system.attributs.caracteristiques.intellect.value}}</p>
+    </div>
+    <div class="attribut">
+        <p>{{localize "EXITNIHILO.SideBar.Attributs.CaractereTitle"}}: </p>
+        <p>{{this.actor.system.attributs.caracteristiques.caractere.value}}</p>
+    </div>
+    <div class="attribut">
+        <p>{{localize "EXITNIHILO.SideBar.Attributs.SocialTitle"}}: </p>
+        <p>{{this.actor.system.attributs.caracteristiques.social.value}}</p>
+    </div>
 </div>

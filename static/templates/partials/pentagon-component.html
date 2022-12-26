@@ -1,7 +1,7 @@
-<div class="pentagon-container">
+<div class="pentagon-container {{extraCss}}">
     <div class="pentagon-wrapper">
         <div class="pentagon">
-            <img src="{{imgSrc}}" title="{{title}}" alt="{{alt}}">
+            <img src="{{imgSrc}}" {{#if title}} title="{{localize title}}" {{/if}} {{#if alt}} title="{{localize alt}}" {{/if}} />            
         </div>
     </div>
 </div>

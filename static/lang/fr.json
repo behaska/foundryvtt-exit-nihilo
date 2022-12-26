@@ -600,7 +600,7 @@
             "Allies": {
                 "PlaceHolder": "Alliés du Personnage",
                 "Titre": "Alliés"
-            },            
+            },
             "Apparence": {
                 "PlaceHolder": "Apparence du Personnage",
                 "Titre": "Apparence"
@@ -681,7 +681,7 @@
             "Ennemis": {
                 "PlaceHolder": "Ennemis du Personnage",
                 "Titre": "Ennemis"
-            },            
+            },
             "Ethnie": {
                 "PlaceHolder": "Ethnie du Personnage",
                 "Titre": "Ethnie"
@@ -728,7 +728,7 @@
             "Organisation": {
                 "PlaceHolder": "Organisation du Personnage",
                 "Titre": "Organisation"
-            },            
+            },
             "Profession": {
                 "PlaceHolder": "Profession du Personnage",
                 "Titre": "Profession"
@@ -775,7 +775,7 @@
             "Slogans": {
                 "PlaceHolder": "Slogans du Personnage",
                 "Titre": "Slogans"
-            },               
+            },
             "Taille": {
                 "PlaceHolder": "Taille du Personnage",
                 "Suffixe": "cm",
@@ -789,8 +789,23 @@
                 "AdresseTitle": "Adresse",
                 "IntellectTitle": "Intellect",
                 "PhysiqueTitle": "Physique",
-                "PsychologieTitle": "Psychologie",
+                "CaractereTitle": "Caractère",
                 "SocialTitle": "Social"
+            },
+            "CaracteristiquesHeader": "Caractéristiques",
+            "Caracteristiques": {
+                "Alt": "Logo de la Caractéristique",
+                "Title": "Logo de la Caractéristique",
+                "PuissanceTitle": "Puissance",
+                "VitaliteTitle": "Vitalité",
+                "AgiliteTitle": "Agilité",
+                "DexteriteTitle": "Dexterité",
+                "RaisonnementTitle": "Raisonnnement",
+                "ApprentissageTitle": "Apprentissage",
+                "VolonteTitle": "Volonté",
+                "IntuitionTitle": "Intuition",
+                "CommunicationTitle": "Communication",
+                "EmpathieTitle": "Empathie"
             },
             "JaugesHeader": "Jauges",
             "Jauges": {
