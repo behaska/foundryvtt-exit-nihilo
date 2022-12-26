@@ -339,76 +339,7 @@ a[href]:hover {
     text-shadow: 0 0 8px var(--color-text-hyperlink);
 }
 
-
-.pentagon-container.small {
-    width: 20px;
-    height: 20px;
-    filter: drop-shadow(2px 6px 2px rgba(25, 25, 0, 0.75));
-
-
-    .pentagon-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background: $white-color;
-        clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
-
-        .pentagon {
-            position: absolute;
-            top: 1px;
-            /* equal to border thickness */
-            left: 1px;
-            width: 94%;
-            height: 94%;
-            background: $text-dark-color;
-            clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
-
-            img {
-                height: 100%;
-                width: 100%;
-                border: none;
-                padding: 6px 0px 2px 0px;
-                border-radius: unset;
-            }
-        }
-    }
-}
-
-.pentagon-container.up {
-    height: 100%;
-    filter: drop-shadow(2px 6px 2px rgba(25, 25, 0, 0.75));
-
-
-    .pentagon-wrapper {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        background: $white-color;
-        clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
-
-        .pentagon {
-            position: absolute;
-            top: 2px;
-            /* equal to border thickness */
-            left: 2px;
-            width: 94%;
-            height: 94%;
-            background: $text-dark-color;
-            clip-path: polygon(50% 0, 100% 38%, 81% 100%, 19% 100%, 0 38%);
-
-            img {
-                height: 100%;
-                width: 100%;
-                border: none;
-                padding: 10px 0px 5px 0px;
-                border-radius: unset;
-            }
-        }
-    }
-}
-
-
-.pentagon-container.down {
+.pentagon-container {
     height: 100%;
     filter: drop-shadow(2px 6px 2px rgba(25, 25, 0, 0.75));
 
@@ -422,12 +353,72 @@ a[href]:hover {
 
         .pentagon {
             position: absolute;
+            background: $text-dark-color;
+            clip-path: polygon(50% 100%, 100% 38%, 81% 0, 19% 0, 0% 38%);
+
+            img {
+                border: none;
+                border-radius: unset;
+            }
+        }
+    }
+}
+
+.pentagon-container.small {
+    width: 1.4em;
+    height: 1.4em;
+
+
+    .pentagon-wrapper {
+
+        .pentagon {
+            top: 1px;
+            /* equal to border thickness */
+            left: 1px;
+            width: 94%;
+            height: 94%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                padding: 6px 0px 2px 0px;
+            }
+        }
+    }
+}
+
+.pentagon-container.up {
+
+    .pentagon-wrapper {
+
+        .pentagon {
+            top: 2px;
+            /* equal to border thickness */
+            left: 2px;
+            width: 94%;
+            height: 94%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                padding: 10px 0px 5px 0px;
+            }
+        }
+    }
+}
+
+
+.pentagon-container.down {
+
+    .pentagon-wrapper {
+        clip-path: polygon(50% 100%, 100% 38%, 81% 0, 19% 0, 0 38%);
+
+        .pentagon {
             top: 4px;
             /* equal to border thickness */
             left: 9px;
             width: 94%;
             height: 94%;
-            background: $text-dark-color;
             clip-path: polygon(50% 100%, 100% 38%, 81% 0, 19% 0, 0% 38%);
 
             img {
@@ -435,9 +426,7 @@ a[href]:hover {
                 position: relative;
                 top: 15px;
                 height: 60%;
-                border: none;
                 padding: 10px 0px 5px 0px;
-                border-radius: unset;
             }
         }
     }

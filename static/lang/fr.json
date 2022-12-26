@@ -809,8 +809,8 @@
             },
             "JaugesHeader": "Jauges",
             "Jauges": {
-                "HumaniteTitle": "Humanité",
-                "ResilienceTitle": "Résilience"
+                "HumaniteTitle": "Humanité:",
+                "ResilienceTitle": "Résilience:"
             },
             "Sante": {
                 "NiveauDeVieTitle": "Niveau de Vie",

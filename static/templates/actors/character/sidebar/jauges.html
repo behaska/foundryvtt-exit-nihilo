@@ -2,6 +2,27 @@
     <h2>{{localize "EXITNIHILO.SideBar.JaugesHeader"}}</h2>
 </div>
 <div class="jauges">
-    <p>{{localize "EXITNIHILO.SideBar.Jauges.HumaniteTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Jauges.ResilienceTitle"}}</p>
+
+    <div class="jauge">
+        {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
+        imgSrc = "systems/exit-nihilo/assets/icons/jauges/humanite.svg"
+        title = "EXITNIHILO.SideBar.Jauges.Title"
+        alt = "EXITNIHILO.SideBar.Jauges.Alt"
+        extraCss= "small" }}
+        <label class="titre" for="humanite">{{localize "EXITNIHILO.SideBar.Jauges.HumaniteTitle"}}</label>
+        <input type="text" class="humanite-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite" name="system.attributs.humanite.value" value="{{data.attributs.humanite.value}}" />
+        <span>/</span>
+        <input type="text" class="humanite-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite-max" name="system.attributs.humanite.max" value="{{data.attributs.humanite.max}}" />
+    </div>
+    <div class="jauge">
+        {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
+        imgSrc = "systems/exit-nihilo/assets/icons/jauges/resilience.svg"
+        title = "EXITNIHILO.SideBar.Jauges.Title"
+        alt = "EXITNIHILO.SideBar.Jauges.Alt"
+        extraCss= "small" }}
+        <label class="titre" for="resilience">{{localize "EXITNIHILO.SideBar.Jauges.HumaniteTitle"}}</label>
+        <input type="text" class="resilience-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite" name="system.attributs.resilience.value" value="{{data.attributs.resilience.value}}" />
+        <span>/</span>
+        <input type="text" class="resilience-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite-max" name="system.attributs.resilience.max" value="{{data.attributs.resilience.max}}" />
+    </div>
 </div>

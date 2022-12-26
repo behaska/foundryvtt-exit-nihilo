@@ -1,0 +1,25 @@
+.jauges {
+    .jauge {
+        display: flex;
+        flex-direction: row;
+        font-size: var(--font-size-16);
+        margin-right: 5px;
+
+        .titre {
+            padding-left: 5px;
+            flex: 2.5;
+        }
+
+        input{
+            background-color: beige;
+            flex: none;
+            width: 2.5em;
+            text-align: center;
+        }
+
+        span{
+            margin: 0 2px;
+            flex: none;
+        }
+    }
+}
