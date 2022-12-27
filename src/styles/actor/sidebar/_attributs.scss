@@ -1,10 +1,27 @@
-.attributs{
-    .attribut{
+.attributs {
+    .attribut {
         display: flex;
         flex-direction: row;
 
-        p{
-            flex:1;
+        p {
+            flex: 3;
+            padding: 0;
+            margin: 2px 0;
+        }
+
+        p.valeur {
+            @include inset-gold-border;
+            flex: none;
+            border-radius: 25px;
+            background: whitesmoke;
+            color: black;
+            text-align: center;
+            height: 26px;
+            width: 26px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 }

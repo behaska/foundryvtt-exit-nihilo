@@ -186,17 +186,50 @@
         }
     }
 
-    legend{
+    legend {
         font-size: .625rem;
     }
 }
 
 .attribut-container.gauche {
     align-items: flex-end;
+
+    .attribut {
+        label {
+            margin-right: 10px;
+        }
+    }
 }
 
 .attribut-container.droite {
     align-items: flex-start;
+
+    .attribut {
+        label {
+            margin-left: 10px;
+        }
+    }
+}
+
+.attribut-container.top {
+    .attribut {
+        label {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.attribut-container.bottom {
+    .attribut {
+        label {
+            margin-top: 10px;
+        }
+    }
+}
+
+.physique-input,
+.adresse-input {
+    margin-top: 5px; // fix un pb avec le margin-bottom sur les éléments top.
 }
 
 .personnage-attributs {
