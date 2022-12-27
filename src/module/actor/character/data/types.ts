@@ -178,7 +178,7 @@ interface Caracteristique {
     label: string;
     labelPremiere: string;
     labelDeuxieme: string;
-    premierEstPrincipal: boolean;
+    premierEstPrincipal: string; //Boolean
 }
 
 interface CaracteristiquesDuPersonnage {
@@ -207,28 +207,69 @@ class CaracteristiquesDuPersonnage {
         const caractere = caracteristiques.caractere;
         const social = caracteristiques.social;
 
-        return {
-            puissance:
-                physique.premierEstPrincipal ? physique.value + 1 : physique.value,
-            vitalite:
-                !physique.premierEstPrincipal ? physique.value + 1 : physique.value,
-            dexterite:
-                adresse.premierEstPrincipal ? adresse.value + 1 : adresse.value,
-            agilite:
-                !adresse.premierEstPrincipal ? adresse.value + 1 : adresse.value,
-            raisonnement:
-                intellect.premierEstPrincipal ? intellect.value + 1 : intellect.value,
-            apprentissage:
-                !intellect.premierEstPrincipal ? intellect.value + 1 : intellect.value,
-            volonte:
-                caractere.premierEstPrincipal ? caractere.value + 1 : caractere.value,
-            intuition:
-                !caractere.premierEstPrincipal ? caractere.value + 1 : caractere.value,
-            communication:
-                social.premierEstPrincipal ? social.value + 1 : social.value,
-            empathie:
-                !social.premierEstPrincipal ? social.value + 1 : social.value,
+        console.log("physique:", physique.value);
+        console.log("physique.premierEstPrincipal:", physique.premierEstPrincipal);
+        console.log("physique + 1:", physique.value + 1);
+
+        //JSON.parse(physique.premierEstPrincipal)
+
+        let vitalite, puissance, dexterite, agilite, raisonnement, apprentissage, intuition, volonte, communication, empathie;
+        if (JSON.parse(physique.premierEstPrincipal)) {
+            puissance = physique.value + 1;
+            vitalite = physique.value;
+        } else {
+            puissance = physique.value;
+            vitalite = physique.value + 1;
         }
+
+        if (JSON.parse(adresse.premierEstPrincipal)) {
+            dexterite = adresse.value;
+            agilite = adresse.value + 1;
+        } else {
+            dexterite = adresse.value + 1;
+            agilite = adresse.value;
+        }
+
+        if (JSON.parse(intellect.premierEstPrincipal)) {
+            raisonnement = intellect.value + 1;
+            apprentissage = intellect.value;
+        } else {
+            raisonnement = intellect.value;
+            apprentissage = intellect.value + 1;
+        }
+
+        if (JSON.parse(caractere.premierEstPrincipal)) {
+            volonte = caractere.value + 1;
+            intuition = caractere.value;
+        } else {
+            volonte = caractere.value;
+            intuition = caractere.value + 1;
+        }
+
+        if (JSON.parse(social.premierEstPrincipal)) {
+            communication = social.value + 1;
+            empathie = social.value;
+        } else {
+            communication = social.value;
+            empathie = social.value + 1;
+        }
+
+
+        const result = {
+            puissance,
+            vitalite,
+            dexterite,
+            agilite,
+            raisonnement,
+            apprentissage,
+            volonte,
+            intuition,
+            communication,
+            empathie,
+        }
+
+        console.log("Result:", result);
+        return result;
     }
 
 }

@@ -816,7 +816,7 @@
                 "NiveauDeVieTitle": "Niveau de Vie",
                 "MaladeTitle": "Malade",
                 "InconscientTitle": "Inconscient",
-                "FatigueTitle": "Fatigué"
+                "EpuiseTitle": "Epuisé"
             },
             "SanteHeader": "Santé"
         },

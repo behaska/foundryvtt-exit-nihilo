@@ -26,7 +26,7 @@
                     "value": "femelle",
                     "type": "String",
                     "label": "EXITNIHILO.actors.details.genre"
-                },                
+                },
                 "ethnie": {
                     "value": "",
                     "type": "String",
@@ -47,12 +47,12 @@
                         "value": "",
                         "type": "String",
                         "label": "EXITNIHILO.actors.details.biographie.apparence"
-                    }, 
+                    },
                     "histoire": {
                         "value": "",
                         "type": "String",
                         "label": "EXITNIHILO.actors.details.biographie.histoire"
-                    },                     
+                    },
                     "lieu-de-naissance": {
                         "value": "",
                         "type": "String",
@@ -62,12 +62,12 @@
                         "value": "",
                         "type": "String",
                         "label": "EXITNIHILO.actors.details.biographie.croyances"
-                    }, 
+                    },
                     "gouts": {
                         "value": "",
                         "type": "String",
                         "label": "EXITNIHILO.actors.details.biographie.gouts"
-                    },                     
+                    },
                     "aversions": {
                         "value": "",
                         "type": "String",
@@ -77,12 +77,12 @@
                         "value": "",
                         "type": "String",
                         "label": "exit-nihilo.actors.details.biographie.slogans"
-                    }, 
+                    },
                     "notes": {
                         "value": "",
                         "type": "String",
                         "label": "exit-nihilo.actors.details.biographie.notes"
-                    },                     
+                    },
                     "allies": {
                         "value": "",
                         "type": "String",
@@ -92,12 +92,12 @@
                         "value": "",
                         "type": "String",
                         "label": "exit-nihilo.actors.details.biographie.ennemis"
-                    },    
+                    },
                     "organisation": {
                         "value": "",
                         "type": "String",
                         "label": "exit-nihilo.actors.details.biographie.organisation"
-                    },                                            
+                    },
                     "profession": {
                         "value": "",
                         "type": "String",
@@ -122,7 +122,7 @@
                     "type": "Number",
                     "label": "tor2e.attributs.resilience",
                     "max": 10
-                },                                
+                },
                 "caracteristiques": {
                     "physique": {
                         "value": 0,
@@ -163,7 +163,7 @@
                         "labelPremiere": "EXITNIHILO.Personnage.Attributs.Social.Communication.Titre",
                         "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Social.Empathie.Titre",
                         "premierEstPrincipal": "true"
-                    }                    
+                    }
                 }
             },
             "competences": {
@@ -335,6 +335,23 @@
                         "type": "Number",
                         "label": "tor2e.stats.explosif"
                     }
+                }
+            },
+            "sante": {
+                "malade": {
+                    "value": false,
+                    "type": "Boolean",
+                    "label": ""
+                },
+                "epuise": {
+                    "value": false,
+                    "type": "Boolean",
+                    "label": ""
+                },
+                "inconscient": {
+                    "value": false,
+                    "type": "Boolean",
+                    "label": ""
                 }
             }
         }

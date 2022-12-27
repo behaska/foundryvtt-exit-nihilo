@@ -6,7 +6,28 @@
 </div>
 <div class="sante">
     <p>{{localize "EXITNIHILO.SideBar.Sante.NiveauDeVieTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Sante.MaladeTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Sante.InconscientTitle"}}</p>
-    <p>{{localize "EXITNIHILO.SideBar.Sante.FatigueTitle"}}</p>
+
+    <div class="etat-de-sante malade">
+        <label for="system.sante.malade.value">{{localize
+            "EXITNIHILO.SideBar.Sante.MaladeTitle"}}</label>
+        <input type="checkbox" id="system.sante.malade.value" name="system.sante.malade.value"
+            value="{{actor.system.sante.malade.value}}" data-dtype="{{actor.system.sante.malade.type}}"
+            {{checked actor.system.sante.malade.value}} />
+    </div>
+
+    <div class="etat-de-sante inconscient">
+        <label for="system.sante.inconscient.value">{{localize
+            "EXITNIHILO.SideBar.Sante.InconscientTitle"}}</label>
+        <input type="checkbox" id="system.sante.inconscient.value" name="system.sante.inconscient.value"
+            value="{{actor.system.sante.inconscient.value}}" data-dtype="{{actor.system.sante.inconscient.type}}"
+            {{checked actor.system.sante.inconscient.value}} />
+    </div>
+
+    <div class="etat-de-sante epuise">
+        <label for="system.sante.epuise.value">{{localize
+            "EXITNIHILO.SideBar.Sante.EpuiseTitle"}}</label>
+        <input type="checkbox" id="system.sante.epuise.value" name="system.sante.epuise.value"
+            value="{{actor.system.sante.epuise.value}}" data-dtype="{{actor.system.sante.epuise.type}}"
+            {{checked actor.system.sante.epuise.value}} />
+    </div>
 </div>
