@@ -10,9 +10,9 @@
         alt = "EXITNIHILO.SideBar.Jauges.Alt"
         extraCss= "up small" }}
         <label class="titre" for="humanite">{{localize "EXITNIHILO.SideBar.Jauges.HumaniteTitle"}}</label>
-        <input type="text" class="humanite-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite" name="system.attributs.humanite.value" value="{{data.attributs.humanite.value}}" />
+        <input type="number" class="humanite-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite" name="system.attributs.humanite.value" data-dtype="Number" value="{{data.attributs.humanite.value}}" />
         <span>/</span>
-        <input type="text" class="humanite-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite-max" name="system.attributs.humanite.max" value="{{data.attributs.humanite.max}}" />
+        <input type="number" class="humanite-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite-max" name="system.attributs.humanite.max" data-dtype="Number" value="{{data.attributs.humanite.max}}" />
     </div>
     <div class="jauge">
         {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
@@ -21,8 +21,8 @@
         alt = "EXITNIHILO.SideBar.Jauges.Alt"
         extraCss= "up small" }}
         <label class="titre" for="resilience">{{localize "EXITNIHILO.SideBar.Jauges.HumaniteTitle"}}</label>
-        <input type="text" class="resilience-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite" name="system.attributs.resilience.value" value="{{data.attributs.resilience.value}}" />
+        <input type="number" class="resilience-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite" name="system.attributs.resilience.value" data-dtype="Number" value="{{data.attributs.resilience.value}}" />
         <span>/</span>
-        <input type="text" class="resilience-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite-max" name="system.attributs.resilience.max" value="{{data.attributs.resilience.max}}" />
+        <input type="number" class="resilience-input" title="{{localize 'EXITNIHILO.SideBar.Jauges.HumaniteTitle'}}" id="hunanite-max" name="system.attributs.resilience.max" data-dtype="Number" value="{{data.attributs.resilience.max}}" />
     </div>
 </div>
