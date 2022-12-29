@@ -44,13 +44,6 @@ type ItemTypeMap = {
     [K in ItemType]: InstanceType<ConfigExitNihilo["EXITNIHILO"]["Item"]["documentClasses"][K]>;
 };
 
-interface HitPointsSummary {
-    value: number;
-    max: number;
-    temp: number;
-    negativeHealing: boolean;
-}
-
 interface ActorConstructorContextExitNihilo extends DocumentConstructionContext<ActorExitNihilo> {
     exitNihilo?: {
         ready?: boolean;
@@ -61,4 +54,4 @@ interface ActorUpdateContext<T extends ActorExitNihilo> extends DocumentUpdateCo
     damageTaken?: number;
 }
 
-export { ActorExitNihilo, HitPointsSummary, ActorUpdateContext };
+export { ActorExitNihilo, ActorUpdateContext };

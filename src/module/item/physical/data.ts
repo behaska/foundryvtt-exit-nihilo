@@ -4,7 +4,7 @@ import { BaseItemSourceExitNihilo, BaseItemDataExitNihilo, ItemSystemSource, Ite
 import { EquipmentTrait } from "@item/equipment/types";
 import { WeaponTrait } from "@item/weapon/types";
 import { PhysicalItemExitNihilo } from "./document";
-import { PhysicalItemType, PreciousMaterialType, PreciousMaterialGrade } from "./types";
+import { PhysicalItemType } from "./types";
 
 type BasePhysicalItemSource<
     TType extends PhysicalItemType = PhysicalItemType,
@@ -19,48 +19,20 @@ type BasePhysicalItemData<
 > = Omit<BasePhysicalItemSource, "system" | "effects" | "flags"> & BaseItemDataExitNihilo<TItem, TType, TSystemData, TSource>;
 
 interface PhysicalSystemSource extends ItemSystemSource, ItemLevelData {
-    traits: PhysicalItemTraits;
     quantity: number;
     baseItem: string | null;
-    hp: PhysicalItemHitPoints;
-    hardness: number;
     weight: {
-        value: string;
-    };
-    equippedBulk: {
-        value: string | null;
-    };
-    /** This is unused, remove when inventory bulk refactor is complete */
-    unequippedBulk: {
         value: string;
     };
     price: PartialPrice;
     equipped: EquippedData;
-    identification: IdentificationSource;
-    stackGroup: string | null;
-    negateBulk: {
-        value: string;
-    };
     containerId: string | null;
-    preciousMaterial: {
-        value: Exclude<PreciousMaterialType, "dragonhide" | "grisantian-pelt"> | null;
-    };
-    preciousMaterialGrade: {
-        value: PreciousMaterialGrade | null;
-    };
-    usage: {
-        value: string;
-    };
-    activations?: Record<string, ItemActivation>;
     temporary?: boolean;
 }
 
 interface PhysicalSystemData extends PhysicalSystemSource, ItemSystemData {
     price: Price;
-    bulk: BulkData;
-    traits: PhysicalItemTraits;
     temporary: boolean;
-    identification: IdentificationData;
 }
 
 type Investable<TData extends PhysicalSystemData | PhysicalSystemSource> = TData & {
@@ -68,18 +40,6 @@ type Investable<TData extends PhysicalSystemData | PhysicalSystemSource> = TData
         invested: boolean | null;
     };
 };
-
-/** The item's bulk in Light bulk units, given the item is of medium size */
-interface BulkData {
-    /** Held or stowed bulk */
-    heldOrStowed: number;
-    /** Worn bulk, if different than when held or stowed */
-    worn: number | null;
-    /** The applicable bulk value between the above two */
-    value: number;
-    /** The quantity of this item necessary to amount to the above bulk quantities: anything less is negligible */
-    per: number;
-}
 
 interface ActivatedEffectData {
     activation: {

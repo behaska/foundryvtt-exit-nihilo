@@ -1,5 +1,5 @@
 import { BaseCreatureData, BaseCreatureSource, CreatureAttributes, CreatureDetails, CreatureSystemData, CreatureTraitsData } from "@actor/creature/data";
-import { ActorFlagsExitNihilo, StrikeData, TraitViewData, ArmorClassData } from "@actor/data/base";
+import { ActorFlagsExitNihilo, ArmorClassData } from "@actor/data/base";
 import { CharacterExitNihilo } from "..";
 import { CharacterSheetTabVisibility } from "./sheet";
 import { NIVEAUX_DE_VIE } from "./values";
@@ -86,15 +86,6 @@ interface Competence {
 
 type CategoryProficiencies = null;
 
-/** The full data for a character action (used primarily for strikes.) */
-interface CharacterStrike extends StrikeData {
-    slug: string;
-    /** Whether this attack is visible on the sheet */
-    visible: boolean;
-    altUsages: CharacterStrike[];
-    auxiliaryActions: AuxiliaryAction[];
-    weaponTraits: TraitViewData[];
-}
 
 interface AuxiliaryAction {
     label: string;
@@ -290,6 +281,5 @@ export {
     CharacterFlags,
     CharacterResources,
     CharacterSource,
-    CharacterStrike,
     CharacterSystemData,
 };

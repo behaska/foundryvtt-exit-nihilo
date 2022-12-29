@@ -798,7 +798,6 @@ export const EXITNIHILOCONFIG = {
     consumableTraits,
     equipmentTraits,
     monsterTraits: creatureTraits,
-    weaponTraits,
 
     weaponHands: {
         1: "EXITNIHILO.WeaponHands1",
@@ -1613,16 +1612,6 @@ export const EXITNIHILOCONFIG = {
             condition: ConditionExitNihilo,
             equipment: EquipmentExitNihilo,
             weapon: WeaponExitNihilo,
-        },
-        traits: {
-            action: actionTraits,
-            armor: armorTraits,
-            ancestry: creatureTraits,
-            backpack: equipmentTraits,
-            book: equipmentTraits,
-            consumable: consumableTraits,
-            equipment: equipmentTraits,
-            weapon: weaponTraits,
         },
     },
 

@@ -42,10 +42,10 @@ declare global {
         protected _dice: DiceTerm[];
 
         /** Store the original cleaned formula for the Roll, prior to any internal evaluation or simplification */
-        protected _formula: string;
+        _formula: string;
 
         /** Track whether this Roll instance has been evaluated or not. Once evaluated the Roll is immutable. */
-        protected _evaluated: boolean;
+        _evaluated: boolean;
 
         /** Cache the numeric total generated through evaluation of the Roll. */
         protected _total: number | undefined;
@@ -137,7 +137,7 @@ declare global {
          * Safely evaluate the final total result for the Roll using its component terms.
          * @returns The evaluated total
          */
-        protected _evaluateTotal(this: Rolled<this>): number;
+        protected _evaluateTotal(): number;
 
         /**
          * Alias for evaluate.
@@ -168,7 +168,7 @@ declare global {
          * @param [options={}] Additional options which modify or describe this Roll
          * @return The constructed Roll instance
          */
-        static create<T extends RollOptions>(formula: string, data?: T, options?: Record<string, unknown>): Roll;
+        static create(formula: string, data?: Record<string, unknown>, options?: RollOptions): Roll;
 
         /**
          * Transform an array of RollTerm objects into a cleaned string formula representation.
@@ -228,9 +228,9 @@ declare global {
          *                  left as-is.
          * @param [warn] Display a warning notification when encountering an un-matched key.
          */
-        static replaceFormulaData<T extends object>(
+        static replaceFormulaData(
             formula: string,
-            data: T,
+            data: Record<string, unknown>,
             { missing, warn }?: { missing?: string; warn?: boolean }
         ): string;
 
@@ -359,7 +359,7 @@ declare global {
         toMessage(
             messageData: PreCreate<foundry.data.ChatMessageSource> | undefined,
             { rollMode, create }: { rollMode: RollMode; create: false }
-        ): Promise<foundry.data.ChatMessageData>;
+        ): Promise<foundry.data.ChatMessageSource>;
         toMessage(
             messageData?: PreCreate<foundry.data.ChatMessageSource>,
             { rollMode, create }?: { rollMode?: RollMode; create?: true }
@@ -400,7 +400,7 @@ declare global {
          * @param data   Unpacked data representing the Roll
          * @return A reconstructed Roll instance
          */
-        static fromData<T extends Roll>(this: ConstructorOf<T>, data: RollJSON): T;
+        static fromData<T extends Roll>(this: AbstractConstructorOf<T>, data: RollJSON): T;
 
         /**
          * Recreate a Roll instance using a provided JSON string
