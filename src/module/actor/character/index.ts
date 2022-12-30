@@ -14,7 +14,6 @@ class CharacterExitNihilo extends CreatureExitNihilo {
         super.prepareDerivedData();
 
         this.system.attributs.caracteristiquesCalculees = CaracteristiquesDuPersonnage.from(this.system);
-        console.log("Actor data:", this);
     }
 
 }

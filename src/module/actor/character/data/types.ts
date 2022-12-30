@@ -198,10 +198,6 @@ class CaracteristiquesDuPersonnage {
         const caractere = caracteristiques.caractere;
         const social = caracteristiques.social;
 
-        console.log("physique:", physique.value);
-        console.log("physique.premierEstPrincipal:", physique.premierEstPrincipal);
-        console.log("physique + 1:", physique.value + 1);
-
         //JSON.parse(physique.premierEstPrincipal)
 
         let vitalite, puissance, dexterite, agilite, raisonnement, apprentissage, intuition, volonte, communication, empathie;
@@ -259,7 +255,6 @@ class CaracteristiquesDuPersonnage {
             empathie,
         }
 
-        console.log("Result:", result);
         return result;
     }
 
