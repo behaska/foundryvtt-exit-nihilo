@@ -16,7 +16,6 @@ type MeleeWeaponGroup = SetElement<typeof MELEE_WEAPON_GROUPS>;
 type WeaponGroup = SetElement<typeof WEAPON_GROUPS>;
 type BaseWeaponType = keyof typeof LocalizeExitNihilo.translations.EXITNIHILO.Weapon.Base;
 
-type WeaponTrait = keyof ConfigExitNihilo["EXITNIHILO"]["weaponTraits"];
 type OtherWeaponTag = "crossbow" | "improvised" | "shoddy";
 
 type WeaponRangeIncrement = SetElement<typeof WEAPON_RANGES>;
@@ -53,5 +52,4 @@ export {
     WeaponPropertyRuneType,
     WeaponRangeIncrement,
     WeaponReloadTime,
-    WeaponTrait,
 };

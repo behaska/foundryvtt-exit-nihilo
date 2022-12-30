@@ -6,7 +6,7 @@ import { ContainerExitNihilo } from "@item/container/document";
 import { EquipmentExitNihilo } from "@item/equipment/document";
 import { WeaponExitNihilo } from "@item/weapon/document";
 import { JournalSheetExitNihilo } from "@module/journal-entry/sheet";
-import { actionTraits, armorTraits, consumableTraits, creatureTraits, equipmentTraits, weaponTraits } from "./traits";
+import { actionTraits, armorTraits, consumableTraits, creatureTraits, equipmentTraits } from "./traits";
 
 export type StatusEffectIconTheme = "default" | "blackWhite";
 

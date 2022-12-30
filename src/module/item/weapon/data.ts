@@ -3,7 +3,7 @@ import { BasePhysicalItemSource, BasePhysicalItemData, Investable, PhysicalSyste
 import { PreciousMaterialGrade, BaseMaterial } from "@item/physical/types";
 import { OneToFour } from "@module/data";
 import { WeaponExitNihilo } from "./document";
-import { WeaponTrait, StrikingRuneType, WeaponPropertyRuneType, WeaponMaterialType, WeaponCategory, WeaponGroup, BaseWeaponType, WeaponRangeIncrement, WeaponReloadTime, MeleeWeaponGroup } from "./types";
+import { StrikingRuneType, WeaponPropertyRuneType, WeaponMaterialType, WeaponCategory, WeaponGroup, BaseWeaponType, WeaponRangeIncrement, WeaponReloadTime, MeleeWeaponGroup } from "./types";
 
 type WeaponSource = BasePhysicalItemSource<"weapon", WeaponSystemSource> & {
     flags: DeepPartial<WeaponFlags>;
@@ -81,7 +81,6 @@ interface WeaponMaterialData {
 
 interface ComboWeaponMeleeUsage {
     group: MeleeWeaponGroup;
-    traits: WeaponTrait[];
 }
 
 export {

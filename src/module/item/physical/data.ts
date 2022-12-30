@@ -2,7 +2,6 @@ import { ArmorTrait } from "@item/armor/types";
 import { ConsumableTrait } from "@item/consumable/types";
 import { BaseItemSourceExitNihilo, BaseItemDataExitNihilo, ItemSystemSource, ItemLevelData, ItemSystemData, ActionCost, Frequency, ItemTraits } from "@item/data/base";
 import { EquipmentTrait } from "@item/equipment/types";
-import { WeaponTrait } from "@item/weapon/types";
 import { PhysicalItemExitNihilo } from "./document";
 import { PhysicalItemType } from "./types";
 
@@ -98,7 +97,7 @@ type EquippedData = {
     invested?: boolean | null;
 };
 
-type PhysicalItemTrait = ArmorTrait | ConsumableTrait | EquipmentTrait | WeaponTrait;
+type PhysicalItemTrait = ArmorTrait | ConsumableTrait | EquipmentTrait ;
 interface PhysicalItemTraits<T extends PhysicalItemTrait = PhysicalItemTrait> extends ItemTraits<T> {
     otherTags: string[];
 }
