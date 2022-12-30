@@ -1,30 +1,35 @@
 header.char-header {
-    justify-content: flex-end;
 
-    .char-details {
-        align-content: flex-start;
-    }
-
-    .char-role,
-    .char-genre,
-    .char-niveau-de-vie {
+    .blasons {
         height: 100%;
-        padding-bottom: 2px;
-        width: 70px;
+        display: flex;
+        justify-content: end;
 
-        .role-container,
-        .genre-container,
-        .niveau-de-vie-container {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        section{
+            padding-left: 10px;
+            padding-right: 10px;
+            height: 90%;
+        }
 
-            .title {
-                margin: 0;
-                padding: 0;
-                text-align: center;
+        .char-role,
+        .char-genre,
+        .char-niveau-de-vie {
+            width: 70px;
+
+            .role-container,
+            .genre-container,
+            .niveau-de-vie-container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .title {
+                    margin: 0;
+                    padding: 0;
+                    text-align: center;
+                }
+
             }
-
         }
     }
 }
