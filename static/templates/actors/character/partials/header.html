@@ -7,7 +7,7 @@
     </section>
 
     <section class="char-genre">
-        <div class="role-container">
+        <div class="genre-container">
             <p class="title">{{localize 'EXITNIHILO.Personnage.Genre.Titre'}}</p>
             {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
             imgSrc = displayGenre.imgSrc
@@ -16,7 +16,16 @@
             extraCss = "up" }}
         </div>
     </section>
-
+    <section class="char-niveau-de-vie">
+        <div class="niveau-de-vie-container">
+            <p class="title">{{localize 'EXITNIHILO.Personnage.Sante.NiveauDeSante.Titre'}}</p>
+            {{> "systems/exit-nihilo/templates/partials/pentagon-component.html"
+            imgSrc = displayNiveauDeSante.imgSrc
+            title = displayNiveauDeSante.title
+            alt = displayNiveauDeSante.alt
+            extraCss = "up" }}
+        </div>
+    </section>
     <section class="char-role">
         <div class="role-container">
             <p class="title">{{localize 'EXITNIHILO.Personnage.Role.Titre'}}</p>

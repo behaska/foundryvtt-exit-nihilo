@@ -465,6 +465,16 @@ export const EXITNIHILOCONFIG = {
         "autres": "EXITNIHILO.Personnage.Genres.Autres.Titre",
     },
 
+    niveauxDeSante: {
+        "pleineSante": "EXITNIHILO.Personnage.Sante.NiveauDeSante.pleineSante.Titre",
+        "legerementBlesse": "EXITNIHILO.Personnage.Sante.NiveauDeSante.legerementBlesse.Titre",
+        "blesse": "EXITNIHILO.Personnage.Sante.NiveauDeSante.blesse.Titre",
+        "grievementBlesse": "EXITNIHILO.Personnage.Sante.NiveauDeSante.grievementBlesse.Titre",
+        "mourant": "EXITNIHILO.Personnage.Sante.NiveauDeSante.mourant.Titre",
+        "mort": "EXITNIHILO.Personnage.Sante.NiveauDeSante.mort.Titre",
+
+    },
+
     roles: {
         protecteur: "EXITNIHILO.Personnage.Roles.Protecteur.Titre",
         approvisionneur: "EXITNIHILO.Personnage.Roles.Approvisionneur.Titre",

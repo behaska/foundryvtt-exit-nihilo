@@ -106,10 +106,10 @@
                 }
             },
             "attributs": {
-                "niveau-de-vie": {
-                    "value": 0,
-                    "type": "Number",
-                    "label": "tor2e.stats.niveau-de-vie"
+                "niveauDeSante": {
+                    "value": "pleineSante",
+                    "type": "String",
+                    "label": "tor2e.stats.niveau-de-sante"
                 },
                 "humanite": {
                     "value": 10,

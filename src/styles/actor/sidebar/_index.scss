@@ -26,11 +26,13 @@ aside {
         &:focus {
             box-shadow: none;
         }
+
         &::-webkit-outer-spin-button,
         &::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
+
         &:read-only {
             pointer-events: none;
             color: var(--tertiary-light);
@@ -65,6 +67,7 @@ aside {
         z-index: 10;
         max-width: unset;
     }
+
     .sidebar {
         padding: 0 2px 2px 8px;
         margin-bottom: 42px;
@@ -96,6 +99,7 @@ aside {
                 margin-top: 0.5em;
                 margin-bottom: -1px;
             }
+
             h2 {
                 font-family: var(--sans-serif);
                 font-size: var(--font-size-13);
@@ -105,29 +109,35 @@ aside {
                 color: var(--sidebar-title);
                 flex: 1;
             }
-            .modifiers_button, h2 {
+
+            .modifiers_button,
+            h2 {
                 border-bottom: 1px solid var(--sidebar-title);
             }
 
         }
+
         a.dots {
             display: flex;
             flex-direction: column;
             gap: 2px;
 
-            > * {
-              cursor: pointer;
+            >* {
+                cursor: pointer;
             }
+
             .pips {
                 display: flex;
                 justify-content: center;
             }
         }
+
         .data-value {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 0; /* Removes whitespace for inputs */
+            font-size: 0;
+            /* Removes whitespace for inputs */
 
             h2 {
                 color: var(--tertiary-light);
@@ -139,6 +149,7 @@ aside {
                 border: none;
             }
         }
+
         a.roll-icon {
             display: inline-flex;
             align-items: center;
@@ -149,6 +160,7 @@ aside {
                 color: var(--text-light);
 
                 transition: all 0.2s ease-in-out;
+
                 &:hover {
                     transform: scale(1.25);
                 }
@@ -161,6 +173,7 @@ aside {
                     fill: var(--text-light);
                 }
             }
+
             &:hover svg {
                 animation-play-state: running;
             }
@@ -170,24 +183,45 @@ aside {
                 filter: brightness(0.75);
                 opacity: 0.75;
                 text-shadow: none;
+
                 &:hover svg {
                     animation-play-state: paused;
                 }
             }
         }
+
         select {
-            font-size: var(--font-size-15);
+            appearance: none;
             background-color: var(--primary);
             padding: 2px 6px;
             width: 100%;
             max-width: 100%;
+            border: 1px solid #956d58;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .1), inset 0 0 4px rgba(0, 0, 0, .5);
+            background-image: url(../assets/icons/chevron-down.svg);
+            background-position: right .25em top 50%;
+            background-repeat: no-repeat;
+            background-size: 1em auto;
+            border: 1px solid #53422a;
+            border-radius: 2px;
+            color: var(--text-light);
+            cursor: pointer;
+            font-family: var(--serif);
+            font-size: var(--font-size-14);
+            font-weight: 500;
+            height: auto;
+            line-height: 1;
+            position: relative;
+            text-overflow: ellipsis;
         }
+
         ol {
             display: flex;
             flex-direction: column;
             list-style: none;
             margin: 0;
             padding: 0;
+
             li {
                 display: flex;
                 flex-direction: row;
@@ -196,6 +230,6 @@ aside {
             }
         }
 
-        @import "health", "attributs", "caracteristiques", "jauges";
+        @import "sante", "attributs", "caracteristiques", "jauges";
     }
 }

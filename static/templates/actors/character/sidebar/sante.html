@@ -5,7 +5,18 @@
     </button>
 </div>
 <div class="sante">
-    <p>{{localize "EXITNIHILO.SideBar.Sante.NiveauDeVieTitle"}}</p>
+    <div class="niveau-de-sante-select-container">
+        <div class="niveau-de-sante">
+            <label>{{localize "EXITNIHILO.SideBar.Sante.Title"}}</label>
+            <select class="niveau-de-vie-select" name="system.attributs.niveauDeSante.value" data-dtype="String">
+                {{#select actor.system.attributs.niveauDeSante.value}}
+                {{#each niveauxDeSante as |value key|}}
+                <option value="{{key}}">{{localize value}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+        </div>
+    </div>
 
     <div class="etat-de-sante malade">
         <label for="system.sante.malade.value">{{localize

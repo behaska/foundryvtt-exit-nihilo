@@ -1,6 +1,6 @@
 import { CreatureSheetExitNihilo } from "@actor/creature/sheet";
 import { CharacterExitNihilo } from ".";
-import { CharacterSheetData, ExitNihiloDisplayGenre, ExitNihiloDisplayRole } from "./data/sheet";
+import { CharacterSheetData, ExitNihiloDisplayGenre, ExitNihiloDisplayNiveauDeSante, ExitNihiloDisplayRole } from "./data/sheet";
 
 class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
 
@@ -26,8 +26,10 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         const sheetData = (await super.getData(options)) as CharacterSheetData;
         sheetData.roles = CONFIG.EXITNIHILO.roles;
         sheetData.genres = CONFIG.EXITNIHILO.genres;
+        sheetData.niveauxDeSante = CONFIG.EXITNIHILO.niveauxDeSante;
         sheetData.displayRole = ExitNihiloDisplayRole.from(sheetData);
         sheetData.displayGenre = ExitNihiloDisplayGenre.from(sheetData);
+        sheetData.displayNiveauDeSante = ExitNihiloDisplayNiveauDeSante.from(sheetData);
         const { biographie } = sheetData.actor.system.details;
         sheetData.enrichedContent.apparence = await TextEditor.enrichHTML(biographie.apparence.value, {
             async: true,

@@ -1,12 +1,20 @@
 header.char-header {
+    justify-content: flex-end;
+
+    .char-details {
+        align-content: flex-start;
+    }
 
     .char-role,
-    .char-genre {
+    .char-genre,
+    .char-niveau-de-vie {
         height: 100%;
         padding-bottom: 2px;
         width: 70px;
 
-        .role-container {
+        .role-container,
+        .genre-container,
+        .niveau-de-vie-container {
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -19,5 +27,4 @@ header.char-header {
 
         }
     }
-
 }

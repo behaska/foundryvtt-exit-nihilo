@@ -772,6 +772,35 @@
                     "Valeur": 6
                 }
             },
+            "Sante": {
+                "NiveauDeSante": {
+                    "Titre": "Santé",
+                    "pleineSante": {
+                        "Titre": "Pleine Santé",
+                        "Valeur": 0
+                    },
+                    "legerementBlesse": {
+                        "Titre": "Légèrement Blessé",
+                        "Valeur": 0
+                    },
+                    "blesse": {
+                        "Titre": "Blessé",
+                        "Valeur": 0
+                    },
+                    "grievementBlesse": {
+                        "Titre": "Grièvement Blessé",
+                        "Valeur": 0
+                    },
+                    "mourant": {
+                        "Titre": "Mourant",
+                        "Valeur": 0
+                    },
+                    "mort": {
+                        "Titre": "Mort",
+                        "Valeur": 0
+                    }
+                }
+            },
             "Slogans": {
                 "PlaceHolder": "Slogans du Personnage",
                 "Titre": "Slogans"
@@ -813,7 +842,7 @@
                 "ResilienceTitle": "Résilience:"
             },
             "Sante": {
-                "NiveauDeVieTitle": "Niveau de Vie",
+                "Title": "Santé",
                 "MaladeTitle": "Malade",
                 "InconscientTitle": "Inconscient",
                 "EpuiseTitle": "Epuisé"
