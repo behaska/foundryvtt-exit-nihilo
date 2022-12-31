@@ -1,0 +1,167 @@
+.competence {
+    display: flex;
+
+    .valeur {
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin-left: 5px;
+
+        >* {
+            width: 10px;
+            height: 10px;
+            border: 1.5px solid black;
+            border-radius: 50%;
+            margin: 0 1px;
+            flex: none;
+        }
+
+        .skill-display-element-full {
+            background-color: black;
+        }
+
+    }
+}
+
+.competence-complexe {
+    display: flex;
+    flex-direction: column;
+
+    .competence {
+        input[type="text"] {
+            background-color: rgba(28, 28, 28, .1);
+            border-bottom: 1px solid #d3ccbc;
+            color: var(--text-dark);
+            font-family: var(--body-serif);
+            font-weight: 700;
+            width: calc(100% - 6px);
+        }
+    }
+}
+
+.personnage-competences-communes {
+    display: grid;
+    grid:
+        "argumenter discretion manipulation" 25px 
+        "athletisme equitation nager" 25px 
+        "baratin esquiver perception" 25px 
+        "bricolage imiter secourisme" 25px 
+        "chercher influencer psychologie" 25px 
+        "cuisine lancer survie" 25px 
+        "jardinage langues technologie" 25px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    .argumenter-container {
+        grid-area: argumenter;
+    }
+
+    .athletisme-container {
+        grid-area: athletisme;
+    }
+
+    .baratin-container {
+        grid-area: baratin;
+    }
+
+    .bricolage-container {
+        grid-area: bricolage;
+    }
+
+    .chercher-container {
+        grid-area: chercher;
+    }
+
+    .cuisine-container {
+        grid-area: cuisine;
+    }
+
+    .jardinage-container {
+        grid-area: jardinage;
+    }
+
+    .discretion-container {
+        grid-area: discretion;
+    }
+
+    .equitation-container {
+        grid-area: equitation;
+    }
+
+    .esquiver-container {
+        grid-area: esquiver;
+    }
+
+    .imiter-container {
+        grid-area: imiter;
+    }
+
+    .influencer-container {
+        grid-area: influencer;
+    }
+
+    .lancer-container {
+        grid-area: lancer;
+    }
+
+    .langues-container {
+        grid-area: langues;
+    }
+
+    .manipulation-container {
+        grid-area: manipulation;
+    }
+
+    .nager-container {
+        grid-area: nager;
+    }
+
+    .perception-container {
+        grid-area: perception;
+    }
+
+    .psychologie-container {
+        grid-area: psychologie;
+    }
+
+    .secourisme-container {
+        grid-area: secourisme;
+    }
+    
+    .survie-container {
+        grid-area: survie;
+    }
+
+    .technologie-container {
+        grid-area: technologie;
+    }
+}
+
+.personnage-competences-complexes {
+    display: grid;
+    grid:
+        "arts pilotages professions" 75px;
+    margin-top: 4px;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px 10px;
+
+    .arts-container {
+        grid-area: arts;
+    }
+
+    .pilotages-container {
+        grid-area: pilotages;
+    }
+
+    .professions-container {
+        grid-area: professions;
+    }
+
+}

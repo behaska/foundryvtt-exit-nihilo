@@ -145,7 +145,7 @@ nav.sheet-navigation {
     .tab {
         flex-direction: column;
 
-        @import "character", "historique";
+        @import "character", "historique", "competences", "combat";
     }
 
     .directory-list {

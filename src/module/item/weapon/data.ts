@@ -1,39 +1,16 @@
-import { ItemFlagsExitNihilo } from "@item/data/base";
 import { BasePhysicalItemSource, BasePhysicalItemData, Investable, PhysicalSystemSource, PhysicalSystemData } from "@item/physical/data";
-import { PreciousMaterialGrade, BaseMaterial } from "@item/physical/types";
-import { OneToFour } from "@module/data";
 import { WeaponExitNihilo } from "./document";
-import { StrikingRuneType, WeaponPropertyRuneType, WeaponMaterialType, WeaponCategory, WeaponGroup, BaseWeaponType, WeaponRangeIncrement, WeaponReloadTime, MeleeWeaponGroup } from "./types";
+import { WeaponCategory, WeaponGroup, BaseWeaponType, WeaponRangeIncrement, WeaponReloadTime } from "./types";
 
-type WeaponSource = BasePhysicalItemSource<"weapon", WeaponSystemSource> & {
-    flags: DeepPartial<WeaponFlags>;
-};
+type WeaponSource = BasePhysicalItemSource<"weapon", WeaponSystemSource>
 
 type WeaponData = Omit<WeaponSource, "system" | "effects" | "flags"> &
-    BasePhysicalItemData<WeaponExitNihilo, "weapon", WeaponSystemData, WeaponSource> & {
-        flags: WeaponFlags;
-    };
-
-type WeaponFlags = ItemFlagsExitNihilo & {
-    exitNihilo: {
-        comboMeleeUsage: boolean;
-    };
-};
+    BasePhysicalItemData<WeaponExitNihilo, "weapon", WeaponSystemData, WeaponSource>
 
 interface WeaponDamage {
     value?: string;
     dice: number;
     modifier: number;
-}
-
-interface WeaponRuneData {
-    potency: OneToFour | null;
-    striking: StrikingRuneType | null;
-    property: Record<OneToFour, WeaponPropertyRuneType | null>;
-}
-
-interface WeaponPropertyRuneSlot {
-    value: WeaponPropertyRuneType | null;
 }
 
 interface WeaponSystemSource extends Investable<PhysicalSystemSource> {
@@ -52,13 +29,11 @@ interface WeaponSystemSource extends Investable<PhysicalSystemSource> {
     reload: {
         value: WeaponReloadTime | null;
     };
-    /** A combination weapon's melee usage */
-    meleeUsage?: ComboWeaponMeleeUsage;
     selectedAmmoId: string | null;
 }
 
 interface WeaponSystemData
-    extends Omit<WeaponSystemSource, "identification" | "price" | "temporary">,
+    extends Omit<WeaponSystemSource, | "price" | "temporary">,
         Omit<Investable<PhysicalSystemData>, "traits"> {
     baseItem: BaseWeaponType | null;
     maxRange: number | null;
@@ -69,27 +44,9 @@ interface WeaponSystemData
     };
 }
 
-interface WeaponMaterialData {
-    /** The "base material" or category: icon/steel (metal), wood, rope, etc. */
-    base: BaseMaterial[];
-    /** The precious material of which this weapon is composed */
-    precious: {
-        type: WeaponMaterialType;
-        grade: PreciousMaterialGrade;
-    } | null;
-}
-
-interface ComboWeaponMeleeUsage {
-    group: MeleeWeaponGroup;
-}
-
 export {
-    ComboWeaponMeleeUsage,
     WeaponDamage,
     WeaponData,
-    WeaponMaterialData,
-    WeaponPropertyRuneSlot,
-    WeaponRuneData,
     WeaponSource,
     WeaponSystemData,
     WeaponSystemSource,

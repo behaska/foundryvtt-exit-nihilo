@@ -674,6 +674,117 @@
                 "PlaceHolder": "Aversions du Personnage",
                 "Titre": "Aversions"
             },
+            "Competences": {
+                "Combat": {
+                    "CorpsACorps": {
+                        "Titre": "Corps à Corps"
+                    },
+                     "CorpsACorpsArme": {
+                        "Titre": "Corps à Corps armé"
+                    },
+                    "ArmeAProjectile": {
+                        "Titre": "Arme à Projectile"
+                    },
+                    "ArmeDePoing": {
+                        "Titre": "Arme de Poing"
+                    },                    
+                    "Fusil": {
+                        "Titre": "Fusil"
+                    },
+                    "FusilDAssaut": {
+                        "Titre": "fusil d'Assaut"
+                    }, 
+                    "FusilDePrecision": {
+                        "Titre": "fusil de Précision"
+                    },
+                    "Explosif": {
+                        "Titre": "Explosif"
+                    }                                        
+                }, 
+                "Communes": {
+                    "Argumenter": {
+                        "Titre": "Argumenter"
+                    },
+                    "Arts": {
+                        "Premiere": "Art1",
+                        "Deuxieme": "Art2",
+                        "Titre": "Arts",
+                        "Placeholder": "Art spécifique"
+                    },
+                    "Athletisme": {
+                        "Titre": "Athlétisme"
+                    },
+                    "Baratin": {
+                        "Titre": "Baratin"
+                    },
+                    "Bricolage": {
+                        "Titre": "Bricolage"
+                    },
+                    "Chercher": {
+                        "Titre": "Chercher"
+                    },
+                    "Cuisine": {
+                        "Titre": "Cuisine"
+                    },
+                    "Jardinage": {
+                        "Titre": "Jardinage"
+                    },
+                    "Discretion": {
+                        "Titre": "Discrétion"
+                    },
+                    "Equitation": {
+                        "Titre": "Équitation"
+                    },
+                    "Esquiver": {
+                        "Titre": "Esquiver"
+                    },
+                    "Imiter": {
+                        "Titre": "Imiter"
+                    },
+                    "Influencer": {
+                        "Titre": "Influencer"
+                    },
+                    "Lancer": {
+                        "Titre": "Lancer"
+                    },
+                    "Langues": {
+                        "Titre": "Langues"
+                    },
+                    "Manipulation": {
+                        "Titre": "Manipulation"
+                    },
+                    "Nager": {
+                        "Titre": "Nager"
+                    },
+                    "Perception": {
+                        "Titre": "Perception"
+                    },
+                    "Pilotages": {
+                        "Premiere": "Pilotage1",
+                        "Deuxieme": "Pilotage2",
+                        "Titre": "Pilotages",
+                        "Placeholder": "Pilotage spécifique"
+                    },
+                    "Professions": {
+                        "Premiere": "Profession1",
+                        "Deuxieme": "Profession2",
+                        "Titre": "Professions",
+                        "Placeholder": "Profession spécifique"
+                    },
+                    "Psychologie": {
+                        "Titre": "Psychologie"
+                    },
+                    "Secourisme": {
+                        "Titre": "Secourisme"
+                    }, 
+                    "Survie": {
+                        "Titre": "Survie"
+                    },
+                    "Technologie": {
+                        "Titre": "Technologie"
+                    }                                        
+                }
+            },
             "Croyances": {
                 "PlaceHolder": "Croyances du Personnage",
                 "Titre": "Croyances"

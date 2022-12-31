@@ -1,6 +1,6 @@
-import { BasePhysicalItemSource, BasePhysicalItemData, Investable, PhysicalSystemSource, PhysicalSystemData, PhysicalItemTraits } from "@item/physical/data";
+import { BasePhysicalItemSource, BasePhysicalItemData, Investable, PhysicalSystemSource, PhysicalSystemData } from "@item/physical/data";
 import { ArmorExitNihilo } from "./document";
-import { ArmorCategory, ArmorGroup, BaseArmorType, ArmorTrait, OtherArmorTag } from "./types";
+import { ArmorCategory, ArmorGroup, BaseArmorType } from "./types";
 
 type ArmorSource = BasePhysicalItemSource<"armor", ArmorSystemSource>;
 
@@ -8,7 +8,6 @@ type ArmorData = Omit<ArmorSource, "system" | "effects" | "flags"> &
     BasePhysicalItemData<ArmorExitNihilo, "armor", ArmorSystemData, ArmorSource>;
 
 interface ArmorSystemSource extends Investable<PhysicalSystemSource> {
-    traits: ArmorTraits;
     armor: {
         value: number;
     };
@@ -18,13 +17,9 @@ interface ArmorSystemSource extends Investable<PhysicalSystemSource> {
 }
 
 interface ArmorSystemData
-    extends Omit<ArmorSystemSource, "identification" | "price" | "temporary" | "usage">,
+    extends Omit<ArmorSystemSource,  "price" | "temporary" | "usage">,
         Omit<Investable<PhysicalSystemData>, "traits"> {
     baseItem: BaseArmorType;
-}
-
-interface ArmorTraits extends PhysicalItemTraits<ArmorTrait> {
-    otherTags: OtherArmorTag[];
 }
 
 export { ArmorData, ArmorSource, ArmorSystemData, ArmorSystemSource };

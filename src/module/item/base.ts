@@ -10,6 +10,7 @@ interface ItemConstructionContextExitNihilo extends DocumentConstructionContext<
 
 /** Override and extend the basic :class:`Item` implementation */
 class ItemExitNihilo extends Item<ActorExitNihilo> {
+
     constructor(data: PreCreate<ItemSourceExitNihilo>, context: ItemConstructionContextExitNihilo = {}) {
         if (context.exitNihilo?.ready) {
             super(data, context);
@@ -18,6 +19,7 @@ class ItemExitNihilo extends Item<ActorExitNihilo> {
             return  new ItemExitNihilo(data, context);
         }
     }
+    
 }
 
 interface ItemExitNihilo {

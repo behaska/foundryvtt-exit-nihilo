@@ -1,7 +1,7 @@
 /** Register Handlebars template partials */
 export function registerTemplates(): void {
     const templatePaths = [
-        // PC Sheet
+        // Feuille de Personnage
         "systems/exit-nihilo/templates/actors/character/partials/header.html",
         "systems/exit-nihilo/templates/actors/character/tabs/general.html",
         "systems/exit-nihilo/templates/actors/character/tabs/equipement.html",
@@ -13,8 +13,10 @@ export function registerTemplates(): void {
         "systems/exit-nihilo/templates/actors/character/sidebar/caracteristiques.html",
         "systems/exit-nihilo/templates/actors/character/sidebar/attributs.html",
 
-        // Partials utilitaire
-        "systems/exit-nihilo/templates/partials/pentagon-component.html",
+        // Composants
+        "systems/exit-nihilo/templates/partials/pentagon-composant.html",
+        "systems/exit-nihilo/templates/partials/competence-composant.html",
+        "systems/exit-nihilo/templates/partials/competence-complexe-composant.html",
     ];
 
     loadTemplates(templatePaths);

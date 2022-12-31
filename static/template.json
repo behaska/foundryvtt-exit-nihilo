@@ -176,12 +176,12 @@
                     "art1": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.art1"
+                        "label": ""
                     },
                     "art2": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.art1"
+                        "label": ""
                     },
                     "athletisme": {
                         "value": 0,
@@ -223,7 +223,7 @@
                         "type": "Number",
                         "label": "tor2e.stats.equitation"
                     },
-                    "esquive": {
+                    "esquiver": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.esquive"
@@ -258,25 +258,30 @@
                         "type": "Number",
                         "label": "tor2e.stats.perception"
                     },
-                    "pilotage": {
+                    "pilotage1": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.pilotage"
+                        "label": ""
                     },
-                    "premier-soins": {
+                    "pilotage2": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.premier-soins"
+                        "label": ""
+                    },
+                    "secourisme": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.secourisme"
                     },
                     "profession1": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.profession1"
+                        "label": ""
                     },
                     "profession2": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.profession2"
+                        "label": ""
                     },
                     "psychologie": {
                         "value": 0,
@@ -295,22 +300,22 @@
                     }
                 },
                 "combat": {
-                    "corps-a-corps": {
+                    "corpsACorps": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.corps-a-corps"
                     },
-                    "corps-a-corps-arme": {
+                    "corpsACorpsArme": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.corps-a-corps-arme"
                     },
-                    "arme-a-projectile": {
+                    "armeAProjectile": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.arme-a-projectile"
                     },
-                    "arme-de-poing": {
+                    "armeDePoing": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.arme-de-poing"
@@ -320,12 +325,12 @@
                         "type": "Number",
                         "label": "tor2e.stats.fusil"
                     },
-                    "fusil-d-assaut": {
+                    "fusilDAssaut": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.fusil-d-assaut"
                     },
-                    "fusil-de-precision": {
+                    "fusilDePrecision": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.de-precision"

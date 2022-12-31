@@ -18,7 +18,7 @@ interface ContainerSystemSource extends Investable<PhysicalSystemSource> {
 }
 
 interface ContainerSystemData
-    extends Omit<ContainerSystemSource, "identification" | "price" | "temporary" | "usage">,
+    extends Omit<ContainerSystemSource, "price" | "temporary" | "usage">,
         Omit<Investable<PhysicalSystemData>, "traits"> {}
 
 export { ContainerData, ContainerSource };

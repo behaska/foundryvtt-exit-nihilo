@@ -83,6 +83,17 @@ export function registerHandlebarsHelpers(): void {
         return results.join("");
     });
 
+    Handlebars.registerHelper('skill-dots', function (n, max) {
+        let accum = '';
+        for (let i = 1; i <= max; ++i)
+            if (i <= n) {
+                accum += '<div class="skill-display-element-full"></div>';
+            } else {
+                accum += '<div class="skill-display-element"></div>';
+            }
+        return accum;
+    });    
+
     Handlebars.registerHelper("isNullish", function (value: unknown) {
         return value === null || value === undefined;
     });
