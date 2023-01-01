@@ -14,7 +14,6 @@ class DiceExitNihilo {
      * This chooses the default options of a normal attack with no bonus, Advantage, or Disadvantage respectively
      *
      * @param actor         The actor
-     * @param parts         The dice roll component parts, excluding the initial d20
      * @param data          Actor or item data against which to parse the roll
      * @param template      The HTML template used to render the roll dialog
      * @param title         The dice roll UI window title
@@ -25,7 +24,6 @@ class DiceExitNihilo {
      */
     static async d6Roll({
         actor,
-        parts,
         data,
         template,
         title,
@@ -35,7 +33,6 @@ class DiceExitNihilo {
         rollType = "",
     }: {
         actor: ActorExitNihilo,
-        parts: (string | number)[];
         data: Record<string, unknown>;
         template?: string;
         title: string;
@@ -45,22 +42,21 @@ class DiceExitNihilo {
         rollType?: string;
     }) {
 
-        const _roll = (rollParts: (string | string[] | number)[], $form?: JQuery) => {
+        const _roll = ($form?: JQuery) => {
             // Don't include situational bonuses unless they are defined
-            if ($form) data.itemBonus = $form.find("[name=itemBonus]").val();
-            if ((!data.itemBonus || data.itemBonus === 0) && rollParts.indexOf("@itemBonus") !== -1)
-                rollParts.splice(rollParts.indexOf("@itemBonus"), 1);
-            if ($form) data.statusBonus = $form.find("[name=statusBonus]").val();
-            if ((!data.statusBonus || data.statusBonus === 0) && rollParts.indexOf("@statusBonus") !== -1)
-                rollParts.splice(rollParts.indexOf("@statusBonus"), 1);
-            if ($form) data.circumstanceBonus = $form.find("[name=circumstanceBonus]").val();
-            if (
-                (!data.circumstanceBonus || data.circumstanceBonus === 0) &&
-                rollParts.indexOf("@circumstanceBonus") !== -1
-            )
-                rollParts.splice(rollParts.indexOf("@circumstanceBonus"), 1);
+
+            if ($form) {
+                data.caracteristique = $form.find("input:checked").val()
+                data.competence = $form.find("[name=valeurCompetence]").val()
+            };
+
+            console.log("Form result:", $form);
+            console.log("Data:", data);
             // Execute the roll and send it to chat
-            const roll = new Roll(rollParts.join("+"), data).roll({ async: false });
+            const propertyKey = `system.attributs.caracteristiquesCalculees.${data.caracteristique}`;
+            const valeurDeCaracteristique = getProperty(actor, propertyKey)
+
+            const roll = new Roll(`${data.competence}d6+${valeurDeCaracteristique}d6`, data).roll({ async: false });
             roll.toMessage(
                 {
                     speaker,
@@ -83,7 +79,7 @@ class DiceExitNihilo {
         const dialogData = {
             actor,
             data,
-            formula: parts.join(" + "),
+            valeurCompetence: data.competence,
             rollModes: CONFIG.Dice.rollModes,
         };
         const content = await renderTemplate(template, dialogData);
@@ -97,17 +93,15 @@ class DiceExitNihilo {
                         roll: {
                             label: game.i18n.localize("EXITNIHILO.Roll.Roll"),
                             callback: (html) => {
-                                roll = _roll(parts, html);
+                                roll = _roll(html);
                             },
                         },
                         cancel: {
                             label: game.i18n.localize("EXITNIHILO.Roll.Cancel"),
-                            callback: (html) => {
-                                roll = _roll(parts, html);
-                            },
+                            icon: '<i class="fa fa-times"></i>',
                         },
                     },
-                    default: game.i18n.localize("EXITNIHILO.Roll.Normal"),
+                    default: game.i18n.localize("EXITNIHILO.Roll.Cancel"),
                     close: (html) => {
                         if (onClose) onClose(html, data);
                         resolve(roll);

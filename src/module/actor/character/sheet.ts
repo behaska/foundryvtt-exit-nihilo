@@ -70,22 +70,21 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
             if (competenceId === "") {
                 throw ErrorExitNihilo(`No skill found with attr-key ("data-competence-id").`);
             }
-            const propertyKey = `system.competences.communes.${competenceId}`;
+            const propertyKey = `system.competences.communes.${competenceId}.value`;
             const competence = getProperty(this.actor, propertyKey)
 
-            if (typeof competence !== "object") {
+            if (typeof competence !== "number") {
                 throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
             }
 
-            const parts = ["2d6","3d6"];
+            console.log ("competence:", competence);
             const title = "Roll Option Dialog";
-            const data = {};
+            const data = {competence};
             const speaker = ChatMessage.getSpeaker({ token: this.token, actor: this.actor });
 
             await DiceExitNihilo.d6Roll(
                 {
                     actor: this.actor,
-                    parts,
                     data,
                     title,
                     speaker
@@ -100,19 +99,17 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
             const propertyKey = `system.competences.combat.${competenceId}.value`;
             const competence = getProperty(this.actor, propertyKey)
 
-            if (typeof competence !== "object") {
+            if (typeof competence !== "number") {
                 throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
             }
 
-            const parts = ["@bonus"];
             const title = "Roll Option Dialog";
-            const data = {};
+            const data = {competence};
             const speaker = ChatMessage.getSpeaker({ token: this.token, actor: this.actor });
 
             await DiceExitNihilo.d6Roll(
                 {
                     actor: this.actor,
-                    parts,
                     data,
                     title,
                     speaker,
