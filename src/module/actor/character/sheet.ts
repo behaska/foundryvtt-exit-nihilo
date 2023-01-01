@@ -43,6 +43,28 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         return sheetData;
     }
 
+    override activateListeners(html: JQuery): void {
+        super.activateListeners(html);
+        const competenceSelector = ".competence>.valeur";
+        //const html = $html[0];
+        const selectedElement = html.find(competenceSelector);
+
+        selectedElement.on("click", (event) => {
+            const target = $(event.currentTarget);
+            const competence = target.closest(".competence").attr("data-competence-id") ?? "";
+            
+            console.log("Click Gauche sur", competence);
+            
+        });
+        
+        selectedElement.on("contextmenu", async (event) => {
+            const target = $(event.currentTarget);
+            const competence = target.closest(".competence").attr("data-competence-id") ?? "";
+            console.log("Click Droit sur", competence);
+        });
+
+    }
+
 }
 
 interface CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
