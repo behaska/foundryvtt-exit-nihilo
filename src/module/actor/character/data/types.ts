@@ -82,6 +82,8 @@ interface CompetencesDeCombat {
 
 /** Block de données qui stockent les compétences de combat du personnage (cf. template.json) */
 interface Competence {
+    titre: string,
+    valeur: number,
 }
 
 type CategoryProficiencies = null;
@@ -269,6 +271,7 @@ export {
     AuxiliaryAction,
     CategoryProficiencies,
     CharacterArmorClass,
+    Competence,
     AttributsDuPersonnage as CharacterAttributes,
     CharacterData,
     CharacterDetails,

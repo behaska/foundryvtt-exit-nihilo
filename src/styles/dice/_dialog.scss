@@ -1,0 +1,78 @@
+form {
+    .form-group.roll-dialog-options {
+
+        .caracteristiques {
+            width: 200px;
+            flex: none;
+
+            .caracteristique {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                border: none;
+
+                input[type="radio"] {
+                    /* Add if not using autoprefixer */
+                    -webkit-appearance: none;
+                    appearance: none;
+                    /* For iOS < 15 to remove gradient background */
+                    background-color: #fff;
+                    /* Not removed via appearance */
+                    margin: 0;
+                }
+
+                label {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    opacity: 0.5;
+                    padding-left: 2px;
+                    padding-right: 2px;
+
+                    p {
+                        margin-top: 2px;
+                        margin-bottom: 2px;
+                    }
+
+                    .header {
+                        flex: 3;
+                        display: flex;
+                        align-items: center;
+
+                    }
+
+                    .titre {
+                        padding-left: 5px;
+                    }
+
+
+                    p.valeur {
+                        @include inset-gold-border;
+                        flex: none;
+                        border-radius: 25px;
+                        background: whitesmoke;
+                        color: black;
+                        text-align: center;
+                        height: 26px;
+                        width: 26px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                input:checked~label {
+                    opacity: 1;
+                    border: 1px solid black;
+                    background-color: var(--alt);
+                    border-radius: 15px;
+                }
+
+                label:hover {
+                    background-color: var(--bg);
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import { CreatureSheetExitNihilo } from "@actor/creature/sheet";
+import { DiceExitNihilo } from "@scripts/dice";
 import { ErrorExitNihilo } from "@util/misc";
 import { CharacterExitNihilo } from ".";
 import { CharacterSheetData, ExitNihiloDisplayGenre, ExitNihiloDisplayNiveauDeSante, ExitNihiloDisplayRole } from "./data/sheet";
@@ -46,27 +47,86 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
 
     override activateListeners(html: JQuery): void {
         super.activateListeners(html);
-        const competenceDeCombatSelector = ".competence-de-combat>.valeur";
-        const competenceSelector = ".competence>.valeur";
+        const valeurDeCompetenceSelector = ".competence>.valeur";
+        const valeurDeCompetenceDeCombatSelector = ".competence-de-combat>.valeur";
+        const selectedValeurDeCompetenceElement = html.find(valeurDeCompetenceSelector);
+        const selectedValeurDeCompetenceDeCombatElement = html.find(valeurDeCompetenceDeCombatSelector);
+        const competenceSelector = ".competence>.titre";
+        const competenceDeCombatSelector = ".competence-de-combat>.titre";
         const selectedCompetenceElement = html.find(competenceSelector);
         const selectedCompetenceDeCombatElement = html.find(competenceDeCombatSelector);
 
-        selectedCompetenceElement.on("click", async (event) => {
+
+        selectedValeurDeCompetenceElement.on("click", async (event) => {
             this.updateActorCompetenceCommune(event, 1);
         });
 
-        selectedCompetenceElement.on("contextmenu", async (event) => {
+        selectedValeurDeCompetenceElement.on("contextmenu", async (event) => {
             this.updateActorCompetenceCommune(event, -1);
         });
 
+        selectedCompetenceElement.on("click", async (event) => {
+            const competenceId = this.getCompetenceId(event, ".competence");
+            if (competenceId === "") {
+                throw ErrorExitNihilo(`No skill found with attr-key ("data-competence-id").`);
+            }
+            const propertyKey = `system.competences.communes.${competenceId}`;
+            const competence = getProperty(this.actor, propertyKey)
+
+            if (typeof competence !== "object") {
+                throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
+            }
+
+            const parts = ["2d6","3d6"];
+            const title = "Roll Option Dialog";
+            const data = {};
+            const speaker = ChatMessage.getSpeaker({ token: this.token, actor: this.actor });
+
+            await DiceExitNihilo.d6Roll(
+                {
+                    actor: this.actor,
+                    parts,
+                    data,
+                    title,
+                    speaker
+                });
+        });
+
         selectedCompetenceDeCombatElement.on("click", async (event) => {
+            const competenceId = this.getCompetenceId(event, ".competence");
+            if (competenceId === "") {
+                throw ErrorExitNihilo(`No skill found with attr-key ("data-competence-id").`);
+            }
+            const propertyKey = `system.competences.combat.${competenceId}.value`;
+            const competence = getProperty(this.actor, propertyKey)
+
+            if (typeof competence !== "object") {
+                throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
+            }
+
+            const parts = ["@bonus"];
+            const title = "Roll Option Dialog";
+            const data = {};
+            const speaker = ChatMessage.getSpeaker({ token: this.token, actor: this.actor });
+
+            await DiceExitNihilo.d6Roll(
+                {
+                    actor: this.actor,
+                    parts,
+                    data,
+                    title,
+                    speaker,
+                });
+        });
+
+        selectedValeurDeCompetenceDeCombatElement.on("click", async (event) => {
             this.updateActorCompetenceDeCombat(event, 1);
         });
 
-        selectedCompetenceDeCombatElement.on("contextmenu", async (event) => {
+        selectedValeurDeCompetenceDeCombatElement.on("contextmenu", async (event) => {
             this.updateActorCompetenceDeCombat(event, -1);
         });
-        
+
     }
 
     async updateActorCompetenceCommune(event: JQuery.MouseEventBase, modifier: number) {
@@ -78,8 +138,7 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
     }
 
     private async updateActorCompetence(event: JQuery.MouseEventBase, selector: string, competenceType: string, modifier: number) {
-        const target = $(event.currentTarget);
-        const competence = target.closest(selector).attr("data-competence-id") ?? "";
+        const competence = this.getCompetenceId(event, selector);
         if (competence === "") {
             throw ErrorExitNihilo(`No skill found with attr-key ("data-competence-id").`);
         }
@@ -89,11 +148,17 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
             throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
         }
 
-        const mayBeNewValue =  currentValue + modifier;
-        const newValue =  mayBeNewValue > 5 || mayBeNewValue < 0 ? currentValue : mayBeNewValue;
+        const mayBeNewValue = currentValue + modifier;
+        const newValue = mayBeNewValue > 5 || mayBeNewValue < 0 ? currentValue : mayBeNewValue;
         return await this.actor.update({ [`${propertyKey}`]: newValue });
     }
 
+
+    private getCompetenceId(event: JQuery.MouseEventBase<any, any, any, any>, selector: string) {
+        const target = $(event.currentTarget);
+        const competence = target.closest(selector).attr("data-competence-id") ?? "";
+        return competence;
+    }
 }
 
 interface CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {

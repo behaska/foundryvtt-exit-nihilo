@@ -23,7 +23,7 @@ interface Dice3D {
 const isDice3D = (obj: unknown): obj is Dice3D =>
     obj instanceof Object && ["addSystem", "addDicePreset", "addTexture", "addColorset"].every((m) => m in obj);
 
-export const DiceSoNiceReady = {
+const DiceSoNiceReady = {
     listen: (): void => {
         Hooks.once("diceSoNiceReady", (dice3d: unknown) => {
             if (!isDice3D(dice3d)) return;
@@ -372,3 +372,5 @@ export const DiceSoNiceReady = {
         });
     },
 };
+
+export { DiceSoNiceReady, Dice3D };
