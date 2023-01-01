@@ -233,6 +233,21 @@
                         "type": "Number",
                         "label": "tor2e.stats.grimper"
                     },
+                    "imiter": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.imiter"
+                    },
+                    "influencer": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.influencer"
+                    },                    
+                    "lancer": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "tor2e.stats.lancer"
+                    },                    
                     "jardinage": {
                         "value": 0,
                         "type": "Number",

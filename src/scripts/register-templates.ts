@@ -16,6 +16,7 @@ export function registerTemplates(): void {
         // Composants
         "systems/exit-nihilo/templates/partials/pentagon-composant.html",
         "systems/exit-nihilo/templates/partials/competence-composant.html",
+        "systems/exit-nihilo/templates/partials/competence-composant-de-combat.html",
         "systems/exit-nihilo/templates/partials/competence-complexe-composant.html",
     ];
 

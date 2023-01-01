@@ -1,4 +1,5 @@
 import { CreatureSheetExitNihilo } from "@actor/creature/sheet";
+import { ErrorExitNihilo } from "@util/misc";
 import { CharacterExitNihilo } from ".";
 import { CharacterSheetData, ExitNihiloDisplayGenre, ExitNihiloDisplayNiveauDeSante, ExitNihiloDisplayRole } from "./data/sheet";
 
@@ -45,24 +46,52 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
 
     override activateListeners(html: JQuery): void {
         super.activateListeners(html);
+        const competenceDeCombatSelector = ".competence-de-combat>.valeur";
         const competenceSelector = ".competence>.valeur";
-        //const html = $html[0];
-        const selectedElement = html.find(competenceSelector);
+        const selectedCompetenceElement = html.find(competenceSelector);
+        const selectedCompetenceDeCombatElement = html.find(competenceDeCombatSelector);
 
-        selectedElement.on("click", (event) => {
-            const target = $(event.currentTarget);
-            const competence = target.closest(".competence").attr("data-competence-id") ?? "";
-            
-            console.log("Click Gauche sur", competence);
-            
+        selectedCompetenceElement.on("click", async (event) => {
+            this.updateActorCompetenceCommune(event, 1);
+        });
+
+        selectedCompetenceElement.on("contextmenu", async (event) => {
+            this.updateActorCompetenceCommune(event, -1);
+        });
+
+        selectedCompetenceDeCombatElement.on("click", async (event) => {
+            this.updateActorCompetenceDeCombat(event, 1);
+        });
+
+        selectedCompetenceDeCombatElement.on("contextmenu", async (event) => {
+            this.updateActorCompetenceDeCombat(event, -1);
         });
         
-        selectedElement.on("contextmenu", async (event) => {
-            const target = $(event.currentTarget);
-            const competence = target.closest(".competence").attr("data-competence-id") ?? "";
-            console.log("Click Droit sur", competence);
-        });
+    }
 
+    async updateActorCompetenceCommune(event: JQuery.MouseEventBase, modifier: number) {
+        return await this.updateActorCompetence(event, ".competence", "communes", modifier);
+    }
+
+    async updateActorCompetenceDeCombat(event: JQuery.MouseEventBase, modifier: number) {
+        return await this.updateActorCompetence(event, ".competence-de-combat", "combat", modifier);
+    }
+
+    private async updateActorCompetence(event: JQuery.MouseEventBase, selector: string, competenceType: string, modifier: number) {
+        const target = $(event.currentTarget);
+        const competence = target.closest(selector).attr("data-competence-id") ?? "";
+        if (competence === "") {
+            throw ErrorExitNihilo(`No skill found with attr-key ("data-competence-id").`);
+        }
+        const propertyKey = `system.competences.${competenceType}.${competence}.value`;
+        const currentValue = getProperty(this.actor, propertyKey)
+        if (typeof currentValue !== "number" || Number.isNaN(currentValue)) {
+            throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
+        }
+
+        const mayBeNewValue =  currentValue + modifier;
+        const newValue =  mayBeNewValue > 5 || mayBeNewValue < 0 ? currentValue : mayBeNewValue;
+        return await this.actor.update({ [`${propertyKey}`]: newValue });
     }
 
 }
