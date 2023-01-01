@@ -676,10 +676,11 @@
             },
             "Competences": {
                 "Combat": {
+                    "Titre": "Compétences de Combat",
                     "CorpsACorps": {
                         "Titre": "Corps à Corps"
                     },
-                     "CorpsACorpsArme": {
+                    "CorpsACorpsArme": {
                         "Titre": "Corps à Corps armé"
                     },
                     "ArmeAProjectile": {
@@ -687,21 +688,27 @@
                     },
                     "ArmeDePoing": {
                         "Titre": "Arme de Poing"
-                    },                    
+                    },
                     "Fusil": {
                         "Titre": "Fusil"
                     },
                     "FusilDAssaut": {
                         "Titre": "fusil d'Assaut"
-                    }, 
+                    },
                     "FusilDePrecision": {
                         "Titre": "fusil de Précision"
                     },
                     "Explosif": {
                         "Titre": "Explosif"
-                    }                                        
-                }, 
+                    }
+                },
                 "Communes": {
+                    "Simples": {
+                        "Titre": "Compétences Communes"
+                    },
+                    "Complexes": {
+                        "Titre": "Compétences Complexes"
+                    },
                     "Argumenter": {
                         "Titre": "Argumenter"
                     },
@@ -776,13 +783,13 @@
                     },
                     "Secourisme": {
                         "Titre": "Secourisme"
-                    }, 
+                    },
                     "Survie": {
                         "Titre": "Survie"
                     },
                     "Technologie": {
                         "Titre": "Technologie"
-                    }                                        
+                    }
                 }
             },
             "Croyances": {

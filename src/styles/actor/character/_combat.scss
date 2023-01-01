@@ -1,8 +1,10 @@
 .personnage-competences-combat {
-    display: flex;
-    flex-direction: column;
-    margin-top: 4px;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 5px 10px;
+    .competences-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 4px;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 5px 10px;
+    }
 }

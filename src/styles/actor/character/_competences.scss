@@ -1,8 +1,9 @@
 .competence {
     display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
 
     .valeur {
-        display: flex;
         cursor: pointer;
         justify-content: center;
         display: flex;
@@ -37,131 +38,134 @@
             font-family: var(--body-serif);
             font-weight: 700;
             width: calc(100% - 6px);
+            height: fit-content;
         }
     }
 }
 
 .personnage-competences-communes {
-    display: grid;
-    grid:
-        "argumenter discretion manipulation" 25px 
-        "athletisme equitation nager" 25px 
-        "baratin esquiver perception" 25px 
-        "bricolage imiter secourisme" 25px 
-        "chercher influencer psychologie" 25px 
-        "cuisine lancer survie" 25px 
-        "jardinage langues technologie" 25px;
-    margin-top: 4px;
-    flex-wrap: wrap;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 5px 10px;
+    .competences-container {
+        display: grid;
+        grid:
+            "argumenter discretion manipulation" 25px "athletisme equitation nager" 25px "baratin esquiver perception" 25px "bricolage imiter secourisme" 25px "chercher influencer psychologie" 25px "cuisine lancer survie" 25px "jardinage langues technologie" 25px;
+        margin-top: 4px;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 5px 10px;
 
-    .argumenter-container {
-        grid-area: argumenter;
-    }
+        .argumenter-container {
+            grid-area: argumenter;
+        }
 
-    .athletisme-container {
-        grid-area: athletisme;
-    }
+        .athletisme-container {
+            grid-area: athletisme;
+        }
 
-    .baratin-container {
-        grid-area: baratin;
-    }
+        .baratin-container {
+            grid-area: baratin;
+        }
 
-    .bricolage-container {
-        grid-area: bricolage;
-    }
+        .bricolage-container {
+            grid-area: bricolage;
+        }
 
-    .chercher-container {
-        grid-area: chercher;
-    }
+        .chercher-container {
+            grid-area: chercher;
+        }
 
-    .cuisine-container {
-        grid-area: cuisine;
-    }
+        .cuisine-container {
+            grid-area: cuisine;
+        }
 
-    .jardinage-container {
-        grid-area: jardinage;
-    }
+        .jardinage-container {
+            grid-area: jardinage;
+        }
 
-    .discretion-container {
-        grid-area: discretion;
-    }
+        .discretion-container {
+            grid-area: discretion;
+        }
 
-    .equitation-container {
-        grid-area: equitation;
-    }
+        .equitation-container {
+            grid-area: equitation;
+        }
 
-    .esquiver-container {
-        grid-area: esquiver;
-    }
+        .esquiver-container {
+            grid-area: esquiver;
+        }
 
-    .imiter-container {
-        grid-area: imiter;
-    }
+        .imiter-container {
+            grid-area: imiter;
+        }
 
-    .influencer-container {
-        grid-area: influencer;
-    }
+        .influencer-container {
+            grid-area: influencer;
+        }
 
-    .lancer-container {
-        grid-area: lancer;
-    }
+        .lancer-container {
+            grid-area: lancer;
+        }
 
-    .langues-container {
-        grid-area: langues;
-    }
+        .langues-container {
+            grid-area: langues;
+        }
 
-    .manipulation-container {
-        grid-area: manipulation;
-    }
+        .manipulation-container {
+            grid-area: manipulation;
+        }
 
-    .nager-container {
-        grid-area: nager;
-    }
+        .nager-container {
+            grid-area: nager;
+        }
 
-    .perception-container {
-        grid-area: perception;
-    }
+        .perception-container {
+            grid-area: perception;
+        }
 
-    .psychologie-container {
-        grid-area: psychologie;
-    }
+        .psychologie-container {
+            grid-area: psychologie;
+        }
 
-    .secourisme-container {
-        grid-area: secourisme;
-    }
-    
-    .survie-container {
-        grid-area: survie;
-    }
+        .secourisme-container {
+            grid-area: secourisme;
+        }
 
-    .technologie-container {
-        grid-area: technologie;
+        .survie-container {
+            grid-area: survie;
+        }
+
+        .technologie-container {
+            grid-area: technologie;
+        }
     }
 }
 
 .personnage-competences-complexes {
-    display: grid;
-    grid:
-        "arts pilotages professions" 75px;
-    margin-top: 4px;
-    flex-wrap: wrap;
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 5px 10px;
+    .competences-container {
+        display: grid;
+        grid:
+            "arts pilotages professions" 75px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 5px 10px;
 
-    .arts-container {
-        grid-area: arts;
+        .arts-container {
+            grid-area: arts;
+        }
+
+        .pilotages-container {
+            grid-area: pilotages;
+        }
+
+        .professions-container {
+            grid-area: professions;
+        }
     }
+}
 
-    .pilotages-container {
-        grid-area: pilotages;
-    }
-
-    .professions-container {
-        grid-area: professions;
-    }
-
+hr {
+    margin: 10px 6px 10px 0;
 }

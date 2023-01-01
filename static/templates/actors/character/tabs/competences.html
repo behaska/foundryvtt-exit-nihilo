@@ -1,180 +1,185 @@
 <div class="tab competences item-container" data-container-type="actorCompetences" data-group="primary"
     data-tab="competences">
     <section class="personnage-competences-communes">
-        <!-- Colonne 1 -->
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "argumenter"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Argumenter.Titre"
-        valeurCourante = actor.system.competences.communes.argumenter.value
-        }}
+        <h2>{{localize "EXITNIHILO.Personnage.Competences.Communes.Simples.Titre"}}</h2>
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "athletisme"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Athletisme.Titre"
-        valeurCourante = actor.system.competences.communes.athletisme.value
-        }}
+        <div class="competences-container">
+            <!-- Colonne 1 -->
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "argumenter"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Argumenter.Titre"
+            valeurCourante = actor.system.competences.communes.argumenter.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "baratin"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Baratin.Titre"
-        valeurCourante = actor.system.competences.communes.baratin.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "athletisme"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Athletisme.Titre"
+            valeurCourante = actor.system.competences.communes.athletisme.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "bricolage"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Bricolage.Titre"
-        valeurCourante = actor.system.competences.communes.bricolage.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "baratin"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Baratin.Titre"
+            valeurCourante = actor.system.competences.communes.baratin.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "chercher"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Chercher.Titre"
-        valeurCourante = actor.system.competences.communes.chercher.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "bricolage"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Bricolage.Titre"
+            valeurCourante = actor.system.competences.communes.bricolage.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "cuisine"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Cuisine.Titre"
-        valeurCourante = actor.system.competences.communes.cuisine.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "chercher"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Chercher.Titre"
+            valeurCourante = actor.system.competences.communes.chercher.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "jardinage"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Jardinage.Titre"
-        valeurCourante = actor.system.competences.communes.jardinage.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "cuisine"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Cuisine.Titre"
+            valeurCourante = actor.system.competences.communes.cuisine.value
+            }}
 
-        <!-- Colonne 2 -->
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "discretion"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Discretion.Titre"
-        valeurCourante = actor.system.competences.communes.discretion.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "jardinage"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Jardinage.Titre"
+            valeurCourante = actor.system.competences.communes.jardinage.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "equitation"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Equitation.Titre"
-        valeurCourante = actor.system.competences.communes.equitation.value
-        }}
+            <!-- Colonne 2 -->
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "discretion"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Discretion.Titre"
+            valeurCourante = actor.system.competences.communes.discretion.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "esquiver"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Esquiver.Titre"
-        valeurCourante = actor.system.competences.communes.esquiver.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "equitation"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Equitation.Titre"
+            valeurCourante = actor.system.competences.communes.equitation.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "imiter"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Imiter.Titre"
-        valeurCourante = actor.system.competences.communes.imiter.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "esquiver"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Esquiver.Titre"
+            valeurCourante = actor.system.competences.communes.esquiver.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "influencer"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Influencer.Titre"
-        valeurCourante = actor.system.competences.communes.influencer.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "imiter"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Imiter.Titre"
+            valeurCourante = actor.system.competences.communes.imiter.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "lancer"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Lancer.Titre"
-        valeurCourante = actor.system.competences.communes.lancer.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "influencer"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Influencer.Titre"
+            valeurCourante = actor.system.competences.communes.influencer.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "langues"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Langues.Titre"
-        valeurCourante = actor.system.competences.communes.langues.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "lancer"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Lancer.Titre"
+            valeurCourante = actor.system.competences.communes.lancer.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "manipulation"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Manipulation.Titre"
-        valeurCourante = actor.system.competences.communes.manipulation.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "langues"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Langues.Titre"
+            valeurCourante = actor.system.competences.communes.langues.value
+            }}
 
-        <!-- Colonne 3 -->
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "nager"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Nager.Titre"
-        valeurCourante = actor.system.competences.communes.nager.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "manipulation"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Manipulation.Titre"
+            valeurCourante = actor.system.competences.communes.manipulation.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "perception"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Perception.Titre"
-        valeurCourante = actor.system.competences.communes.perception.value
-        }}
+            <!-- Colonne 3 -->
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "nager"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Nager.Titre"
+            valeurCourante = actor.system.competences.communes.nager.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "psychologie"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Psychologie.Titre"
-        valeurCourante = actor.system.competences.communes.psychologie.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "perception"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Perception.Titre"
+            valeurCourante = actor.system.competences.communes.perception.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "secourisme"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Secourisme.Titre"
-        valeurCourante = actor.system.competences.communes.secourisme.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "psychologie"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Psychologie.Titre"
+            valeurCourante = actor.system.competences.communes.psychologie.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "survie"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Survie.Titre"
-        valeurCourante = actor.system.competences.communes.survie.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "secourisme"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Secourisme.Titre"
+            valeurCourante = actor.system.competences.communes.secourisme.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
-        id = "technologie"
-        label = "EXITNIHILO.Personnage.Competences.Communes.Technologie.Titre"
-        valeurCourante = actor.system.competences.communes.technologie.value
-        }}
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "survie"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Survie.Titre"
+            valeurCourante = actor.system.competences.communes.survie.value
+            }}
+
+            {{> "systems/exit-nihilo/templates/partials/competence-composant.html"
+            id = "technologie"
+            label = "EXITNIHILO.Personnage.Competences.Communes.Technologie.Titre"
+            valeurCourante = actor.system.competences.communes.technologie.value
+            }}
+        </div>
     </section>
-
+    <hr />
     <section class="personnage-competences-complexes">
+        <h2>{{localize "EXITNIHILO.Personnage.Competences.Communes.Complexes.Titre"}}</h2>
+        <div class="competences-container">
+            {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.html"
+            idContainer = "arts"
+            labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Arts.Titre"
+            id1 = "art1"
+            id2 = "art2"
+            placeholder = "EXITNIHILO.Personnage.Competences.Communes.Arts.Placeholder"
+            referenceLabel1 = "system.competences.communes.art1.label"
+            referenceLabel2 = "system.competences.communes.art2.label"
+            valeurLabel1 = actor.system.competences.communes.art1.label
+            valeurLabel2 = actor.system.competences.communes.art2.label
+            valeurCompetence1 = actor.system.competences.communes.art1.value
+            valeurComptence2 = actor.system.competences.communes.art2.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.html"
-        idContainer = "arts"
-        labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Arts.Titre"
-        id1 = "art1"
-        id2 = "art2"
-        placeholder = "EXITNIHILO.Personnage.Competences.Communes.Arts.Placeholder"
-        referenceLabel1 = "system.competences.communes.art1.label"
-        referenceLabel2 = "system.competences.communes.art2.label"
-        valeurLabel1 = actor.system.competences.communes.art1.label
-        valeurLabel2 = actor.system.competences.communes.art2.label
-        valeurCompetence1 = actor.system.competences.communes.art1.value
-        valeurComptence2 = actor.system.competences.communes.art2.value
-        }}
 
+            {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.html"
+            idContainer = "pilotages"
+            labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Titre"
+            id1 = "pilotage1"
+            id2 = "pilotage2"
+            placeholder = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Placeholder"
+            referenceLabel1 = "system.competences.communes.pilotage1.label"
+            referenceLabel2 = "system.competences.communes.pilotage2.label"
+            valeurLabel1 = actor.system.competences.communes.pilotage1.label
+            valeurLabel2 = actor.system.competences.communes.pilotage2.label
+            valeurCompetence1 = actor.system.competences.communes.pilotage1.value
+            valeurComptence2 = actor.system.competences.communes.pilotage2.value
+            }}
 
-        {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.html"
-        idContainer = "pilotages"
-        labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Titre"
-        id1 = "pilotage1"
-        id2 = "pilotage2"
-        placeholder = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Placeholder"
-        referenceLabel1 = "system.competences.communes.pilotage1.label"
-        referenceLabel2 = "system.competences.communes.pilotage2.label"
-        valeurLabel1 = actor.system.competences.communes.pilotage1.label
-        valeurLabel2 = actor.system.competences.communes.pilotage2.label
-        valeurCompetence1 = actor.system.competences.communes.pilotage1.value
-        valeurComptence2 = actor.system.competences.communes.pilotage2.value
-        }}
-
-        {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.html"
-        idContainer = "professions"
-        labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Professions.Titre"
-        id1 = "profession1"
-        id2 = "profession2"
-        placeholder = "EXITNIHILO.Personnage.Competences.Communes.Professions.Placeholder"
-        referenceLabel1 = "system.competences.communes.profession1.label"
-        referenceLabel2 = "system.competences.communes.profession2.label"
-        valeurLabel1 = actor.system.competences.communes.profession1.label
-        valeurLabel2 = actor.system.competences.communes.profession2.label
-        valeurCompetence1 = actor.system.competences.communes.profession1.value
-        valeurComptence2 = actor.system.competences.communes.profession2.value
-        }}
-
+            {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.html"
+            idContainer = "professions"
+            labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Professions.Titre"
+            id1 = "profession1"
+            id2 = "profession2"
+            placeholder = "EXITNIHILO.Personnage.Competences.Communes.Professions.Placeholder"
+            referenceLabel1 = "system.competences.communes.profession1.label"
+            referenceLabel2 = "system.competences.communes.profession2.label"
+            valeurLabel1 = actor.system.competences.communes.profession1.label
+            valeurLabel2 = actor.system.competences.communes.profession2.label
+            valeurCompetence1 = actor.system.competences.communes.profession1.value
+            valeurComptence2 = actor.system.competences.communes.profession2.value
+            }}
+        </div>
     </section>
 </div>
