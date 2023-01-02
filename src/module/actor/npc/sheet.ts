@@ -31,6 +31,10 @@ export class NPCSheetExitNihilo<TActor extends NPCExitNihilo> extends CreatureSh
         // Return data for rendering
         return sheetData as NPCSheetData<TActor>;
     }
+
+    override activateListeners($html: JQuery): void {
+        super.activateListeners($html);
+    }
 }
 
 type PrePrepSheetData<T extends NPCExitNihilo> = Partial<NPCSheetData<T>> & CreatureSheetData<T>;

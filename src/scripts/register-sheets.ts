@@ -1,5 +1,8 @@
 import { CharacterSheetExitNihilo } from "@actor/character/sheet";
-import { ItemSheetExitNihilo } from "@item/sheet/base";
+import { NPCSheetExitNihilo } from "@actor/npc/sheet";
+import { ContainerSheetExitNihilo, EquipmentSheetExitNihilo } from "@item";
+import { ArmorSheetExitNihilo } from "@item/armor";
+import { WeaponSheetExitNihilo } from "@item/weapon";
 import { JournalSheetExitNihilo, JournalTextTinyMCESheetExitNihilo } from "@module/journal-entry/sheet";
 import { LocalizeExitNihilo } from "@system/localize";
 
@@ -36,15 +39,28 @@ export function registerSheets() {
         makeDefault: true,
     });
 
+      // Regiser NPC Sheet
+      Actors.registerSheet("exit-nihilo", NPCSheetExitNihilo, {
+        types: ["npc"],
+        label: game.i18n.format(sheetLabel, { type: localizeType("npc") }),
+        makeDefault: true,
+    });
+
     // ITEMS
     Items.unregisterSheet("core", ItemSheet);
 
-    const itemTypes = ["condition", "lore", "spellcastingEntry"];
-    for (const itemType of itemTypes) {
-        Items.registerSheet("exit-nihilo", ItemSheetExitNihilo, {
-            types: [itemType],
-            label: game.i18n.format(sheetLabel, { type: localizeType(itemType) }),
+    const sheetEntries = [
+        ["armor", ArmorSheetExitNihilo],
+        ["container", ContainerSheetExitNihilo],
+        ["equipment", EquipmentSheetExitNihilo],
+        ["weapon", WeaponSheetExitNihilo],
+    ] as const;
+    for (const [type, Sheet] of sheetEntries) {
+        Items.registerSheet("exit-nihilo", Sheet, {
+            types: [type],
+            label: game.i18n.format(sheetLabel, { type: localizeType(type) }),
             makeDefault: true,
         });
     }
+
 }

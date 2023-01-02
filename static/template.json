@@ -1,10 +1,18 @@
 {
     "Actor": {
         "types": [
-            "npc",
-            "character"
+            "character",
+            "npc"
         ],
-        "npc": {},
+        "npc": {
+            "details": {
+                "historique": {
+                    "value": "",
+                    "type": "String",
+                    "label": "tor2e.npc.details.historique"
+                }
+            }
+        },
         "character": {
             "configuration": {
                 "onglet": "general",
@@ -246,12 +254,12 @@
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.influencer"
-                    },                    
+                    },
                     "lancer": {
                         "value": 0,
                         "type": "Number",
                         "label": "tor2e.stats.lancer"
-                    },                    
+                    },
                     "jardinage": {
                         "value": 0,
                         "type": "Number",
@@ -379,5 +387,42 @@
                 }
             }
         }
+    },
+    "Item": {
+        "types": [
+            "equipment",
+            "weapon",
+            "container",
+            "armor"
+        ],
+        "templates": {
+            "descriptionBlock": {
+                "description": {
+                    "value": "",
+                    "type": "String",
+                    "label": "exit-nihilo.common.description"
+                }
+            }
+        },
+        "armor": {
+            "templates": [
+                "descriptionBlock"
+            ]
+        },
+        "weapon": {
+            "templates": [
+                "descriptionBlock"
+            ]
+        },
+        "container": {
+            "templates": [
+                "descriptionBlock"
+            ]
+        },
+        "equipment": {
+            "templates": [
+                "descriptionBlock"
+            ]
+        } 
     }
 }

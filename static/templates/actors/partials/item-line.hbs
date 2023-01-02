@@ -1,0 +1,38 @@
+<li class="list-row">
+    <div class="item {{#if item.isTemporary}}temporary-item{{/if}}" data-item-id="{{item.id}}" data-item-is-container="{{isContainer}}">
+        <div class="item-name rollable{{#if (and (ne @root.actor.type "loot") (not owner))}} long{{/if}}">
+            <div class="item-image" style="background-image: url('{{item.img}}')"></div>
+            <h4 {{#if (or user.isGM item.isIdentified)}}class="rarity-{{item.system.traits.rarity}}"{{/if}}>
+                {{item.name}}
+                {{#if item.isTemporary}}<i class="fas fa-info-circle small" title="{{localize "PF2E.TemporaryItemToolTip"}}"></i>{{/if}}
+                {{#if (and user.isGM (not item.isIdentified))}}<span class="gm-mystified-data">({{item.system.identification.identified.name}})</span>{{/if}}
+                {{#if itemSize}}<span class="size">({{itemSize}})</span>{{/if}}
+            </h4>
+            {{#if (and item.uses.max (or (gt item.uses.max 1) (eq item.system.consumableType.value "wand")))}}
+                <span class="item-charges">({{item.uses.value}}/{{item.uses.max}})</span>
+            {{/if}}
+        </div>
+        {{#if (or @root.inventory.showValueAlways (and (eq item.type "treasure") (not item.container)))}}
+            <span class="item-sell-value">
+                {{#if (or item.isIdentified @root.user.isGM)}}
+                    <span data-visibility="{{#if item.isIdentified}}all{{else}}gm{{/if}}">
+                        {{#if @root.inventory.showIndividualPricing}}
+                            {{item.price.value}}
+                        {{else}}
+                            {{item.assetValue}}
+                        {{/if}}
+                    </span>
+                {{/if}}
+            </span>
+        {{/if}}
+        <span class="item-quantity">
+            {{#if editable}}<a class="item-decrease-quantity">&ndash;</a>{{/if}}
+            <span>{{item.quantity}}</span>
+            {{#if editable}}<a class="item-increase-quantity">+</a>{{/if}}
+        </span>
+
+        {{#if (ne @root.actor.type "npc")}}
+            <span class="item-weight">{{item.bulk}}</span>
+        {{/if}}
+    </div>
+</li>

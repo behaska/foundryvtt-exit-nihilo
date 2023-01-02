@@ -17,7 +17,6 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         options.scrollY.push(".tab.active .tab-content");
         options.tabs = [
             { navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "general" },
-            { navSelector: ".actions-nav", contentSelector: ".actions-panels", initial: "encounter" },
         ];
         return options;
     }

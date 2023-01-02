@@ -42,7 +42,7 @@
                     "studded-leather-armor": "Studded Leather Armor"
                 }
             },
-            "Backpack": {
+            "container": {
                 "StowingLabel": "Is Stowing Container?"
             },
             "CannotAddType": "{type} items cannot be added to this actor.",
@@ -442,7 +442,7 @@
                         "anklets": "Anklets",
                         "armbands": "Armbands",
                         "armor": "Armor",
-                        "backpack": "Backpack",
+                        "container": "container",
                         "barding": "Barding",
                         "belt": "Belt",
                         "beltpouch": "Belt Pouch",

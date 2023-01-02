@@ -332,7 +332,7 @@ export const EXITNIHILOCONFIG = {
     Item: {
         documentClasses: {
             armor: ArmorExitNihilo,
-            backpack: ContainerExitNihilo,
+            container: ContainerExitNihilo,
             equipment: EquipmentExitNihilo,
             weapon: WeaponExitNihilo,
         },

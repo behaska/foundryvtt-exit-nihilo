@@ -7,10 +7,10 @@ import {
 } from "@item/physical/data";
 import { ContainerExitNihilo } from ".";
 
-type ContainerSource = BasePhysicalItemSource<"backpack", ContainerSystemSource>;
+type ContainerSource = BasePhysicalItemSource<"container", ContainerSystemSource>;
 
 type ContainerData = Omit<ContainerSource, "system" | "effects" | "flags"> &
-    BasePhysicalItemData<ContainerExitNihilo, "backpack", ContainerSystemData, ContainerSource>;
+    BasePhysicalItemData<ContainerExitNihilo, "container", ContainerSystemData, ContainerSource>;
 
 interface ContainerSystemSource extends Investable<PhysicalSystemSource> {
     stowing: boolean;
