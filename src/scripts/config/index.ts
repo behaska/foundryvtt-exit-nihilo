@@ -1,5 +1,6 @@
 import { CharacterExitNihilo } from "@actor/character";
 import { ActorType } from "@actor/data";
+import { NPCExitNihilo } from "@actor/npc/document";
 import { ArmorExitNihilo } from "@item/armor/document";
 import { ContainerExitNihilo } from "@item/container/document";
 import { EquipmentExitNihilo } from "@item/equipment/document";
@@ -1611,6 +1612,7 @@ export const EXITNIHILOCONFIG = {
     Actor: {
         documentClasses: {
             character: CharacterExitNihilo,
+            npc: NPCExitNihilo,
         },
     },
 

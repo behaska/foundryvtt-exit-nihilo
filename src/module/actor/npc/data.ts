@@ -1,4 +1,4 @@
-import { BaseCreatureSource, BaseCreatureData, CreatureSystemSource, CreatureTraitsSource, CreatureSystemData, CreatureTraitsData, SaveData, SkillData, CreatureDetails } from "@actor/creature/data";
+import { BaseCreatureSource, BaseCreatureData, CreatureSystemSource, CreatureTraitsSource, CreatureSystemData, CreatureTraitsData, CreatureDetails, SaveData, SkillData } from "@actor/creature/data";
 import { ActorFlagsExitNihilo, StrikeData, PerceptionData } from "@actor/data/base";
 import { AbilityString } from "@actor/types";
 import { ValueAndMax, Rarity, Size } from "@module/data";
