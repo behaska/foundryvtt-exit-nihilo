@@ -13,31 +13,6 @@ interface ActorDimensions {
 type SkillAbbreviation = SetElement<typeof SKILL_ABBREVIATIONS>;
 type SkillLongForm = SetElement<typeof SKILL_LONG_FORMS>;
 
-type ActorAlliance = "party" | "opposition" | null;
-
-interface AuraData {
-    slug: string;
-    radius: number;
-    effects: AuraEffectData[];
-    colors: AuraColors | null;
-}
-
-interface AuraEffectData {
-    uuid: string;
-    level: number | null;
-    affects: "allies" | "enemies" | "all";
-    events: ("enter" | "turn-start" | "turn-end")[];
-    save: {
-        dc: number;
-    } | null;
-    removeOnExit: boolean;
-}
-
-interface AuraColors {
-    border: `#${string}`;
-    fill: `#${string}`;
-}
-
 /* -------------------------------------------- */
 /*  Attack Rolls                                */
 /* -------------------------------------------- */
@@ -80,14 +55,10 @@ interface AttackRollContext<A extends ActorExitNihilo, I extends AttackItem> ext
 
 export {
     AbilityString,
-    ActorAlliance,
     ActorDimensions,
     AttackItem,
     AttackRollContext,
     AttackTarget,
-    AuraColors,
-    AuraData,
-    AuraEffectData,
     SkillAbbreviation,
     SkillLongForm,
     StrikeRollContext,
