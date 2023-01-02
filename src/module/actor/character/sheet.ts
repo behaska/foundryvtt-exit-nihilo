@@ -24,7 +24,7 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
 
     override get template(): string {
         const template = this.actor.limited && !game.user.isGM ? "limited" : "sheet";
-        return `systems/exit-nihilo/templates/actors/character/${template}.html`;
+        return `systems/exit-nihilo/templates/actors/character/${template}.hbs`;
     }
 
     override async getData(options?: ActorSheetOptions): Promise<CharacterSheetData> {

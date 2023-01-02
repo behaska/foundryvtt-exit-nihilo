@@ -23,7 +23,7 @@ export class NPCSheetExitNihilo<TActor extends NPCExitNihilo> extends CreatureSh
 
     /** Show either the actual NPC sheet or a briefened lootable version if the NPC is dead */
     override get template(): string {
-        return "systems/exit-nihilo/templates/actors/npc/sheet.html";
+        return "systems/exit-nihilo/templates/actors/npc/sheet.hbs";
     }
 
     override async getData(): Promise<NPCSheetData<TActor>> {

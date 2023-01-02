@@ -87,7 +87,7 @@ class DiceExitNihilo {
 
 
         // Render modal dialog
-        template = template || "systems/exit-nihilo/templates/dice/roll-dialog.html";
+        template = template || "systems/exit-nihilo/templates/dice/roll-dialog.hbs";
         const dialogData = {
             actor,
             data,

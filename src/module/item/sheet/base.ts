@@ -6,7 +6,7 @@ export class ItemSheetExitNihilo<TItem extends ItemExitNihilo> extends ItemSheet
         options.width = 650;
         options.height = 460;
         options.classes = options.classes.concat(["exit-nihilo", "item"]);
-        options.template = "systems/exit-nihilo/templates/items/item-sheet.html";
+        options.template = "systems/exit-nihilo/templates/items/item-sheet.hbs";
         options.scrollY = [".tab.active"];
         options.tabs = [
             {

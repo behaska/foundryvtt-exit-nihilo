@@ -10,6 +10,7 @@ interface ItemConstructionContextExitNihilo extends DocumentConstructionContext<
 
 /** Override and extend the basic :class:`Item` implementation */
 class ItemExitNihilo extends Item<ActorExitNihilo> {
+    private initialized?: true;
 
     constructor(data: PreCreate<ItemSourceExitNihilo>, context: ItemConstructionContextExitNihilo = {}) {
         if (context.exitNihilo?.ready) {
@@ -20,7 +21,17 @@ class ItemExitNihilo extends Item<ActorExitNihilo> {
             return ItemConstructor ? new ItemConstructor(data, context) : new ItemExitNihilo(data, context);
         }
     }
-    
+
+    /** Refresh the Item Directory if this item isn't owned */
+    override prepareData(): void {
+        super.prepareData();
+        if (!this.isOwned && ui.items && this.initialized) ui.items.render();
+    }
+
+    /** Ensure the presence of the pf2e flag scope with default properties and values */
+    override prepareBaseData(): void {
+        super.prepareBaseData();
+    }
 }
 
 interface ItemExitNihilo {

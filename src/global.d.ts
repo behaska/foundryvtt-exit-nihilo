@@ -1,9 +1,8 @@
 import { ActorExitNihilo } from "@actor/base";
 import { ItemExitNihilo } from "@item/base";
-import { ActorDirectoryExitNihilo } from "@module/apps/ui/actor-directory";
-import { ChatLogExitNihilo } from "@module/apps/ui/chat-log";
-import { CompendiumDirectoryExitNihilo } from "@module/apps/ui/compendium-directory";
-import { EncounterTrackerExitNihilo } from "@module/apps/ui/encounter-tracker";
+import { HotbarExitNihilo } from "@module/apps/hotbar";
+import { ActorDirectoryExitNihilo, ChatLogExitNihilo, CompendiumDirectoryExitNihilo } from "@module/apps/sidebar";
+import { EncounterTrackerExitNihilo } from "@module/apps/sidebar/encounter-tracker";
 import { ChatMessageExitNihilo } from "@module/chat-message/document";
 import { ActorsExitNihilo } from "@module/collection/actors";
 import { CombatantExitNihilo } from "@module/encounter/combatant";
@@ -73,7 +72,7 @@ type ConfiguredConfig = Config<
     CombatantExitNihilo,
     EncounterTrackerExitNihilo<EncounterExitNihilo | null>,
     CompendiumDirectoryExitNihilo,
-    Hotbar,
+    HotbarExitNihilo,
     ItemExitNihilo,
     MacroExitNihilo,
     MeasuredTemplateDocument,

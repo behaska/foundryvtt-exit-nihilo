@@ -19,13 +19,8 @@ export class WeaponSheetExitNihilo extends PhysicalItemSheetExitNihilo<WeaponExi
             ...sheetData,
             hasDetails: true,
             hasSidebar: true,
-            weaponPotencyRunes: CONFIG.EXITNIHILO.weaponPotencyRunes,
-            weaponStrikingRunes: CONFIG.EXITNIHILO.weaponStrikingRunes,
             categories: CONFIG.EXITNIHILO.weaponCategories,
             baseTypes: LocalizeExitNihilo.translations.EXITNIHILO.Weapon.Base,
-            itemBonuses: CONFIG.EXITNIHILO.itemBonuses,
-            damageDie: CONFIG.EXITNIHILO.damageDie,
-            damageDice: CONFIG.EXITNIHILO.damageDice,
             weaponRanges,
         };
     }

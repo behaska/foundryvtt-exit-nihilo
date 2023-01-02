@@ -1,0 +1,59 @@
+<div class="tab combat item-container" data-container-type="actorCompetences" data-group="primary" data-tab="combat">
+    <section class="personnage-competences-combat">
+        <h2>{{localize "EXITNIHILO.Personnage.Competences.Combat.Titre"}}</h2>
+
+        <div class="competences-container">
+            <!-- Colonne 1 -->
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "corpsACorps"
+            label = "EXITNIHILO.Personnage.Competences.Combat.CorpsACorps.Titre"
+            valeurCourante = actor.system.competences.combat.corpsACorps.value
+            }}
+
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "corpsACorpsArme"
+            label = "EXITNIHILO.Personnage.Competences.Combat.CorpsACorpsArme.Titre"
+            valeurCourante = actor.system.competences.combat.corpsACorpsArme.value
+            }}
+
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "armeAProjectile"
+            label = "EXITNIHILO.Personnage.Competences.Combat.ArmeAProjectile.Titre"
+            valeurCourante = actor.system.competences.combat.armeAProjectile.value
+            }}
+
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "armeDePoing"
+            label = "EXITNIHILO.Personnage.Competences.Combat.ArmeDePoing.Titre"
+            valeurCourante = actor.system.competences.combat.armeDePoing.value
+            }}
+
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "fusil"
+            label = "EXITNIHILO.Personnage.Competences.Combat.Fusil.Titre"
+            valeurCourante = actor.system.competences.combat.fusil.value
+            }}
+
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "fusilDAssaut"
+            label = "EXITNIHILO.Personnage.Competences.Combat.FusilDAssaut.Titre"
+            valeurCourante = actor.system.competences.combat.fusilDAssaut.value
+            }}
+
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "fusilDePrecision"
+            label = "EXITNIHILO.Personnage.Competences.Combat.FusilDePrecision.Titre"
+            valeurCourante = actor.system.competences.combat.fusilDePrecision.value
+            }}
+
+            <!-- Colonne 2 -->
+            {{> "systems/exit-nihilo/templates/partials/competence-composant-de-combat.hbs"
+            id = "explosif"
+            label = "EXITNIHILO.Personnage.Competences.Combat.Explosif.Titre"
+            valeurCourante = actor.system.competences.combat.explosif.value
+            }}
+
+            <!-- Colonne 3 -->
+        </div>
+    </section>
+</div>

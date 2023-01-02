@@ -1,0 +1,42 @@
+<header class="char-header">
+    <section class="char-details">
+        <h1 class="char-name">
+            <input name="name" type="text" value="{{actor.name}}"
+                placeholder="{{localize 'EXITNIHILO.Personnage.NamePlaceholder'}}" spellcheck="false" />
+        </h1>
+    </section>
+
+    <div class="blasons">
+        <section class="char-genre">
+            <div class="genre-container">
+                <p class="title">{{localize 'EXITNIHILO.Personnage.Genre.Titre'}}</p>
+                {{> "systems/exit-nihilo/templates/partials/pentagon-composant.hbs"
+                imgSrc = displayGenre.imgSrc
+                title = displayGenre.title
+                alt = displayGenre.alt
+                extraCss = "up" }}
+            </div>
+        </section>
+        <section class="char-niveau-de-vie">
+            <div class="niveau-de-vie-container">
+                <p class="title">{{localize 'EXITNIHILO.Personnage.Sante.NiveauDeSante.Titre'}}</p>
+                {{> "systems/exit-nihilo/templates/partials/pentagon-composant.hbs"
+                imgSrc = displayNiveauDeSante.imgSrc
+                title = displayNiveauDeSante.title
+                alt = displayNiveauDeSante.alt
+                extraCss = "up" }}
+            </div>
+        </section>
+        <section class="char-role">
+            <div class="role-container">
+                <p class="title">{{localize 'EXITNIHILO.Personnage.Role.Titre'}}</p>
+                {{> "systems/exit-nihilo/templates/partials/pentagon-composant.hbs"
+                imgSrc = displayRole.imgSrc
+                title = displayRole.title
+                alt = displayRole.alt
+                extraCss = "up" }}
+            </div>
+        </section>
+    </div>
+
+</header>
