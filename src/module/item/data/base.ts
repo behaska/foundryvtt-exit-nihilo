@@ -1,8 +1,5 @@
-import { CreatureTrait } from "@actor/creature/data";
 import { ItemExitNihilo } from "@item/base";
-import { PhysicalItemTrait } from "@item/physical/data";
 import { ActiveEffectExitNihilo } from "@module/active-effect";
-import { TraitsWithRarity } from "@module/data";
 import { ItemType } from ".";
 
 interface BaseItemSourceExitNihilo<
@@ -25,15 +22,11 @@ interface BaseItemDataExitNihilo<
     readonly _source: TSource;
 }
 
-type ItemTrait =  CreatureTrait | PhysicalItemTrait ;
-
 type ActionType = keyof ConfigExitNihilo["EXITNIHILO"]["actionTypes"];
 
 interface ActionCost {
     type: Exclude<ActionType, "passive">;
 }
-
-type ItemTraits<T extends ItemTrait = ItemTrait> = TraitsWithRarity<T>;
 
 interface ItemFlagsExitNihilo extends foundry.data.ItemFlags {
     exitNihilo: {
@@ -83,24 +76,11 @@ interface ItemSystemSource {
 
 type ItemSystemData = ItemSystemSource;
 
-interface FrequencySource {
-    value?: number;
-    max: number;
-    /** Gap between recharges as an ISO8601 duration, or "day" for daily prep. */
-    per: keyof ConfigExitNihilo["EXITNIHILO"]["frequencies"];
-}
-
-interface Frequency extends FrequencySource {
-    value: number;
-}
-
 export {
     ActionCost,
     ActionType,
     BaseItemDataExitNihilo,
     BaseItemSourceExitNihilo,
-    Frequency,
-    FrequencySource,
     ItemFlagsExitNihilo,
     ItemGrantData,
     ItemGrantDeleteAction,
@@ -108,6 +88,4 @@ export {
     ItemLevelData,
     ItemSystemData,
     ItemSystemSource,
-    ItemTrait,
-    ItemTraits,
 };

@@ -13,9 +13,7 @@ interface CreatureSheetData<TActor extends CreatureExitNihilo = CreatureExitNihi
     data: CreatureSystemData & {
     };
     skills: ConfigExitNihilo["EXITNIHILO"]["skills"];
-    frequencies: ConfigExitNihilo["EXITNIHILO"]["frequencies"];
     attitude: ConfigExitNihilo["EXITNIHILO"]["attitude"];
-    pfsFactions: ConfigExitNihilo["EXITNIHILO"]["pfsFactions"];
     dying: {
         maxed: boolean;
         remainingDying: number;

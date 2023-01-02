@@ -1,4 +1,4 @@
-import { BaseCreatureData, BaseCreatureSource, CreatureAttributes, CreatureDetails, CreatureSystemData, CreatureTraitsData } from "@actor/creature/data";
+import { BaseCreatureData, BaseCreatureSource, CreatureAttributes, CreatureDetails, CreatureSystemData } from "@actor/creature/data";
 import { ActorFlagsExitNihilo, ArmorClassData } from "@actor/data/base";
 import { CharacterExitNihilo } from "..";
 import { CharacterSheetTabVisibility } from "./sheet";
@@ -27,8 +27,6 @@ interface CharacterSystemData extends CreatureSystemData {
     attributs: AttributsDuPersonnage;
 
     resources: CharacterResources;
-
-    traits: CharacterTraitsData;
 
     competences: CompetencesDuPersonnage;
 }
@@ -273,9 +271,6 @@ class CaracteristiquesDuPersonnage {
 }
 
 type NiveauDeVie = SetElement<typeof NIVEAUX_DE_VIE>;
-
-interface CharacterTraitsData extends CreatureTraitsData {
-}
 
 export {
     AuxiliaryAction,

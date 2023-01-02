@@ -1,6 +1,4 @@
-import { ArmorTrait } from "@item/armor/types";
-import { BaseItemSourceExitNihilo, BaseItemDataExitNihilo, ItemSystemSource, ItemLevelData, ItemSystemData, ItemTraits } from "@item/data/base";
-import { EquipmentTrait } from "@item/equipment/types";
+import { BaseItemSourceExitNihilo, BaseItemDataExitNihilo, ItemSystemSource, ItemLevelData, ItemSystemData } from "@item/data/base";
 import { PhysicalItemExitNihilo } from "./document";
 import { PhysicalItemType } from "./types";
 
@@ -43,11 +41,6 @@ type EquippedData = {
     invested?: boolean | null;
 };
 
-type PhysicalItemTrait = ArmorTrait | EquipmentTrait ;
-interface PhysicalItemTraits<T extends PhysicalItemTrait = PhysicalItemTrait> extends ItemTraits<T> {
-    otherTags: string[];
-}
-
 interface PhysicalItemHitPoints {
     value: number;
     max: number;
@@ -68,8 +61,6 @@ export {
     EquippedData,
     Investable,
     PhysicalItemHitPoints,
-    PhysicalItemTrait,
-    PhysicalItemTraits,
     PhysicalSystemData,
     PhysicalSystemSource,
 };

@@ -1,7 +1,7 @@
-import { BaseCreatureSource, BaseCreatureData, CreatureSystemSource, CreatureTraitsSource, CreatureSystemData, CreatureTraitsData, CreatureDetails, SaveData, SkillData } from "@actor/creature/data";
+import { BaseCreatureSource, BaseCreatureData, CreatureSystemSource, CreatureSystemData, CreatureDetails, SaveData, SkillData } from "@actor/creature/data";
 import { ActorFlagsExitNihilo, StrikeData, PerceptionData } from "@actor/data/base";
 import { AbilityString } from "@actor/types";
-import { ValueAndMax, Rarity, Size } from "@module/data";
+import { ValueAndMax } from "@module/data";
 import { NPCExitNihilo } from ".";
 
 interface NPCSource extends BaseCreatureSource<"npc", NPCSystemSource> {
@@ -10,7 +10,7 @@ interface NPCSource extends BaseCreatureSource<"npc", NPCSystemSource> {
 
 interface NPCData
     extends Omit<NPCSource, "data" | "system" | "effects" | "items" | "prototypeToken" | "type">,
-        BaseCreatureData<NPCExitNihilo, "npc", NPCSystemData, NPCSource> {
+    BaseCreatureData<NPCExitNihilo, "npc", NPCSystemData, NPCSource> {
     flags: NPCFlags;
 }
 
@@ -28,18 +28,9 @@ interface NPCSystemSource extends CreatureSystemSource {
     resources: {
         focus?: ValueAndMax;
     };
-
-    traits: NPCTraitsSource;
 }
 
 interface NPCAttributesSource {
-}
-
-interface NPCTraitsSource extends CreatureTraitsSource {
-    /** A description of special senses this NPC has */
-    senses: { value: string };
-    rarity: Rarity;
-    size: { value: Size };
 }
 
 /** The raw information contained within the actor data object for NPCs. */
@@ -57,12 +48,6 @@ interface NPCSystemData extends Omit<CreatureSystemData, "senses">, NPCSystemSou
     resources: {
         focus?: { value: number; max: number };
     };
-
-    traits: NPCTraitsData;
-}
-
-interface NPCTraitsData extends Omit<CreatureTraitsData, "senses">, NPCTraitsSource {
-    rarity: Rarity;
 }
 
 interface NPCDetailsSource extends Omit<CreatureDetails, "creature"> {
@@ -131,5 +116,4 @@ export {
     NPCStrike,
     NPCSystemData,
     NPCSystemSource,
-    NPCTraitsData,
 };

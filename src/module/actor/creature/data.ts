@@ -1,4 +1,4 @@
-import { AbilityBasedStatistic, ActorSystemData, ActorSystemSource, BaseActorAttributes, BaseActorDataExitNihilo, BaseActorSourceExitNihilo, BaseTraitsData, BaseTraitsSource, InitiativeData, Rollable, StrikeData } from "@actor/data/base";
+import { AbilityBasedStatistic, ActorSystemData, ActorSystemSource, BaseActorAttributes, BaseActorDataExitNihilo, BaseActorSourceExitNihilo, InitiativeData, Rollable } from "@actor/data/base";
 import { CREATURE_ACTOR_TYPES } from "@actor/values";
 import { CombatantExitNihilo } from "@module/encounter/combatant";
 import { CreatureExitNihilo } from ".";
@@ -24,11 +24,7 @@ type CreatureSkills = null;
 
 interface CreatureSystemSource extends ActorSystemSource {
     details?: {
-        creature?: unknown;
     };
-
-    /** Traits, languages, and other information. */
-    traits?: CreatureTraitsSource;
 }
 
 type CreatureDetails = {
@@ -39,12 +35,7 @@ type CreatureDetails = {
 interface CreatureSystemData extends CreatureSystemSource, ActorSystemData {
     details: CreatureDetails;
 
-    /** Traits, languages, and other information. */
-    traits: CreatureTraitsData;
-
     attributes: CreatureAttributes;
-
-    actions?: StrikeData[];
 }
 
 type CreatureType = typeof CREATURE_ACTOR_TYPES[number];
@@ -67,13 +58,6 @@ type Abilities = null;
 /** A type representing the possible ability strings. */
 type Language = keyof ConfigExitNihilo["EXITNIHILO"]["languages"];
 type Attitude = keyof ConfigExitNihilo["EXITNIHILO"]["attitude"];
-type CreatureTrait = keyof ConfigExitNihilo["EXITNIHILO"]["creatureTraits"];
-
-interface CreatureTraitsSource extends BaseTraitsSource<CreatureTrait> {
-}
-
-interface CreatureTraitsData extends BaseTraitsData<CreatureTrait>, Omit<CreatureTraitsSource, "rarity" | "size"> {
-}
 
 type SkillData = AbilityBasedStatistic &
     Rollable & {
@@ -140,9 +124,6 @@ export {
     CreatureSkills,
     CreatureSystemData,
     CreatureSystemSource,
-    CreatureTrait,
-    CreatureTraitsData,
-    CreatureTraitsSource,
     CreatureType,
     HeldShieldData,
     InitiativeRollResult,
