@@ -44,10 +44,6 @@ interface NPCSystemData extends Omit<CreatureSystemData, "senses">, NPCSystemSou
 
     /** Special strikes which the creature can take. */
     actions: NPCStrike[];
-
-    resources: {
-        focus?: { value: number; max: number };
-    };
 }
 
 interface NPCDetailsSource extends Omit<CreatureDetails, "creature"> {

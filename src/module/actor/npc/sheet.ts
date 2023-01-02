@@ -28,6 +28,7 @@ export class NPCSheetExitNihilo<TActor extends NPCExitNihilo> extends CreatureSh
 
     override async getData(): Promise<NPCSheetData<TActor>> {
         const sheetData = (await super.getData()) as PrePrepSheetData<TActor>;
+        console.log ("SheetData:", sheetData);
         // Return data for rendering
         return sheetData as NPCSheetData<TActor>;
     }
