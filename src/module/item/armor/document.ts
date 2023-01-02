@@ -1,4 +1,5 @@
 import { PhysicalItemExitNihilo } from "@item/physical/document";
+import { ArmorData } from ".";
 
 class ArmorExitNihilo extends PhysicalItemExitNihilo {
 
@@ -11,6 +12,8 @@ class ArmorExitNihilo extends PhysicalItemExitNihilo {
     }
 }
 
-interface ArmorExitNihilo {}
+interface ArmorExitNihilo {
+    readonly data: ArmorData;
+}
 
 export { ArmorExitNihilo };

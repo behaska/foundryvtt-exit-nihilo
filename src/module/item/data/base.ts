@@ -1,5 +1,4 @@
 import { CreatureTrait } from "@actor/creature/data";
-import { ActionTrait } from "@item/action/data";
 import { ItemExitNihilo } from "@item/base";
 import { PhysicalItemTrait } from "@item/physical/data";
 import { ActiveEffectExitNihilo } from "@module/active-effect";
@@ -26,7 +25,7 @@ interface BaseItemDataExitNihilo<
     readonly _source: TSource;
 }
 
-type ItemTrait =  ActionTrait | CreatureTrait | PhysicalItemTrait ;
+type ItemTrait =  CreatureTrait | PhysicalItemTrait ;
 
 type ActionType = keyof ConfigExitNihilo["EXITNIHILO"]["actionTypes"];
 

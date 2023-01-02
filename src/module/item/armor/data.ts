@@ -1,4 +1,4 @@
-import { BasePhysicalItemSource, BasePhysicalItemData, Investable, PhysicalSystemSource, PhysicalSystemData } from "@item/physical/data";
+import { BasePhysicalItemSource, BasePhysicalItemData, Investable, PhysicalSystemSource } from "@item/physical/data";
 import { ArmorExitNihilo } from "./document";
 import { ArmorCategory, ArmorGroup, BaseArmorType } from "./types";
 
@@ -17,8 +17,7 @@ interface ArmorSystemSource extends Investable<PhysicalSystemSource> {
 }
 
 interface ArmorSystemData
-    extends Omit<ArmorSystemSource,  "price" | "temporary" | "usage">,
-        Omit<Investable<PhysicalSystemData>, "traits"> {
+    extends ArmorSystemSource {
     baseItem: BaseArmorType;
 }
 

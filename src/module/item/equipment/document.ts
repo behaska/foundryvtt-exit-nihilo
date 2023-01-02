@@ -1,5 +1,5 @@
 import { PhysicalItemExitNihilo } from "@item/physical";
-import { EquipmentData, EquipmentTrait } from "./data";
+import { EquipmentData } from "./data";
 import { OtherEquipmentTag } from "./types";
 
 class EquipmentExitNihilo extends PhysicalItemExitNihilo {
@@ -16,8 +16,6 @@ class EquipmentExitNihilo extends PhysicalItemExitNihilo {
 
 interface EquipmentExitNihilo {
     readonly data: EquipmentData;
-
-    get traits(): Set<EquipmentTrait>;
 }
 
 export { EquipmentExitNihilo };
