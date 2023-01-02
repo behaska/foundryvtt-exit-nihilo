@@ -2,10 +2,13 @@ import { CreatureSheetExitNihilo } from "@actor/creature/sheet";
 import { DiceExitNihilo } from "@scripts/dice";
 import { ErrorExitNihilo } from "@util/misc";
 import { CharacterExitNihilo } from ".";
+import { CharacterConfig } from "./config";
 import { CharacterSheetData, ExitNihiloDisplayGenre, ExitNihiloDisplayNiveauDeSante, ExitNihiloDisplayRole } from "./data/sheet";
 
 class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
 
+    protected readonly actorConfigClass = CharacterConfig;
+    
     static override get defaultOptions(): ActorSheetOptions {
         const options = super.defaultOptions;
         options.classes = [...options.classes, "character"];

@@ -16,7 +16,8 @@ class ItemExitNihilo extends Item<ActorExitNihilo> {
             super(data, context);
         } else {
             context.exitNihilo = mergeObject(context.exitNihilo ?? {}, { ready: true });
-            return  new ItemExitNihilo(data, context);
+            const ItemConstructor = CONFIG.EXITNIHILO.Item.documentClasses[data.type];
+            return ItemConstructor ? new ItemConstructor(data, context) : new ItemExitNihilo(data, context);
         }
     }
     

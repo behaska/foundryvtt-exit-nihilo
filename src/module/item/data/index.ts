@@ -4,17 +4,14 @@ import { EquipmentData } from "@item/equipment/data";
 import { PhysicalItemType } from "@item/physical/types";
 import { WeaponData } from "@item/weapon/data";
 
-export type NonPhysicalItemType =
-    | "condition";
-
-export type ItemType = NonPhysicalItemType | PhysicalItemType;
+export type ItemType = PhysicalItemType;
 
 /** Actual physical items which you carry (as opposed to feats, lore, proficiencies, statuses, etc). */
 export type PhysicalItemData = (
     | ArmorData
     | ContainerData
     | EquipmentData
-    | WeaponData    
+    | WeaponData
 );
 
 export type ItemDataExitNihilo =

@@ -1,9 +1,12 @@
 import { CreatureSheetExitNihilo } from "@actor/creature/sheet";
 import { CreatureSheetData } from "@actor/creature/types";
 import { NPCExitNihilo } from ".";
+import { NPCConfig } from "./config";
 import { NPCSheetData } from "./types";
 
 export class NPCSheetExitNihilo<TActor extends NPCExitNihilo> extends CreatureSheetExitNihilo<TActor> {
+    protected readonly actorConfigClass = NPCConfig;
+
     static override get defaultOptions() {
         const options = super.defaultOptions;
 

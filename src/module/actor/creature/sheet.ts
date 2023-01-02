@@ -1,5 +1,6 @@
 import { ActorSheetExitNihilo } from "@actor/sheet/base";
 import { CreatureExitNihilo } from ".";
+import { CreatureConfig } from "./config";
 import { CreatureSheetData } from "./types";
 
 /**
@@ -7,6 +8,9 @@ import { CreatureSheetData } from "./types";
  * @category Actor
  */
 export abstract class CreatureSheetExitNihilo<TActor extends CreatureExitNihilo> extends ActorSheetExitNihilo<TActor> {
+
+    /** A DocumentSheet class presenting additional, per-actor settings */
+    protected abstract readonly actorConfigClass: ConstructorOf<CreatureConfig<CreatureExitNihilo>> | null;
 
     override async getData(options?: ActorSheetOptions): Promise<CreatureSheetData<TActor>> {
         const sheetData = (await super.getData(options)) as CreatureSheetData<TActor>;
