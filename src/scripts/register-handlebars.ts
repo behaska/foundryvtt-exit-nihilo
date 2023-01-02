@@ -1,4 +1,9 @@
 export function registerHandlebarsHelpers(): void {
+
+    Handlebars.registerHelper("isLocked", function (context) {
+        return (context.data.root.actor.system.configuration.verrou) ? " Disabled" : "";
+    });
+
     Handlebars.registerHelper("isTrue", function (arg1: string) {
         return (arg1.toLocaleLowerCase() === 'true') ? "Checked" : "";
     });

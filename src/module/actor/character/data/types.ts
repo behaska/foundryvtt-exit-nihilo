@@ -22,6 +22,8 @@ type CharacterFlags = ActorFlagsExitNihilo & {
 
 /** The raw information contained within the actor data object for characters. */
 interface CharacterSystemData extends CreatureSystemData {
+    configuration: ConfigurationDuPersonnage;
+
     attributs: AttributsDuPersonnage;
 
     resources: CharacterResources;
@@ -37,6 +39,14 @@ interface CompetencesDuPersonnage {
     communes: CompetencesCommunes;
     /** compétences de combat */
     combat: CompetencesDeCombat;
+}
+
+/** Block de données qui stockent les infos de configuration du personnage ou de sa feuille (cf. template.json) */
+interface ConfigurationDuPersonnage {
+    /** est ce que la feuille de personnage est vérouillée à la modification */
+    verrou: boolean;
+    /** l'onglet a ouvrir par défaut */
+    onglet: string;
 }
 
 /** Block de données qui stockent les compétences communes du personnage (cf. template.json) */

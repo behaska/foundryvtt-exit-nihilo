@@ -1,5 +1,9 @@
 {
     "EXITNIHILO": {
+        "Feuille-De-Personnage": {
+            "Deverrouille": "Deverrouille",
+            "Verrouille": "Verrouille"
+        },
         "Item": {
             "Activation": {
                 "Label": "Activation",

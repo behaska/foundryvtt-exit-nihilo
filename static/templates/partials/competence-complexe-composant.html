@@ -1,17 +1,29 @@
 <div class="{{idContainer}}-container">
     <div class="competence-complexe {{idContainer}}">
-        <div class="titre">{{localize labelContainer}}</div>
+        <div class="titre-competence-complexe">{{localize labelContainer}}</div>
+        {{#unless (and (eq valeurCompetence1 0) actor.system.configuration.verrou)}}
         <div class="competence {{id1}}" data-competence-id="{{id1}}">
+            {{#if actor.system.configuration.verrou}}
+            <div class="titre">{{valeurLabel1}}</div>
+            {{else}}
             <input name="{{referenceLabel1}}" type="text" data-dtype="String" value="{{valeurLabel1}}"
                 placeholder="{{localize placeholder}}" size="10" />
-            <div class="valeur">{{#skill-dots valeurCompetence1 5}}{{/skill-dots}}
+            {{/if}}
+            <div class="valeur{{#isLocked}}{{/isLocked}}">{{#skill-dots valeurCompetence1 5}}{{/skill-dots}}
             </div>
         </div>
+        {{/unless}}
+        {{#unless (and (eq valeurCompetence2 0) actor.system.configuration.verrou)}}
         <div class="competence {{id2}}" data-competence-id="{{id2}}">
+            {{#if actor.system.configuration.verrou}}
+            <div class="titre">{{valeurLabel2}}</div>
+            {{else}}
             <input name="{{referenceLabel2}}" type="text" data-dtype="String" value="{{valeurLabel2}}"
                 placeholder="{{localize placeholder}}" size="10" />
-            <div class="valeur">{{#skill-dots valeurCompetence2 5}}{{/skill-dots}}
+            {{/if}}
+            <div class="valeur{{#isLocked}}{{/isLocked}}">{{#skill-dots valeurCompetence2 5}}{{/skill-dots}}
             </div>
         </div>
+        {{/unless}}
     </div>
 </div>

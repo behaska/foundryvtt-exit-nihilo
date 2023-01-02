@@ -184,6 +184,11 @@
             height: 40px;
             background: whitesmoke;
         }
+
+        input:disabled {
+            color: whitesmoke;
+            background: black;
+        }
     }
 
     legend {

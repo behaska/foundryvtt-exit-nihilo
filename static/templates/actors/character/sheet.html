@@ -1,13 +1,23 @@
 <form class="{{cssClass}} en-style" autocomplete="off">
     <aside>
-        <img class="logo" src="systems/exit-nihilo/assets/exit-nihilo_logo.webp" height="56" alt="" srcset="" />
+        <header>
+            <img class="logo" src="systems/exit-nihilo/assets/exit-nihilo_logo.webp" height="56" alt="" srcset="" />
+            <button type="button" class="verouille-deverouille-bouton hover"
+                title="{{localize 'EXITNIHILO.Feuille-De)Personnage.Verrouille'}}">
+                {{#if actor.system.configuration.verrou}}
+                <i class="fa-solid fa-lock"></i>
+                {{else}}
+                <i class="fa-solid fa-lock-open"></i>
+                {{/if}}
+            </button>
+        </header>
         <div class="sidebar" data-group="dashboard" data-tab="sidebar">
             <!-- SANTÉ -->
             {{> "systems/exit-nihilo/templates/actors/character/sidebar/sante.html"}}
             <!-- JAUGES -->
             {{> "systems/exit-nihilo/templates/actors/character/sidebar/jauges.html"}}
             <!-- CARACTERISTIQUES -->
-            {{> "systems/exit-nihilo/templates/actors/character/sidebar/caracteristiques.html"}}            
+            {{> "systems/exit-nihilo/templates/actors/character/sidebar/caracteristiques.html"}}
         </div>
     </aside>
 

@@ -43,7 +43,7 @@
         <div class="genre-select-container">
             <div class="genre">
                 <label>{{localize "EXITNIHILO.Personnage.Genre.Titre"}}</label>
-                <select class="genre-select" name="system.details.genre.value" data-dtype="String">
+                <select class="genre-select" name="system.details.genre.value" data-dtype="String" {{#isLocked}}{{/isLocked}}>
                     {{#select actor.system.details.genre.value}}
                     {{#each genres as |value key|}}
                     <option value="{{key}}">{{localize value}}</option>
@@ -55,7 +55,7 @@
         <div class="role-select-container">
             <div class="role">
                 <label>{{localize "EXITNIHILO.Personnage.Role.Titre"}}</label>
-                <select class="role-select" name="system.details.role.value" data-dtype="String">
+                <select class="role-select" name="system.details.role.value" data-dtype="String" {{#isLocked}}{{/isLocked}}>
                     {{#select actor.system.details.role.value}}
                     {{#each roles as |value key|}}
                     <option value="{{key}}">{{localize value}}</option>
@@ -86,7 +86,7 @@
     <hr />
     <section class="personnage-attributs">
         <div class="attribut-container physique-container top gauche">
-            <fieldset class="radio-principal">
+            <fieldset class="radio-principal" {{#isLocked}}{{/isLocked}}>
                 <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.physique.valeur1"
@@ -108,12 +108,13 @@
                 <div class="physique-input">
                     <input name="system.attributs.caracteristiques.physique.value" type="number"
                         data-dtype="{{actor.system.attributs.caracteristiques.physique.type}}"
-                        value="{{actor.system.attributs.caracteristiques.physique.value}}" size="2" />
+                        value="{{actor.system.attributs.caracteristiques.physique.value}}" size="2"
+                        {{#isLocked}}{{/isLocked}} />
                 </div>
             </div>
         </div>
         <div class="attribut-container adresse-container top droite">
-            <fieldset class="radio-principal">
+            <fieldset class="radio-principal" {{#isLocked}}{{/isLocked}}>
                 <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.adresse.valeur1"
@@ -136,7 +137,8 @@
                 <div class="adresse-input">
                     <input name="system.attributs.caracteristiques.adresse.value" type="number"
                         data-dtype="{{actor.system.attributs.caracteristiques.adresse.type}}"
-                        value="{{actor.system.attributs.caracteristiques.adresse.value}}" size="2" />
+                        value="{{actor.system.attributs.caracteristiques.adresse.value}}" size="2"
+                        {{#isLocked}}{{/isLocked}} />
                 </div>
             </div>
         </div>
@@ -146,10 +148,11 @@
                 <div class="intellect-input">
                     <input name="system.attributs.caracteristiques.intellect.value" type="number"
                         data-dtype="{{actor.system.attributs.caracteristiques.intellect.type}}"
-                        value="{{actor.system.attributs.caracteristiques.intellect.value}}" size="2" />
+                        value="{{actor.system.attributs.caracteristiques.intellect.value}}" size="2"
+                        {{#isLocked}}{{/isLocked}} />
                 </div>
             </div>
-            <fieldset class="radio-principal">
+            <fieldset class="radio-principal" {{#isLocked}}{{/isLocked}}>
                 <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.intellect.valeur1"
@@ -172,11 +175,12 @@
                 <div class="caractere-input">
                     <input name="system.attributs.caracteristiques.caractere.value" type="number"
                         data-dtype="{{actor.system.attributs.caracteristiques.caractere.type}}"
-                        value="{{actor.system.attributs.caracteristiques.caractere.value}}" size="2" />
+                        value="{{actor.system.attributs.caracteristiques.caractere.value}}" size="2"
+                        {{#isLocked}}{{/isLocked}} />
                 </div>
                 <label>{{localize "EXITNIHILO.Personnage.Attributs.Caractere.Titre"}}</label>
             </div>
-            <fieldset class="radio-principal">
+            <fieldset class="radio-principal" {{#isLocked}}{{/isLocked}}>
                 <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.caractere.valeur1"
@@ -199,11 +203,12 @@
                 <div class="social-input">
                     <input name="system.attributs.caracteristiques.social.value" type="number"
                         data-dtype="{{actor.system.attributs.caracteristiques.social.type}}"
-                        value="{{actor.system.attributs.caracteristiques.social.value}}" size="2" />
+                        value="{{actor.system.attributs.caracteristiques.social.value}}" size="2"
+                        {{#isLocked}}{{/isLocked}} />
                 </div>
                 <label>{{localize "EXITNIHILO.Personnage.Attributs.Social.Titre"}}</label>
             </div>
-            <fieldset class="radio-principal">
+            <fieldset class="radio-principal" {{#isLocked}}{{/isLocked}}>
                 <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
                 <div class="valeur">
                     <input type="radio" id="system.attributs.caracteristiques.social.valeur1"

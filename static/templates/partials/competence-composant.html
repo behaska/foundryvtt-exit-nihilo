@@ -1,7 +1,7 @@
 <div class="{{id}}-container">
     <div class="competence {{id}}" data-competence-id="{{id}}">
         <div class="titre">{{localize label}}</div>
-        <div class="valeur">{{#skill-dots valeurCourante 5}}{{/skill-dots}}
+        <div class="valeur{{#isLocked}}{{/isLocked}}">{{#skill-dots valeurCourante 5}}{{/skill-dots}}
         </div>
     </div>
 </div>

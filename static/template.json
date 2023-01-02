@@ -6,6 +6,10 @@
         ],
         "adversary": {},
         "character": {
+            "configuration": {
+                "onglet": "general",
+                "verrou": "false"
+            },
             "details": {
                 "age": {
                     "value": 18,

@@ -1,17 +1,58 @@
-aside .sidebar {
-    a.roll-icon.rest {
-        padding-bottom: 0;
-    }
+aside {
 
-    .class-dc {
-        &.secondary {
-            margin-top: 0.2em;
+    header {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+        
+        button {
+            position: absolute;
+            right: 5px;
+            bottom: 0px;
+            width: 20px;
+            height: 20px;
         }
 
-        .classdc-rank {
-            align-items: center;
-            display: flex;
-            gap: 0.5em;
+        .verouille-deverouille-bouton{
+            background: rgba(255, 255, 255, 0.75);
+            border-radius: 2px 2px 0 0;
+            border: none;
+            box-shadow: inset 0 0 0 1px rgba(white, 0.4);
+            color: var(--primary);
+            flex: 0;
+            font: 600 var(--font-size-9) var(--sans-serif);
+            letter-spacing: 0.05em;
+            line-height: 1;
+            margin: 0;
+            padding: 2px 3px;
+            text-rendering: optimizeLegibility;
+            text-transform: uppercase;
+            white-space: nowrap;
+    
+            &:hover:not(:disabled) {
+                background: white;
+                box-shadow: inset 0 0 0 1px white;
+            }
+        }
+    }
+
+    .sidebar {
+        a.roll-icon.rest {
+            padding-bottom: 0;
+        }
+
+        .class-dc {
+            &.secondary {
+                margin-top: 0.2em;
+            }
+
+            .classdc-rank {
+                align-items: center;
+                display: flex;
+                gap: 0.5em;
+            }
         }
     }
 }

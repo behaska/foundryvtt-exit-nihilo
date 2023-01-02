@@ -1,4 +1,5 @@
 import { ActorExitNihilo } from "@actor/base";
+import { ErrorExitNihilo } from "@util/misc";
 
 /**
  * @category Other
@@ -50,13 +51,24 @@ class DiceExitNihilo {
                 data.competence = $form.find("[name=valeurCompetence]").val()
             };
 
-            console.log("Form result:", $form);
-            console.log("Data:", data);
             // Execute the roll and send it to chat
             const propertyKey = `system.attributs.caracteristiquesCalculees.${data.caracteristique}`;
             const valeurDeCaracteristique = getProperty(actor, propertyKey)
 
-            const roll = new Roll(`${data.competence}d6+${valeurDeCaracteristique}d6`, data).roll({ async: false });
+            const valeurCompetence = parseInt(data.competence as string, 10);
+
+            if (typeof valeurCompetence !== "number") {
+                throw ErrorExitNihilo(`Skill value is not a number (${data.competence}).`);
+            }
+            
+            if (typeof valeurDeCaracteristique !== "number") {
+                throw ErrorExitNihilo(`Skill value is not a number (${valeurDeCaracteristique}).`);
+            }
+
+            const nombreDeDesPotentiel = valeurCompetence + valeurDeCaracteristique;
+
+            const nombreDeDes = nombreDeDesPotentiel <= 0 ? 0 : nombreDeDesPotentiel;
+            const roll = new Roll(`${nombreDeDes}d6`, data).roll({ async: false });
             roll.toMessage(
                 {
                     speaker,
