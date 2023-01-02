@@ -103,13 +103,13 @@ class DiceExitNihilo {
                     content,
                     buttons: {
                         roll: {
-                            label: game.i18n.localize("EXITNIHILO.Roll.Roll"),
+                            label: game.i18n.localize("EXITNIHILO.Dialogue.LancerDeDes.Lancer"),
                             callback: (html) => {
                                 roll = _roll(html);
                             },
                         },
                         cancel: {
-                            label: game.i18n.localize("EXITNIHILO.Roll.Cancel"),
+                            label: game.i18n.localize("EXITNIHILO.Dialogue.LancerDeDes.Annuler"),
                             icon: '<i class="fa fa-times"></i>',
                         },
                     },
