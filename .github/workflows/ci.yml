@@ -2,11 +2,11 @@ name: Exit Nihilo System CI
 
 on:
   pull_request:
-    branches: [master]
+    branches: [main]
   push:
-    branches: [master, release-v9]
+    branches: [main, release-v10]
   workflow_dispatch:
-    branches: [master, release-v9]
+    branches: [main, release-v10]
 
 jobs:
   build:
@@ -35,18 +35,6 @@ jobs:
         if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
         run: |
           npm ci
-
-      - name: Cache Packs
-        id: cache-packs
-        uses: actions/cache@v3
-        with:
-          path: packs/
-          key: packs-${{ hashFiles('packs/**/*') }}
-
-      - name: Build Packs
-        if: ${{ steps.cache-packs.outputs.cache-hit != 'true' }}
-        run: |
-          npm run build:packs
 
       - name: Webpack
         run: |
