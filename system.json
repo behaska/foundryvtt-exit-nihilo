@@ -3,7 +3,7 @@
     "title": "Exit Nihilo game system",
     "description": "A game system for Exit Nihilo TTRPG",
     "license": "./LICENSE",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "compatibility": {
         "minimum": "10.286",
         "verified": "10.290",
@@ -40,9 +40,9 @@
     "gridDistance": 5,
     "gridUnits": "m",
     "primaryTokenAttribute": "attributes.hp",
-    "url": "https://github.com/foundryvtt/exit-nihilo",
-    "bugs": "https://github.com/foundryvtt/exit-nihilo/issues",
-    "changelog": "https://github.com/foundryvtt/exit-nihilo/blob/release/CHANGELOG.md",
-    "manifest": "https://github.com/foundryvtt/exit-nihilo/releases/latest/download/system.json",
-    "download": "https://github.com/foundryvtt/exit-nihilo/releases/latest/download/exit-nihilo.zip"
+    "url": "https://github.com/behaska/foundryvtt-exit-nihilo",
+    "bugs": "https://github.com/behaska/foundryvtt-exit-nihilo/issues",
+    "changelog": "https://github.com/behaska/foundryvtt-exit-nihilo/blob/release/CHANGELOG.md",
+    "manifest": "https://github.com/behaska/foundryvtt-exit-nihilo/releases/latest/download/system.json",
+    "download": "https://github.com/behaska/foundryvtt-exit-nihilo/releases/latest/download/exit-nihilo.zip"
 }
