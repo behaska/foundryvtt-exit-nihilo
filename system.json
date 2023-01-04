@@ -25,17 +25,7 @@
     "styles": [
         "styles/main.css"
     ],
-    "packs": [
-        {
-            "name": "equipment-srd",
-            "label": "Equipment",
-            "system": "exit-nihilo",
-            "path": "packs/equipment.db",
-            "type": "Item",
-            "private": false,
-            "flags": {}
-        }
-    ],
+    "packs": [],
     "languages": [
         {
             "lang": "fr",
