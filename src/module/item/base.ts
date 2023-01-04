@@ -28,7 +28,7 @@ class ItemExitNihilo extends Item<ActorExitNihilo> {
         if (!this.isOwned && ui.items && this.initialized) ui.items.render();
     }
 
-    /** Ensure the presence of the pf2e flag scope with default properties and values */
+    /** Ensure the presence of the exit-nihilo flag scope with default properties and values */
     override prepareBaseData(): void {
         super.prepareBaseData();
     }

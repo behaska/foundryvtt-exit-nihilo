@@ -4,14 +4,19 @@
     "description": "",
     "private": true,
     "scripts": {
-        "build": "webpack --mode production",
-        "build:dev": "webpack",
-        "start": "webpack serve --hot",
+        "build": "npm run build:packs && webpack --mode production",
+        "build:dev": "npm run build:packs && webpack",
+        "build:packs": "ts-node -r tsconfig-paths/register ./packs/scripts/build.ts",
+        "start": "npm run build:packs && webpack serve --hot",
+        "extractPacks": "ts-node -r tsconfig-paths/register ./packs/scripts/extract.ts",
         "pretest": "eslint ./ --ext .ts && eslint ./static ./system.json --ext .json",
         "test": "jest",
+        "posttest": "npm run betterer",
+        "migrate": "ts-node -r tsconfig-paths/register ./packs/scripts/run-migration.ts",
         "lint": "eslint ./src --ext .ts && eslint ./static ./system.json --ext .json",
         "lint:fix": "eslint ./src --ext .ts --fix",
-        "docs": "typedoc"
+        "docs": "typedoc",
+        "betterer": "betterer --strict"
     },
     "author": "",
     "license": "",

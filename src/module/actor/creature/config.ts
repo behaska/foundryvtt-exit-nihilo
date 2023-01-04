@@ -8,7 +8,7 @@ abstract class CreatureConfig<TActor extends CreatureExitNihilo> extends Documen
     }
 
     override get template(): string {
-        return `systems/pf2e/templates/actors/${this.actor.type}/config.hbs`;
+        return `systems/exit-nihilo/templates/actors/${this.actor.type}/config.hbs`;
     }
 
     get actor(): TActor {

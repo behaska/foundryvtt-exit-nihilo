@@ -13,7 +13,7 @@ export class CompendiumDirectoryExitNihilo extends CompendiumDirectory {
         return {
             ...options,
             filters: [{ inputSelector: "input[type=search]", contentSelector: "ol.directory-list" }],
-            template: "systems/pf2e/templates/sidebar/compendium-directory.hbs",
+            template: "systems/exit-nihilo/templates/sidebar/compendium-directory.hbs",
         };
     }
 

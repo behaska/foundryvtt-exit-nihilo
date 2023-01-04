@@ -14,7 +14,7 @@
             "name": "Hervé Darritchon",
             "discord": "herveDarritchon#7262",
             "email": "herve.darritchon@gmail.com"
-          }
+        }
     ],
     "esmodules": [
         "vendor.bundle.js",
@@ -26,7 +26,17 @@
     "styles": [
         "styles/main.css"
     ],
-    "packs": [],
+    "packs": [
+        {
+            "name": "equipment-srd",
+            "label": "Equipment",
+            "system": "exit-nihilo",
+            "path": "packs/equipment.db",
+            "type": "Item",
+            "private": false,
+            "flags": {}
+        }
+    ],
     "languages": [
         {
             "lang": "fr",

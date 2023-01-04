@@ -13,7 +13,7 @@
                 <a class="item-control item-location-option{{#if (and (eq item.system.equipped.carryType "held") (eq item.system.equipped.handsHeld 1))}} selected{{/if}}"
                     data-carry-type="held"
                     data-hands-held="1">
-                    <i class="fas fa-hand-rock"></i>{{localize "PF2E.CarryType.held1"}}
+                    <i class="fas fa-hand-rock"></i>{{localize "EXITNIHILO.CarryType.held1"}}
                 </a>
             </li>
         {{/if}}
@@ -21,31 +21,31 @@
         <a class="item-control item-location-option{{#if (and (eq item.system.equipped.carryType "held") (eq item.system.equipped.handsHeld 2))}} selected{{/if}}"
             data-carry-type="held"
             data-hands-held="2">
-            <i class="fas fa-hand-rock"></i>{{localize "PF2E.CarryType.held2"}}
+            <i class="fas fa-hand-rock"></i>{{localize "EXITNIHILO.CarryType.held2"}}
         </a>
     </li>
     {{#if (and (eq item.system.usage.type "worn") item.system.usage.where)}}
         <li>
             <a class="item-control item-location-option{{#if item.system.equipped.inSlot}} selected{{/if}}" data-carry-type="worn" data-in-slot="true">
-                <i class="fas fa-tshirt"></i>{{localize "PF2E.Item.Physical.Usage.WornParenthetical" where=(localize (concat "PF2E.Item.Physical.Usage.WornSlot." item.system.usage.where))}}
+                <i class="fas fa-tshirt"></i>{{localize "EXITNIHILO.Item.Physical.Usage.WornParenthetical" where=(localize (concat "EXITNIHILO.Item.Physical.Usage.WornSlot." item.system.usage.where))}}
             </a>
         </li>
     {{/if}}
     <li>
         <a class="item-control item-location-option{{#if (and (eq item.system.equipped.carryType "worn") (or (not item.system.usage.where) (eq item.system.equipped.inSlot false)))}} selected{{/if}}"
             data-carry-type="worn"
-            data-in-slot="false"><i class="fas fa-tshirt"></i>{{localize "PF2E.CarryType.worn"}}</a>
+            data-in-slot="false"><i class="fas fa-tshirt"></i>{{localize "EXITNIHILO.CarryType.worn"}}</a>
     </li>
 
     {{#if @root.inventory.hasStowingContainers}}
         <li>
             <a class="item-control item-location-option{{#if (eq item.system.equipped.carryType "stowed")}} selected{{/if}}"
-                data-carry-type="stowed"><i class="fas fa-box"></i>{{localize "PF2E.CarryType.stowed"}}</a>
+                data-carry-type="stowed"><i class="fas fa-box"></i>{{localize "EXITNIHILO.CarryType.stowed"}}</a>
         </li>
     {{/if}}
     <li>
         <a class="item-control item-location-option {{#if (eq item.system.equipped.carryType "dropped")}}selected{{/if}}"
-            data-carry-type="dropped"><i class="fas fa-grip-lines"></i>{{localize "PF2E.CarryType.dropped"}}</a>
+            data-carry-type="dropped"><i class="fas fa-grip-lines"></i>{{localize "EXITNIHILO.CarryType.dropped"}}</a>
     </li>
 </ul>
 </div>

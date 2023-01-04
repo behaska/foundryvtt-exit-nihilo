@@ -41,7 +41,7 @@ const [outDir, foundryUri] = ((): [string, string] => {
         config instanceof Object
             ? path.join(config.dataPath, "Data", "systems", config.systemName ?? "exit-nihilo")
             : path.join(__dirname, "dist/");
-    const foundryUri = (config instanceof Object ? String(config.foundryUri) : "") ?? "http://localhost:30000";
+    const foundryUri = (config instanceof Object ? String(config.foundryUri ?? "") : null) || "http://localhost:30000";
     return [outDir, foundryUri];
 })();
 
@@ -59,25 +59,25 @@ class EmptyStaticFilesPlugin {
 type Optimization = Configuration["optimization"];
 const optimization: Optimization = isProductionBuild
     ? {
-          minimize: true,
-          minimizer: [
-              new TerserPlugin({ terserOptions: { mangle: false, module: true, keep_classnames: true } }),
-              new CssMinimizerPlugin(),
-          ],
-          splitChunks: {
-              chunks: "all",
-              cacheGroups: {
-                  default: {
-                      name: "main",
-                      test: "src/exit-nihilo.ts",
-                  },
-                  vendor: {
-                      name: "vendor",
-                      test: /node_modules/,
-                  },
-              },
-          },
-      }
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({ terserOptions: { mangle: false, module: true, keep_classnames: true } }),
+            new CssMinimizerPlugin(),
+        ],
+        splitChunks: {
+            chunks: "all",
+            cacheGroups: {
+                default: {
+                    name: "main",
+                    test: "src/exit-nihilo.ts",
+                },
+                vendor: {
+                    name: "vendor",
+                    test: /node_modules/,
+                },
+            },
+        },
+    }
     : undefined;
 
 const config: Configuration = {
@@ -88,15 +88,7 @@ const config: Configuration = {
     },
     module: {
         rules: [
-            !isProductionBuild
-                ? {
-                      test: /\.hbs$/,
-                      loader: "raw-loader",
-                  }
-                : {
-                      test: /\.hbs$/,
-                      loader: "null-loader",
-                  },
+            !isProductionBuild ? { test: /\.hbs$/, loader: "raw-loader" } : { test: /\.hbs$/, loader: "null-loader" },
             {
                 test: /\.ts$/,
                 use: [
@@ -188,6 +180,7 @@ const config: Configuration = {
         new webpack.WatchIgnorePlugin({ paths: ["node_modules/", "packs/", "static/packs/"] }),
         new webpack.DefinePlugin({
             BUILD_MODE: JSON.stringify(buildMode),
+            ROLL_GRAMMAR: JSON.stringify(fs.readFileSync("roll-grammar.peggy", { encoding: "utf-8" })),
         }),
         new CopyPlugin({
             patterns: [
@@ -195,7 +188,7 @@ const config: Configuration = {
                 {
                     from: "static/",
                     transform(content: Buffer, absoluteFrom: string) {
-                        if (path.basename(absoluteFrom) === "en.json") {
+                        if (path.basename(absoluteFrom) === "fr.json") {
                             return JSON.stringify(JSON.parse(content.toString()));
                         }
                         return content;
