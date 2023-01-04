@@ -11,6 +11,20 @@
             "Deverrouille": "Deverrouille",
             "Verrouille": "Verrouille"
         },
+        "Item": {
+            "Armor": {
+                "Base": {
+                    "Gilet-Pare-Balles": "Gilet Pare-Balles"
+                }
+            },
+            "CreationDialog": {
+                "Categories": {
+                    "Character": "Character Building",
+                    "Physical": "Physical Items",
+                    "Other": "Other"
+                }
+            }
+        },
         "ModifierTitle": "Modifier",
         "NavBar": {
             "Tabs": {

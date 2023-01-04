@@ -1,10 +1,11 @@
-import { PHYSICAL_ITEM_TYPES } from "@item";
+import { PHYSICAL_ITEM_TYPES } from "@item/physical/values";
 import { PC_ITEM_TYPES } from "@item/values";
 import { LocalizeExitNihilo } from "@system/localize";
 
 export const RenderDialog = {
     listen: () => {
         Hooks.on("renderDialog", (_dialog, $html) => {
+
             // Break up the item document dialog into option groups
             // The class we're checking for is injected by the item document's createDialog() method
             const element = $html[0];
