@@ -25,6 +25,10 @@ jobs:
           npm ci
           npm run build
 
+      - name: List
+        run: |
+          ll dist
+
       - name: Update Manifest
         run: |
           SYSTEM_VERSION=$(grep -oP '(?<="version": ")[^"]+' dist/system.json | tr -d '\n')
