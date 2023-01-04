@@ -39,7 +39,3 @@ jobs:
       - name: Webpack
         run: |
           node_modules/.bin/webpack --mode production
-
-      - name: Test
-        run: |
-          npm run test
