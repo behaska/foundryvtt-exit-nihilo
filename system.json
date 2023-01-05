@@ -3,7 +3,7 @@
     "title": "Exit Nihilo game system",
     "description": "A game system for Exit Nihilo TTRPG",
     "license": "./LICENSE",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "compatibility": {
         "minimum": "10.286",
         "verified": "10.290",
