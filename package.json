@@ -1,6 +1,6 @@
 {
     "name": "foundry-exit-nihilo",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "",
     "private": true,
     "scripts": {
@@ -30,9 +30,10 @@
         "@types/jquery": "^3.5.14",
         "@types/jsdom": "^20.0.1",
         "@types/luxon": "^3.1.0",
-        "@types/node": "^18.11.13",
+        "@types/node": "^18.11.18",
         "@types/sortablejs": "^1.15.0",
         "@types/tooltipster": "^0.0.31",
+        "@types/webpack": "^5.28.0",
         "@types/webpack-env": "^1.18.0",
         "@types/yaireo__tagify": "^4.16.0",
         "@typescript-eslint/eslint-plugin": "^5.46.0",

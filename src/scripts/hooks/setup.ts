@@ -6,7 +6,6 @@ export const Setup = {
     listen: (): void => {
         Hooks.once("setup", () => {
             LocalizeExitNihilo.ready = true;
-
             // Register actor and item sheets
             registerSheets();
         });

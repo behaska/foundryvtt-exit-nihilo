@@ -73,7 +73,7 @@ const optimization: Optimization = isProductionBuild
                 },
                 vendor: {
                     name: "vendor",
-                    test: /node_modules/,
+                    test: /[\\/]node_modules[\\/]/,
                 },
             },
         },
