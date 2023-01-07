@@ -33,7 +33,7 @@ class DiceExitNihilo {
         dialogOptions,
         rollType = "",
     }: {
-        actor: ActorExitNihilo,
+        actor: ActorExitNihilo;
         data: Record<string, unknown>;
         template?: string;
         title: string;
@@ -42,25 +42,24 @@ class DiceExitNihilo {
         dialogOptions?: Partial<ApplicationOptions>;
         rollType?: string;
     }) {
-
         const _roll = ($form?: JQuery) => {
             // Don't include situational bonuses unless they are defined
 
             if ($form) {
-                data.caracteristique = $form.find("input:checked").val()
-                data.competence = $form.find("[name=valeurCompetence]").val()
-            };
+                data.caracteristique = $form.find("input:checked").val();
+                data.competence = $form.find("[name=valeurCompetence]").val();
+            }
 
             // Execute the roll and send it to chat
             const propertyKey = `system.attributs.caracteristiquesCalculees.${data.caracteristique}`;
-            const valeurDeCaracteristique = getProperty(actor, propertyKey)
+            const valeurDeCaracteristique = getProperty(actor, propertyKey);
 
             const valeurCompetence = parseInt(data.competence as string, 10);
 
             if (typeof valeurCompetence !== "number") {
                 throw ErrorExitNihilo(`Skill value is not a number (${data.competence}).`);
             }
-            
+
             if (typeof valeurDeCaracteristique !== "number") {
                 throw ErrorExitNihilo(`Skill value is not a number (${valeurDeCaracteristique}).`);
             }
@@ -68,23 +67,20 @@ class DiceExitNihilo {
             const nombreDeDesPotentiel = valeurCompetence + valeurDeCaracteristique;
 
             const nombreDeDes = nombreDeDesPotentiel <= 0 ? 0 : nombreDeDesPotentiel;
-            const roll = new Roll(`${nombreDeDes}d6`, data).roll({ async: false });
-            roll.toMessage(
-                {
-                    speaker,
-                    flags: {
-                        exitNihilo: {
-                            context: {
-                                type: rollType,
-                            },
-                            origin,
+            const roll = new Roll(`${nombreDeDes}ds`, data).roll({ async: false });
+            roll.toMessage({
+                speaker,
+                flags: {
+                    exitNihilo: {
+                        context: {
+                            type: rollType,
                         },
+                        origin,
                     },
                 },
-            );
+            });
             return roll;
         };
-
 
         // Render modal dialog
         template = template || "systems/exit-nihilo/templates/dice/roll-dialog.hbs";
@@ -123,8 +119,20 @@ class DiceExitNihilo {
             ).render(true);
         });
     }
-
 }
 
+class ExitNihiloCompetenceDie extends Die {
+    constructor(termData?: Partial<DieData>) {
+        if (termData) {
+            termData.faces = 6;
+        }
+        super(termData);
+    }
 
-export { DiceExitNihilo };
+    /* -------------------------------------------- */
+
+    /** @override */
+    static override DENOMINATION = "s";
+}
+
+export { DiceExitNihilo, ExitNihiloCompetenceDie };
