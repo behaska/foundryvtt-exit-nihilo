@@ -7,7 +7,7 @@
         text-align: left;
         padding: 5px;
 
-        .competence, .caracteristique {
+        .competence, .caracteristique, .modificateur {
             display: flex;
             flex-direction: row;
         }
@@ -17,10 +17,18 @@
             flex: 1;
         }
 
-        div > span.value {
-            font-weight: bold;
+        div.valeur {
             flex: 1;
-            text-transform:capitalize;
+
+            span.value {
+                font-weight: bold;
+                flex: 1;
+                text-transform: capitalize;
+            }
+            span.extra {
+                font-weight: unset;
+                flex: none;
+            }
         }
     }
 

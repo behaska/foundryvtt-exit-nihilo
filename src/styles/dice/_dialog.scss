@@ -1,9 +1,9 @@
 form {
     .form-group.roll-dialog-options {
+        align-items: flex-start;
 
         .caracteristiques {
-            width: 200px;
-            flex: none;
+            flex: 1;
 
             .caracteristique {
                 display: flex;
@@ -62,7 +62,7 @@ form {
                     }
                 }
 
-                input:checked~label {
+                input:checked ~ label {
                     opacity: 1;
                     border: 1px solid black;
                     background-color: var(--alt);
@@ -71,6 +71,48 @@ form {
 
                 label:hover {
                     background-color: var(--bg);
+                }
+            }
+        }
+
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: flex-start;
+            align-items: center;
+        }
+
+        .modificateurs {
+            flex: 1;
+
+            .bonus-malus {
+                align-items: center;
+                flex: none;
+
+                label {
+                    text-align: center;
+                    font-weight: bold;
+                }
+
+                input {
+                    width: 3em;
+                    text-align: center;
+                }
+            }
+
+            .roll-visibility {
+                align-items: center;
+                flex: none;
+                margin-top: 5px;
+
+                label {
+                    text-align: center;
+                    font-weight: bold;
+                }
+                select{
+                    flex: 1;
                 }
             }
         }

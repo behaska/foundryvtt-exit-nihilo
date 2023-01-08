@@ -4,15 +4,32 @@
     {{/if}}
     <div class="infos">
         <div class="competence">
-            <span class="titre">Compétence: </span><span class="value">{{competence.titre}}</span>
+            <span class="titre">Compétence: </span>
+            <div class="valeur">
+                <span class="value">{{competence.titre}}</span>
+                <span class="extra">({{competence.valeur}})</span>
+            </div>
         </div>
         <div class="caracteristique">
-            <span class="titre">Caractéristique: </span><span class="value">{{caracteristique}}</span>
+            <span class="titre">Caractéristique: </span>
+            <div class="valeur">
+                <span class="value">{{caracteristique}}</span>
+                <span class="extra">({{valeurCaracteristique}})</span>
+            </div>
         </div>
+        {{#if estModifie}}
+            <div class="modificateur">
+                <span class="titre">Modificateur: </span>
+                <div class="valeur">
+                    <span class="value">Standard</span>
+                    <span class="extra">({{modificateur}})</span>
+                </div>
+            </div>
+        {{/if}}
     </div>
     <div class="dice-result">
         <div class="dice-formula">
-            <span class="titre">Nombre de Dés:</span> <span class="value">{{competence.valeur}}</span>
+            <span class="titre">Nombre de Dés:</span> <span class="value">{{nbDeDes}}</span>
         </div>
         {{{tooltip}}}
         <h4 class="dice-total {{exitNihiloResult.extraCss}}">{{exitNihiloResult.label}}</h4>

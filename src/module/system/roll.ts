@@ -6,15 +6,20 @@ class ExitNihiloRoll extends Roll {
     caracteristique: string;
     competence: string;
     nombreDeDes: number;
+    modificateur: number;
+    valeurCompetence: number;
+    valeurCaracteristique: number;
 
     constructor(formula: string, data = {}, options?: ExitNihiloRollData) {
         const wrapped = formula.startsWith("{") ? formula : `{${formula}}`;
         super(wrapped, data, options);
-        console.log("ExitNihiloRollData:", options);
         this.roller = game.users.get(options?.rollerId ?? "") ?? null;
         this.caracteristique = options?.caracteristique ?? "Unknown";
         this.competence = options?.titreCompetence ?? "Unknown";
         this.nombreDeDes = options?.nombreDeDes ?? -1;
+        this.modificateur = options?.modificateur ?? 0;
+        this.valeurCompetence = options?.valeurCompetence ?? 0;
+        this.valeurCaracteristique = options?.valeurDeCaracteristique ?? 0;
     }
 
     static override CHAT_TEMPLATE = "systems/exit-nihilo/templates/dice/jet-de-competence.hbs";
@@ -110,13 +115,15 @@ class ExitNihiloRoll extends Roll {
             total: isPrivate ? "?" : Math.floor((this.total! * 100) / 100),
             exitNihiloResult: this.computeCustomResult(),
             caracteristique: this.caracteristique,
+            valeurCaracteristique: this.valeurCaracteristique,
+            modificateur: this.modificateur,
+            estModifie: this.modificateur !== 0,
+            nbDeDes: this.nombreDeDes,
             competence: {
                 titre: this.competence,
-                valeur: this.nombreDeDes,
+                valeur: this.valeurCompetence,
             },
         };
-        console.log("Roll:", this);
-        console.log("ChatData:", chatData);
         return renderTemplate(template, chatData);
     }
 
@@ -159,6 +166,9 @@ interface ExitNihiloRollData extends RollOptions {
     totalModifier?: number;
     caracteristique: string;
     titreCompetence: string;
+    valeurCompetence: number;
+    valeurDeCaracteristique: number;
+    modificateur: number;
     nombreDeDes: number;
 }
 

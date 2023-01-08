@@ -48,6 +48,7 @@ class DiceExitNihilo {
 
             if ($form) {
                 data.caracteristique = $form.find("input:checked").val();
+                data.modificateur = $form.find("[name=bonus-malus]").val();
                 data.valeurCompetence = $form.find("[name=valeurCompetence]").val();
                 data.titreCompetence = $form.find("[name=titreCompetence]").val();
             }
@@ -62,16 +63,25 @@ class DiceExitNihilo {
 
             const valeurCompetence = parseInt(data.valeurCompetence as string, 10);
 
+            if (typeof data.modificateur !== "string") {
+                data.modificateur = "0";
+            }
+
+            const valeurModificateur = parseInt(data.modificateur as string, 10);
+
             if (typeof valeurDeCaracteristique !== "number") {
                 throw ErrorExitNihilo(`Skill value is not a number (${valeurDeCaracteristique}).`);
             }
 
-            const nombreDeDesPotentiel = valeurCompetence + valeurDeCaracteristique;
+            const nombreDeDesPotentiel = valeurCompetence + valeurDeCaracteristique + valeurModificateur;
 
             const nombreDeDes: number = nombreDeDesPotentiel <= 0 ? 0 : nombreDeDesPotentiel;
             const options: ExitNihiloRollData = {
                 caracteristique: data.caracteristique as string,
                 titreCompetence: data.titreCompetence as string,
+                modificateur: valeurModificateur,
+                valeurCompetence: valeurCompetence,
+                valeurDeCaracteristique: valeurDeCaracteristique,
                 nombreDeDes: nombreDeDes,
             };
 
