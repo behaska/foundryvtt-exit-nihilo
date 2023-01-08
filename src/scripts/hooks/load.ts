@@ -6,11 +6,15 @@ import { EncounterExitNihilo } from "@module/encounter/document";
 import { MacroExitNihilo } from "@module/macro";
 import { UserExitNihilo } from "@module/user/document";
 import { SceneExitNihilo } from "@scene/document";
+import { ExitNihiloRoll } from "@system/roll";
+import { ExitNihiloCompetenceDie } from "@scripts/dice";
 
 /** Not an actual hook listener but rather things to run on initial load */
 export const Load = {
     listen(): void {
         // Assign document classes
+        CONFIG.Dice.rolls[CONFIG.Dice.rolls.length] = ExitNihiloRoll;
+        CONFIG.Dice.terms["s"] = ExitNihiloCompetenceDie;
         CONFIG.Actor.collection = ActorsExitNihilo;
         CONFIG.Actor.documentClass = ActorExitNihilo;
         CONFIG.ChatMessage.documentClass = ChatMessageExitNihilo;
@@ -19,7 +23,6 @@ export const Load = {
         CONFIG.Macro.documentClass = MacroExitNihilo;
         CONFIG.Scene.documentClass = SceneExitNihilo;
         CONFIG.User.documentClass = UserExitNihilo;
-
 
         // Mystery Man but with a drop shadow
         Actor.DEFAULT_ICON = "systems/exit-nihilo/icons/default-icons/mystery-man.svg";

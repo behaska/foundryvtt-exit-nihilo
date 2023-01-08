@@ -13,7 +13,7 @@ export const HooksExitNihilo = {
             Init,
             Ready,
             RenderDialog,
-            Setup
+            Setup,
         ];
         for (const Listener of listeners) {
             Listener.listen();

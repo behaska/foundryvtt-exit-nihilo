@@ -1,5 +1,3 @@
-import { ExitNihiloCompetenceDie } from "@scripts/dice";
-
 interface ColorsetOptions {
     name: string;
     description: string;
@@ -31,14 +29,12 @@ const isDice3D = (obj: unknown): obj is Dice3D =>
 const DiceSoNiceReady = {
     listen: (): void => {
         Hooks.once("diceSoNiceReady", (dice3d: unknown) => {
-            CONFIG.Dice.terms["s"] = ExitNihiloCompetenceDie;
-
             if (!isDice3D(dice3d)) return;
 
             // BASIC SYSTEM
             dice3d.addSystem({ id: "basic", name: "DiceExitNiholo Basique" }, "preferred");
 
-            for (const faces of [4, 6, 8, 10, 12, 20]) {
+            for (const faces of [4, 8, 6, 10, 12, 20]) {
                 dice3d.addDicePreset({
                     type: `d${faces}`,
                     labels: [...Array(faces)].map((_value, idx) => String(idx + 1)),

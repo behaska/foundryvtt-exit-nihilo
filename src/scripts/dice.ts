@@ -1,5 +1,6 @@
 import { ActorExitNihilo } from "@actor/base";
 import { ErrorExitNihilo } from "@util/misc";
+import { ExitNihiloRoll } from "@system/roll";
 
 /**
  * @category Other
@@ -67,7 +68,7 @@ class DiceExitNihilo {
             const nombreDeDesPotentiel = valeurCompetence + valeurDeCaracteristique;
 
             const nombreDeDes = nombreDeDesPotentiel <= 0 ? 0 : nombreDeDesPotentiel;
-            const roll = new Roll(`${nombreDeDes}ds`, data).roll({ async: false });
+            const roll = new ExitNihiloRoll(`${nombreDeDes}ds`, data).roll({ async: false });
             roll.toMessage({
                 speaker,
                 flags: {
@@ -125,6 +126,8 @@ class ExitNihiloCompetenceDie extends Die {
     constructor(termData?: Partial<DieData>) {
         if (termData) {
             termData.faces = 6;
+        } else {
+            console.error("Die has undefined or null termData:", termData);
         }
         super(termData);
     }
