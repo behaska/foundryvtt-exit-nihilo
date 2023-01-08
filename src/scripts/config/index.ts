@@ -71,29 +71,28 @@ export const EXITNIHILOCONFIG = {
     chatDamageButtonShieldToggle: false,
 
     genres: {
-        "male": "EXITNIHILO.Personnage.Genres.Male.Titre",
-        "femelle": "EXITNIHILO.Personnage.Genres.Femelle.Titre",
-        "autres": "EXITNIHILO.Personnage.Genres.Autres.Titre",
+        male: "EXITNIHILO.Personnage.Genres.male.Titre",
+        femelle: "EXITNIHILO.Personnage.Genres.femelle.Titre",
+        autres: "EXITNIHILO.Personnage.Genres.autres.Titre",
     },
 
     niveauxDeSante: {
-        "pleineSante": "EXITNIHILO.Personnage.Sante.NiveauDeSante.pleineSante.Titre",
-        "legerementBlesse": "EXITNIHILO.Personnage.Sante.NiveauDeSante.legerementBlesse.Titre",
-        "blesse": "EXITNIHILO.Personnage.Sante.NiveauDeSante.blesse.Titre",
-        "grievementBlesse": "EXITNIHILO.Personnage.Sante.NiveauDeSante.grievementBlesse.Titre",
-        "mourant": "EXITNIHILO.Personnage.Sante.NiveauDeSante.mourant.Titre",
-        "mort": "EXITNIHILO.Personnage.Sante.NiveauDeSante.mort.Titre",
-
+        pleineSante: "EXITNIHILO.Personnage.Sante.NiveauDeSante.pleineSante.Titre",
+        legerementBlesse: "EXITNIHILO.Personnage.Sante.NiveauDeSante.legerementBlesse.Titre",
+        blesse: "EXITNIHILO.Personnage.Sante.NiveauDeSante.blesse.Titre",
+        grievementBlesse: "EXITNIHILO.Personnage.Sante.NiveauDeSante.grievementBlesse.Titre",
+        mourant: "EXITNIHILO.Personnage.Sante.NiveauDeSante.mourant.Titre",
+        mort: "EXITNIHILO.Personnage.Sante.NiveauDeSante.mort.Titre",
     },
 
     roles: {
-        protecteur: "EXITNIHILO.Personnage.Roles.Protecteur.Titre",
-        approvisionneur: "EXITNIHILO.Personnage.Roles.Approvisionneur.Titre",
-        dirigeant: "EXITNIHILO.Personnage.Roles.Dirigeant.Titre",
-        animateur: "EXITNIHILO.Personnage.Roles.Animateur.Titre",
-        soigneur: "EXITNIHILO.Personnage.Roles.Soigneur.Titre",
-        sachant: "EXITNIHILO.Personnage.Roles.Sachant.Titre",
-        bricoleur: "EXITNIHILO.Personnage.Roles.Bricoleur.Titre",
+        protecteur: "EXITNIHILO.Personnage.Roles.protecteur.Titre",
+        approvisionneur: "EXITNIHILO.Personnage.Roles.approvisionneur.Titre",
+        dirigeant: "EXITNIHILO.Personnage.Roles.dirigeant.Titre",
+        animateur: "EXITNIHILO.Personnage.Roles.animateur.Titre",
+        soigneur: "EXITNIHILO.Personnage.Roles.soigneur.Titre",
+        sachant: "EXITNIHILO.Personnage.Roles.sachant.Titre",
+        bricoleur: "EXITNIHILO.Personnage.Roles.bricoleur.Titre",
     },
 
     statusEffects: {
@@ -285,18 +284,14 @@ export const EXITNIHILOCONFIG = {
         burrow: "EXITNIHILO.SpeedTypesBurrow",
     },
 
-    prerequisitePlaceholders: {
-    },
+    prerequisitePlaceholders: {},
 
-    pfsFactions: {
-    },
+    pfsFactions: {},
 
-    pfsSchools: {
-    },
+    pfsSchools: {},
 
     // Languages, alphabetical by common, uncommon, secret
-    languages: {
-    },
+    languages: {},
 
     attackEffects: {
         grab: "EXITNIHILO.AttackEffectGrab",
@@ -311,16 +306,13 @@ export const EXITNIHILOCONFIG = {
     },
 
     // Year offsets relative to the current actual year
-    worldClock: {
-    },
+    worldClock: {},
 
     monsterAbilities: () => {
-        return {
-        };
+        return {};
     },
 
-    SETTINGS: {
-    },
+    SETTINGS: {},
 
     Actor: {
         documentClasses: {

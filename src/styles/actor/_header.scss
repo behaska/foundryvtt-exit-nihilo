@@ -8,6 +8,7 @@ header.char-header {
         @include micro;
         margin-top: 4px;
         margin-left: 8px;
+        flex: 1;
 
         h1.char-name {
             margin: 0;

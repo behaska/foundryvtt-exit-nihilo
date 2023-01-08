@@ -1,19 +1,63 @@
-.dice-total.succes-critique {
-    color: blueviolet;
-}
+.dice-roll {
 
-.dice-total.succes {
-    color: green;
-}
+    .infos {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 5px;
 
-.dice-total.succes-partiel {
-    color: darkorange;
-}
+        .competence, .caracteristique {
+            display: flex;
+            flex-direction: row;
+        }
 
-.dice-total.echec {
-    color: black;
-}
+        div > span.titre {
+            text-decoration: underline;
+            flex: 1;
+        }
 
-.dice-total.echec-crtique {
-    color: red;
+        div > span.value {
+            font-weight: bold;
+            flex: 1;
+            text-transform:capitalize;
+        }
+    }
+
+    .dice-result {
+
+        .dice-formula {
+            span.titre {
+                font-size: 16px;
+                text-decoration: underline;
+            }
+
+            span.value {
+                padding-left: 5px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        }
+
+        .dice-total.succes-critique {
+            color: blueviolet;
+        }
+
+        .dice-total.succes {
+            color: green;
+        }
+
+        .dice-total.succes-partiel {
+            color: darkorange;
+        }
+
+        .dice-total.echec {
+            color: black;
+        }
+
+        .dice-total.echec-critique {
+            color: red;
+        }
+    }
+
 }

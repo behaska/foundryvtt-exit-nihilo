@@ -183,7 +183,7 @@
                     "argumenter": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.argumenter"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Argumenter.Titre"
                     },
                     "art1": {
                         "value": 0,
@@ -198,92 +198,92 @@
                     "athletisme": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.athletisme"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Athletisme.Titre"
                     },
                     "baratin": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.baratin"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Baratin.Titre"
                     },
                     "bricolage": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.bricolage"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Bricolage.Titre"
                     },
                     "chercher": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.chercher"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Chercher.Titre"
                     },
                     "cuisine": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.cuisine"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Cuisine.Titre"
                     },
                     "discretion": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.discretion"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Discretion.Titre"
                     },
                     "dressage": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.dressage"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Dressage.Titre"
                     },
                     "equitation": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.equitation"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Equitation.Titre"
                     },
                     "esquiver": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.esquive"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Esquiver.Titre"
                     },
                     "grimper": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.grimper"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Grimper.Titre"
                     },
                     "imiter": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.imiter"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Imiter.Titre"
                     },
                     "influencer": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.influencer"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Influencer.Titre"
                     },
                     "lancer": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.lancer"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Lancer.Titre"
                     },
                     "jardinage": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.jardinage"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Jardinage.Titre"
                     },
                     "langues": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.langues"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Langues.Titre"
                     },
                     "manipulation": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.manipulation"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Manipulation.Titre"
                     },
                     "nager": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.nager"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Nager.Titre"
                     },
                     "perception": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.perception"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Perception.Titre"
                     },
                     "pilotage1": {
                         "value": 0,
@@ -298,7 +298,7 @@
                     "secourisme": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.secourisme"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Secourisme.Titre"
                     },
                     "profession1": {
                         "value": 0,
@@ -313,59 +313,59 @@
                     "psychologie": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.psychologie"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Psychologie.Titre"
                     },
                     "survie": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.survie"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Survie.Titre"
                     },
                     "technologie": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.technologie"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Technologie.Titre"
                     }
                 },
                 "combat": {
                     "corpsACorps": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.corps-a-corps"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.CorpsACorps.Titre"
                     },
                     "corpsACorpsArme": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.corps-a-corps-arme"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.CorpsACorpsArme.Titre"
                     },
                     "armeAProjectile": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.arme-a-projectile"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.ArmeAProjectile.Titre"
                     },
                     "armeDePoing": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.arme-de-poing"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.ArmeDePoing.Titre"
                     },
                     "fusil": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.fusil"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.Fusil.Titre"
                     },
                     "fusilDAssaut": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.fusil-d-assaut"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.FusilDAssaut.Titre"
                     },
                     "fusilDePrecision": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.de-precision"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.FusilDePrecision.Titre"
                     },
                     "explosif": {
                         "value": 0,
                         "type": "Number",
-                        "label": "tor2e.stats.explosif"
+                        "label": "EXITNIHILO.Personnage.Competences.Combat.Explosif.Titre"
                     }
                 }
             },
@@ -423,6 +423,6 @@
             "templates": [
                 "descriptionBlock"
             ]
-        } 
+        }
     }
 }

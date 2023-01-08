@@ -1,6 +1,6 @@
 import { ActorExitNihilo } from "@actor/base";
 import { ErrorExitNihilo } from "@util/misc";
-import { ExitNihiloRoll } from "@system/roll";
+import { ExitNihiloRoll, ExitNihiloRollData } from "@system/roll";
 
 /**
  * @category Other
@@ -48,18 +48,19 @@ class DiceExitNihilo {
 
             if ($form) {
                 data.caracteristique = $form.find("input:checked").val();
-                data.competence = $form.find("[name=valeurCompetence]").val();
+                data.valeurCompetence = $form.find("[name=valeurCompetence]").val();
+                data.titreCompetence = $form.find("[name=titreCompetence]").val();
             }
 
             // Execute the roll and send it to chat
             const propertyKey = `system.attributs.caracteristiquesCalculees.${data.caracteristique}`;
             const valeurDeCaracteristique = getProperty(actor, propertyKey);
 
-            const valeurCompetence = parseInt(data.competence as string, 10);
-
-            if (typeof valeurCompetence !== "number") {
-                throw ErrorExitNihilo(`Skill value is not a number (${data.competence}).`);
+            if (typeof data.valeurCompetence !== "string") {
+                throw ErrorExitNihilo(`Skill value is not a string (${data.valeurCompetence}).`);
             }
+
+            const valeurCompetence = parseInt(data.valeurCompetence as string, 10);
 
             if (typeof valeurDeCaracteristique !== "number") {
                 throw ErrorExitNihilo(`Skill value is not a number (${valeurDeCaracteristique}).`);
@@ -67,8 +68,14 @@ class DiceExitNihilo {
 
             const nombreDeDesPotentiel = valeurCompetence + valeurDeCaracteristique;
 
-            const nombreDeDes = nombreDeDesPotentiel <= 0 ? 0 : nombreDeDesPotentiel;
-            const roll = new ExitNihiloRoll(`${nombreDeDes}ds`, data).roll({ async: false });
+            const nombreDeDes: number = nombreDeDesPotentiel <= 0 ? 0 : nombreDeDesPotentiel;
+            const options: ExitNihiloRollData = {
+                caracteristique: data.caracteristique as string,
+                titreCompetence: data.titreCompetence as string,
+                nombreDeDes: nombreDeDes,
+            };
+
+            const roll = new ExitNihiloRoll(`${nombreDeDes}ds`, data, options).roll({ async: false });
             roll.toMessage({
                 speaker,
                 flags: {
@@ -88,7 +95,8 @@ class DiceExitNihilo {
         const dialogData = {
             actor,
             data,
-            valeurCompetence: data.competence,
+            valeurCompetence: data.valeur,
+            titreCompetence: data.titre,
             rollModes: CONFIG.Dice.rollModes,
         };
         const content = await renderTemplate(template, dialogData);

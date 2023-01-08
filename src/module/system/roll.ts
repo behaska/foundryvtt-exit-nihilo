@@ -3,12 +3,18 @@ import { ErrorExitNihilo, isObject } from "@util";
 
 class ExitNihiloRoll extends Roll {
     roller: UserExitNihilo | null;
+    caracteristique: string;
+    competence: string;
+    nombreDeDes: number;
 
-    constructor(formula: string, data = {}, options?: RollDataExitNihilo) {
+    constructor(formula: string, data = {}, options?: ExitNihiloRollData) {
         const wrapped = formula.startsWith("{") ? formula : `{${formula}}`;
         super(wrapped, data, options);
-
+        console.log("ExitNihiloRollData:", options);
         this.roller = game.users.get(options?.rollerId ?? "") ?? null;
+        this.caracteristique = options?.caracteristique ?? "Unknown";
+        this.competence = options?.titreCompetence ?? "Unknown";
+        this.nombreDeDes = options?.nombreDeDes ?? -1;
     }
 
     static override CHAT_TEMPLATE = "systems/exit-nihilo/templates/dice/jet-de-competence.hbs";
@@ -103,13 +109,18 @@ class ExitNihiloRoll extends Roll {
             tooltip: isPrivate ? "" : await this.getTooltip(),
             total: isPrivate ? "?" : Math.floor((this.total! * 100) / 100),
             exitNihiloResult: this.computeCustomResult(),
+            caracteristique: this.caracteristique,
+            competence: {
+                titre: this.competence,
+                valeur: this.nombreDeDes,
+            },
         };
-
+        console.log("Roll:", this);
+        console.log("ChatData:", chatData);
         return renderTemplate(template, chatData);
     }
 
     private computeCustomResult(): ExitNihiloRollCustomResult {
-        console.log("Roll in computeCustomResult:", this);
         const results = this.dice.flatMap((die) => die.results.map((result) => result.result));
         const nbSucces = results.filter((result) => result === 6).length;
         const nbSuccesPartiel = results.filter((result) => result === 5).length;
@@ -143,9 +154,12 @@ interface ExitNihiloRollCustomResult {
     label: string;
 }
 
-interface RollDataExitNihilo extends RollOptions {
+interface ExitNihiloRollData extends RollOptions {
     rollerId?: string;
     totalModifier?: number;
+    caracteristique: string;
+    titreCompetence: string;
+    nombreDeDes: number;
 }
 
-export { ExitNihiloRoll };
+export { ExitNihiloRoll, ExitNihiloRollData };

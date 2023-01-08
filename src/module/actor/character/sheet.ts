@@ -3,21 +3,24 @@ import { DiceExitNihilo } from "@scripts/dice";
 import { ErrorExitNihilo } from "@util/misc";
 import { CharacterExitNihilo } from ".";
 import { CharacterConfig } from "./config";
-import { CharacterSheetData, ExitNihiloDisplayGenre, ExitNihiloDisplayNiveauDeSante, ExitNihiloDisplayRole } from "./data/sheet";
+import {
+    CharacterSheetData,
+    ExitNihiloDisplayGenre,
+    ExitNihiloDisplayNiveauDeSante,
+    ExitNihiloDisplayRole,
+} from "./data/sheet";
+import { Competence } from "@actor/character/data";
 
 class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
-
     protected readonly actorConfigClass = CharacterConfig;
-    
+
     static override get defaultOptions(): ActorSheetOptions {
         const options = super.defaultOptions;
         options.classes = [...options.classes, "character"];
         options.width = 800;
         options.height = 850;
         options.scrollY.push(".tab.active .tab-content");
-        options.tabs = [
-            { navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "general" },
-        ];
+        options.tabs = [{ navSelector: ".sheet-navigation", contentSelector: ".sheet-content", initial: "general" }];
         return options;
     }
 
@@ -50,13 +53,22 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
     override activateListeners(html: JQuery): void {
         super.activateListeners(html);
 
+        {
+            // ensure correct tab name is displayed after actor update
+            const title = $(".sheet-navigation .active").attr("title");
+            if (title) {
+                console.log("Changement du titre à ", title);
+                html.find(".navigation-title").text(title);
+            }
+        }
+
         const selectedCompetenceElement = html.find(".competence>.titre");
         const selectedCompetenceDeCombatElement = html.find(".competence-de-combat>.titre");
 
         const selectedbuttonVerrouilleDeverouilleElement = html.find(".verouille-deverouille-bouton");
 
         selectedbuttonVerrouilleDeverouilleElement.on("click", async () => {
-            const propertyKey: string = "system.configuration.verrou";
+            const propertyKey = "system.configuration.verrou";
             const currentValue = getProperty(this.actor, propertyKey);
             return await this.actor.update({ [`${propertyKey}`]: !currentValue });
         });
@@ -69,55 +81,54 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
             await this.rollSkill(event, ".competence-de-combat", "combat");
         });
 
-
         if (!this.actor.system.configuration.verrou) {
             const selectedValeurDeCompetenceElement = html.find(".competence>.valeur");
             const selectedValeurDeCompetenceDeCombatElement = html.find(".competence-de-combat>.valeur");
 
             selectedValeurDeCompetenceElement.on("click", async (event) => {
-                this.updateActorCompetenceCommune(event, 1);
+                await this.updateActorCompetenceCommune(event, 1);
             });
 
             selectedValeurDeCompetenceElement.on("contextmenu", async (event) => {
-                this.updateActorCompetenceCommune(event, -1);
+                await this.updateActorCompetenceCommune(event, -1);
             });
 
             selectedValeurDeCompetenceDeCombatElement.on("click", async (event) => {
-                this.updateActorCompetenceDeCombat(event, 1);
+                await this.updateActorCompetenceDeCombat(event, 1);
             });
 
             selectedValeurDeCompetenceDeCombatElement.on("contextmenu", async (event) => {
-                this.updateActorCompetenceDeCombat(event, -1);
+                await this.updateActorCompetenceDeCombat(event, -1);
             });
         }
-
     }
 
-    private async rollSkill(event: JQuery.ClickEvent<HTMLElement, undefined, HTMLElement, HTMLElement>,
+    private async rollSkill(
+        event: JQuery.ClickEvent<HTMLElement, undefined, HTMLElement, HTMLElement>,
         selector: string,
-        type: string) {
+        type: string
+    ) {
         const competenceId = this.getCompetenceId(event, selector);
         if (competenceId === "") {
             throw ErrorExitNihilo(`No skill found with attr-key ("data-competence-id") with selector ${selector}.`);
         }
-        const propertyKey = `system.competences.${type}.${competenceId}.value`;
-        const competence = getProperty(this.actor, propertyKey);
+        const propertyKey = `system.competences.${type}.${competenceId}`;
+        const competence: Competence = getProperty(this.actor, propertyKey) as Competence;
 
-        if (typeof competence !== "number") {
-            throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
+        if (!competence) {
+            throw ErrorExitNihilo(`Skill with id ${competenceId} not found in actor ${this.actor.id} !`);
         }
 
         const title = "Fenêtre de configuration de Lancer de Dés";
-        const data = { competence };
+        const data = { valeur: competence.value, titre: game.i18n.localize(competence.label) };
         const speaker = ChatMessage.getSpeaker({ token: this.token, actor: this.actor });
 
-        await DiceExitNihilo.d6Roll(
-            {
-                actor: this.actor,
-                data,
-                title,
-                speaker
-            });
+        await DiceExitNihilo.d6Roll({
+            actor: this.actor,
+            data,
+            title,
+            speaker,
+        });
     }
 
     private async updateActorCompetenceCommune(event: JQuery.MouseEventBase, modifier: number) {
@@ -128,13 +139,18 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         return await this.updateActorCompetence(event, ".competence-de-combat", "combat", modifier);
     }
 
-    private async updateActorCompetence(event: JQuery.MouseEventBase, selector: string, competenceType: string, modifier: number) {
+    private async updateActorCompetence(
+        event: JQuery.MouseEventBase,
+        selector: string,
+        competenceType: string,
+        modifier: number
+    ) {
         const competence = this.getCompetenceId(event, selector);
         if (competence === "") {
             throw ErrorExitNihilo(`No skill found with attr-key ("data-competence-id").`);
         }
         const propertyKey = `system.competences.${competenceType}.${competence}.value`;
-        const currentValue = getProperty(this.actor, propertyKey)
+        const currentValue = getProperty(this.actor, propertyKey);
         if (typeof currentValue !== "number" || Number.isNaN(currentValue)) {
             throw ErrorExitNihilo(`Actor property (${propertyKey}) not found`);
         }
@@ -144,7 +160,6 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         return await this.actor.update({ [`${propertyKey}`]: newValue });
     }
 
-
     private getCompetenceId(event: JQuery.MouseEventBase<any, any, any, any>, selector: string) {
         const target = $(event.currentTarget);
         const competence = target.closest(selector).attr("data-competence-id") ?? "";
@@ -152,7 +167,6 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
     }
 }
 
-interface CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
-}
+interface CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {}
 
 export { CharacterSheetExitNihilo };

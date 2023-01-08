@@ -2,11 +2,18 @@
     {{#if flavor}}
         <div class="dice-flavor">{{flavor}}</div>
     {{/if}}
-    <div>
-        <span>Compétence: </span><span>Bricolage</span>
+    <div class="infos">
+        <div class="competence">
+            <span class="titre">Compétence: </span><span class="value">{{competence.titre}}</span>
+        </div>
+        <div class="caracteristique">
+            <span class="titre">Caractéristique: </span><span class="value">{{caracteristique}}</span>
+        </div>
     </div>
     <div class="dice-result">
-        <div class="dice-formula">{{formula}}</div>
+        <div class="dice-formula">
+            <span class="titre">Nombre de Dés:</span> <span class="value">{{competence.valeur}}</span>
+        </div>
         {{{tooltip}}}
         <h4 class="dice-total {{exitNihiloResult.extraCss}}">{{exitNihiloResult.label}}</h4>
     </div>

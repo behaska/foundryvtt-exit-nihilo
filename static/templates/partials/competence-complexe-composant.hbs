@@ -2,7 +2,7 @@
     <div class="competence-complexe {{idContainer}}">
         <div class="titre-competence-complexe">{{localize labelContainer}}</div>
         {{#unless (and (eq valeurCompetence1 0) actor.system.configuration.verrou)}}
-        <div class="competence {{id1}}" data-competence-id="{{id1}}">
+        <div class="competence {{id1}}" data-competence-id="{{id1}}" data-competence-label="{{valeurLabel1}}">
             {{#if actor.system.configuration.verrou}}
             <div class="titre">{{valeurLabel1}}</div>
             {{else}}
@@ -14,7 +14,7 @@
         </div>
         {{/unless}}
         {{#unless (and (eq valeurCompetence2 0) actor.system.configuration.verrou)}}
-        <div class="competence {{id2}}" data-competence-id="{{id2}}">
+        <div class="competence {{id2}}" data-competence-id="{{id2}}" data-competence-label="{{valeurLabel2}}">
             {{#if actor.system.configuration.verrou}}
             <div class="titre">{{valeurLabel2}}</div>
             {{else}}

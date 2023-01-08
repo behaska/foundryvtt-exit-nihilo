@@ -3,10 +3,12 @@ nav.sheet-navigation {
     justify-content: center;
     align-items: center;
     height: 20px;
-    background: var(--secondary);
     background: url('../assets/sheet/border-pattern.webp') repeat-x top,
-        url('../assets/sheet/border-pattern.webp') repeat-x bottom,
-        var(--secondary);
+    url('../assets/sheet/border-pattern.webp') repeat-x bottom,
+    var(--alt);
+    background: var(--alt);
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
     transition: all 0.1s ease-out;
     box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -15,6 +17,8 @@ nav.sheet-navigation {
 
     .navigation-title {
         color: var(--text-light);
+        text-shadow: 1px 1px 2px black;
+        font-weight: bold;
         margin-right: auto;
         padding-left: 1em;
         white-space: nowrap;
@@ -39,14 +43,13 @@ nav.sheet-navigation {
         background-size: contain;
 
         /* prettier-ignore */
-        box-shadow:
-            0 0 0 1px var(--tertiary),
-            0 0 0 2px #9f725b,
-            inset 0 0 4px rgba(black, 0.25);
+        box-shadow: 0 0 0 1px var(--tertiary),
+        0 0 0 2px #9f725b,
+        inset 0 0 4px rgba(black, 0.25);
 
         &.active {
             box-shadow: 0 0 0 1px var(--tertiary), 0 0 0 2px #9f725b,
-                inset 0 0 4px rgba(black, 0.25), 0 0 8px var(--tertiary);
+            inset 0 0 4px rgba(black, 0.25), 0 0 8px var(--tertiary);
         }
 
         &:last-child {
@@ -67,7 +70,7 @@ nav.sheet-navigation {
         }
 
         &:hover .pfs-icon {
-            filter: drop-shadow( 0 0 8px var(--color-shadow-primary));
+            filter: drop-shadow(0 0 8px var(--color-shadow-primary));
         }
 
         // Actions and PFS tabs

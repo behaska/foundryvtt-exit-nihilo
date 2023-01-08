@@ -1,4 +1,10 @@
-import { BaseCreatureData, BaseCreatureSource, CreatureAttributes, CreatureDetails, CreatureSystemData } from "@actor/creature/data";
+import {
+    BaseCreatureData,
+    BaseCreatureSource,
+    CreatureAttributes,
+    CreatureDetails,
+    CreatureSystemData,
+} from "@actor/creature/data";
 import { ActorFlagsExitNihilo, ArmorClassData } from "@actor/data/base";
 import { CharacterExitNihilo } from "..";
 import { CharacterSheetTabVisibility } from "./sheet";
@@ -10,7 +16,7 @@ interface CharacterSource extends BaseCreatureSource<"character", CharacterSyste
 
 interface CharacterData
     extends Omit<CharacterSource, "data" | "flags" | "effects" | "items" | "prototypeToken" | "system" | "type">,
-    BaseCreatureData<CharacterExitNihilo, "character", CharacterSystemData, CharacterSource> { }
+        BaseCreatureData<CharacterExitNihilo, "character", CharacterSystemData, CharacterSource> {}
 
 type CharacterFlags = ActorFlagsExitNihilo & {
     exitNihilo: {
@@ -90,12 +96,12 @@ interface CompetencesDeCombat {
 
 /** Block de données qui stockent les compétences de combat du personnage (cf. template.json) */
 interface Competence {
-    titre: string,
-    valeur: number,
+    label: string;
+    value: number;
+    type: string;
 }
 
 type CategoryProficiencies = null;
-
 
 interface AuxiliaryAction {
     label: string;
@@ -179,7 +185,7 @@ interface Caracteristique {
     label: string;
     labelPremiere: string;
     labelDeuxieme: string;
-    premierEstPrincipal: string; //Boolean
+    premierEstPrincipal: string; // Boolean
 }
 
 interface CaracteristiquesDuPersonnage {
@@ -196,9 +202,7 @@ interface CaracteristiquesDuPersonnage {
 }
 
 class CaracteristiquesDuPersonnage {
-
-    private constructor() {
-    }
+    private constructor() {}
 
     static from(systemData: CharacterSystemData): CaracteristiquesDuPersonnage {
         const caracteristiques = systemData.attributs.caracteristiques;
@@ -208,9 +212,18 @@ class CaracteristiquesDuPersonnage {
         const caractere = caracteristiques.caractere;
         const social = caracteristiques.social;
 
-        //JSON.parse(physique.premierEstPrincipal)
+        // JSON.parse(physique.premierEstPrincipal)
 
-        let vitalite, puissance, dexterite, agilite, raisonnement, apprentissage, intuition, volonte, communication, empathie;
+        let vitalite,
+            puissance,
+            dexterite,
+            agilite,
+            raisonnement,
+            apprentissage,
+            intuition,
+            volonte,
+            communication,
+            empathie;
         if (JSON.parse(physique.premierEstPrincipal)) {
             puissance = physique.value + 1;
             vitalite = physique.value;
@@ -251,7 +264,6 @@ class CaracteristiquesDuPersonnage {
             empathie = social.value + 1;
         }
 
-
         const result = {
             puissance,
             vitalite,
@@ -263,11 +275,10 @@ class CaracteristiquesDuPersonnage {
             intuition,
             communication,
             empathie,
-        }
+        };
 
         return result;
     }
-
 }
 
 type NiveauDeVie = SetElement<typeof NIVEAUX_DE_VIE>;
@@ -277,7 +288,6 @@ export {
     CategoryProficiencies,
     CharacterArmorClass,
     Competence,
-    AttributsDuPersonnage as CharacterAttributes,
     CharacterData,
     CharacterDetails,
     CaracteristiquesDuPersonnage,

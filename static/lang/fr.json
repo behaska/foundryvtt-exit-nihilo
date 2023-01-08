@@ -1,5 +1,10 @@
 {
     "EXITNIHILO": {
+        "actor": {
+            "competences": {
+
+            }
+        },
         "Dialogue": {
             "LancerDeDes": {
                 "Annuler": "Annuler",
