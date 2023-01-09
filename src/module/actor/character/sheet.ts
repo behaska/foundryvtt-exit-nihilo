@@ -7,7 +7,7 @@ import {
     CharacterSheetData,
     ExitNihiloDisplayGenre,
     ExitNihiloDisplayNiveauDeSante,
-    ExitNihiloDisplayRole,
+    ExitNihiloDisplayRole
 } from "./data/sheet";
 import { Competence } from "@actor/character/data";
 import { COMPETENCES, COMPETENCES_ADOLESCENCE, COMPETENCES_ADULTE, COMPETENCES_ENFANCE } from "@actor/values";
@@ -137,8 +137,8 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         });
 
         if (!this.actor.system.configuration.verrou) {
-            const selectedValeurDeCompetenceElement = html.find(".competence>.valeur");
-            const selectedValeurDeCompetenceDeCombatElement = html.find(".competence-de-combat>.valeur");
+            const selectedValeurDeCompetenceElement = html.find(".competence>.valeur:not(.Disabled)");
+            const selectedValeurDeCompetenceDeCombatElement = html.find(".competence-de-combat>.valeur:not(.Disabled)");
 
             selectedValeurDeCompetenceElement.on("click", async (event) => {
                 await this.updateActorCompetenceCommune(event, 1);
@@ -217,8 +217,7 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
 
     private getCompetenceId(event: JQuery.MouseEventBase<any, any, any, any>, selector: string) {
         const target = $(event.currentTarget);
-        const competence = target.closest(selector).attr("data-competence-id") ?? "";
-        return competence;
+        return target.closest(selector).attr("data-competence-id") ?? "";
     }
 
     private buildCompetenceVisibilite(): object {
@@ -231,7 +230,7 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
             listeDesCompetencesActives = [...COMPETENCES_ENFANCE];
         }
         const result = COMPETENCES.map((competence) => {
-            if (listeDesCompetencesActives.includes(competence)) {
+            if (listeDesCompetencesActives.includes(competence) || this.actor.system.configuration.verrou) {
                 return { [`${competence}`]: "" };
             } else {
                 return { [`${competence}`]: " Disabled" };
