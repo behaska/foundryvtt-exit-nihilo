@@ -3,13 +3,28 @@
         <header>
             <img class="logo" src="systems/exit-nihilo/assets/exit-nihilo_logo.webp" height="56" alt="" srcset="" />
             <button type="button" class="verouille-deverouille-bouton hover"
-                title="{{localize 'EXITNIHILO.Feuille-De)Personnage.Verrouille'}}">
+                    title="{{localize 'EXITNIHILO.Feuille-De-Personnage.Verrouille-Total'}}">
                 {{#if actor.system.configuration.verrou}}
-                <i class="fa-solid fa-lock"></i>
+                    <i class="fa-solid fa-lock"></i>
                 {{else}}
-                <i class="fa-solid fa-lock-open"></i>
+                    <i class="fa-solid fa-lock-open"></i>
                 {{/if}}
             </button>
+
+            {{#unless actor.system.configuration.verrou}}
+                <button type="button"
+                        class="adulte-bouton hover {{#unless actor.system.configuration.toggles.adulte}}disabled{{/unless}}"
+                        title="{{localize 'EXITNIHILO.Feuille-De-Personnage.Verrouille.Adulte'}}">18+
+                </button>
+                <button type="button"
+                        class="adolescence-bouton hover {{#unless actor.system.configuration.toggles.adolescence}}disabled{{/unless}}"
+                        title="{{localize 'EXITNIHILO.Feuille-De-Personnage.Verrouille.Adolescence'}}">10+
+                </button>
+                <button type="button"
+                        class="enfance-bouton hover {{#unless actor.system.configuration.toggles.enfance}}disabled{{/unless}}"
+                        title="{{localize 'EXITNIHILO.Feuille-De-Personnage.Verrouille.Enfance'}}">5+
+                </button>
+            {{/unless}}
         </header>
         <div class="sidebar" data-group="dashboard" data-tab="sidebar">
             <!-- SANTÉ -->

@@ -10,6 +10,7 @@ import {
     ExitNihiloDisplayRole,
 } from "./data/sheet";
 import { Competence } from "@actor/character/data";
+import { COMPETENCES, COMPETENCES_ADOLESCENCE, COMPETENCES_ADULTE, COMPETENCES_ENFANCE } from "@actor/values";
 
 class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihilo> {
     protected readonly actorConfigClass = CharacterConfig;
@@ -47,6 +48,9 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         sheetData.enrichedContent.notes = await TextEditor.enrichHTML(biographie.notes.value, {
             async: true,
         });
+
+        sheetData.competenceVisibilite = this.buildCompetenceVisibilite();
+
         return sheetData;
     }
 
@@ -57,7 +61,6 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
             // ensure correct tab name is displayed after actor update
             const title = $(".sheet-navigation .active").attr("title");
             if (title) {
-                console.log("Changement du titre à ", title);
                 html.find(".navigation-title").text(title);
             }
         }
@@ -66,6 +69,58 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         const selectedCompetenceDeCombatElement = html.find(".competence-de-combat>.titre");
 
         const selectedbuttonVerrouilleDeverouilleElement = html.find(".verouille-deverouille-bouton");
+
+        const selectedbuttonAdulteElement = html.find(".adulte-bouton");
+        const selectedbuttonAdolescenceElement = html.find(".adolescence-bouton");
+        const selectedbuttonEnfanceElement = html.find(".enfance-bouton");
+
+        selectedbuttonAdulteElement.on("click", async () => {
+            const adultePropertyKey = "system.configuration.toggles.adulte";
+            const currentValue = getProperty(this.actor, adultePropertyKey);
+            if (currentValue) {
+                return;
+            }
+            const adolescencePropertyKey = "system.configuration.toggles.adolescence";
+            const enfancePropertyKey = "system.configuration.toggles.enfance";
+            const data = {
+                [`${adultePropertyKey}`]: true,
+                [`${adolescencePropertyKey}`]: false,
+                [`${enfancePropertyKey}`]: false,
+            };
+            return await this.actor.update(data);
+        });
+
+        selectedbuttonAdolescenceElement.on("click", async () => {
+            const adolescencePropertyKey = "system.configuration.toggles.adolescence";
+            const currentValue = getProperty(this.actor, adolescencePropertyKey);
+            if (currentValue) {
+                return;
+            }
+            const adultePropertyKey = "system.configuration.toggles.adulte";
+            const enfancePropertyKey = "system.configuration.toggles.enfance";
+            const data = {
+                [`${adultePropertyKey}`]: false,
+                [`${adolescencePropertyKey}`]: true,
+                [`${enfancePropertyKey}`]: false,
+            };
+            return await this.actor.update(data);
+        });
+
+        selectedbuttonEnfanceElement.on("click", async () => {
+            const enfancePropertyKey = "system.configuration.toggles.enfance";
+            const currentValue = getProperty(this.actor, enfancePropertyKey);
+            if (currentValue) {
+                return;
+            }
+            const adultePropertyKey = "system.configuration.toggles.adulte";
+            const adolescencePropertyKey = "system.configuration.toggles.adolescence";
+            const data = {
+                [`${adultePropertyKey}`]: false,
+                [`${adolescencePropertyKey}`]: false,
+                [`${enfancePropertyKey}`]: true,
+            };
+            return await this.actor.update(data);
+        });
 
         selectedbuttonVerrouilleDeverouilleElement.on("click", async () => {
             const propertyKey = "system.configuration.verrou";
@@ -164,6 +219,29 @@ class CharacterSheetExitNihilo extends CreatureSheetExitNihilo<CharacterExitNihi
         const target = $(event.currentTarget);
         const competence = target.closest(selector).attr("data-competence-id") ?? "";
         return competence;
+    }
+
+    private buildCompetenceVisibilite(): object {
+        let listeDesCompetencesActives: string[];
+        if (this.actor.system.configuration.toggles.adulte) {
+            listeDesCompetencesActives = [...COMPETENCES_ADULTE];
+        } else if (this.actor.system.configuration.toggles.adolescence) {
+            listeDesCompetencesActives = [...COMPETENCES_ADOLESCENCE];
+        } else {
+            listeDesCompetencesActives = [...COMPETENCES_ENFANCE];
+        }
+        const result = COMPETENCES.map((competence) => {
+            if (listeDesCompetencesActives.includes(competence)) {
+                return { [`${competence}`]: "" };
+            } else {
+                return { [`${competence}`]: " Disabled" };
+            }
+        });
+        const finalObj = {};
+        for (let i = 0; i < result.length; i++) {
+            Object.assign(finalObj, result[i]);
+        }
+        return finalObj;
     }
 }
 

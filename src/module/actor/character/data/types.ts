@@ -51,6 +51,13 @@ interface ConfigurationDuPersonnage {
     verrou: boolean;
     /** l'onglet a ouvrir par défaut */
     onglet: string;
+    toggles: ConfigurationToggles;
+}
+
+interface ConfigurationToggles {
+    adulte: boolean;
+    adolescence: boolean;
+    enfance: boolean;
 }
 
 /** Block de données qui stockent les compétences communes du personnage (cf. template.json) */

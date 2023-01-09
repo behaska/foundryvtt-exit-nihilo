@@ -1,15 +1,14 @@
 export function registerHandlebarsHelpers(): void {
-
     Handlebars.registerHelper("isLocked", function (context) {
-        return (context.data.root.actor.system.configuration.verrou) ? " Disabled" : "";
+        return context.data.root.actor.system.configuration.verrou ? " Locked" : "";
     });
 
     Handlebars.registerHelper("isTrue", function (arg1: string) {
-        return (arg1.toLocaleLowerCase() === 'true') ? "Checked" : "";
+        return arg1.toLocaleLowerCase() === "true" ? "Checked" : "";
     });
 
     Handlebars.registerHelper("isFalse", function (arg1: string) {
-        return (arg1.toLocaleLowerCase() === 'false') ? "Checked" : "";
+        return arg1.toLocaleLowerCase() === "false" ? "Checked" : "";
     });
 
     Handlebars.registerHelper("developMode", function (this: unknown, body: Handlebars.HelperOptions) {
@@ -88,8 +87,8 @@ export function registerHandlebarsHelpers(): void {
         return results.join("");
     });
 
-    Handlebars.registerHelper('skill-dots', function (n, max) {
-        let accum = '';
+    Handlebars.registerHelper("skill-dots", function (n, max) {
+        let accum = "";
         for (let i = 1; i <= max; ++i)
             if (i <= n) {
                 accum += '<div class="skill-display-element-full"></div>';
@@ -97,7 +96,7 @@ export function registerHandlebarsHelpers(): void {
                 accum += '<div class="skill-display-element"></div>';
             }
         return accum;
-    });    
+    });
 
     Handlebars.registerHelper("isNullish", function (value: unknown) {
         return value === null || value === undefined;

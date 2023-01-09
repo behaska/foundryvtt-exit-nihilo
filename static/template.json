@@ -16,7 +16,12 @@
         "character": {
             "configuration": {
                 "onglet": "general",
-                "verrou": "false"
+                "verrou": "false",
+                "toggles": {
+                    "adulte": false,
+                    "adolescence": false,
+                    "enfance": true
+                }
             },
             "details": {
                 "age": {

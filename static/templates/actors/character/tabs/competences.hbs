@@ -1,136 +1,160 @@
+{{log "competenceVisibilite.argumenter:" this}}
+{{log "competenceVisibilite.argumenter:" competenceVisibilite.argumenter}}
+{{log "competenceVisibilite.athletisme:" competenceVisibilite.athletisme}}
 <div class="tab competences item-container" data-container-type="actorCompetences" data-group="primary"
-    data-tab="competences">
+     data-tab="competences">
     <section class="personnage-competences-communes">
         <h2>{{localize "EXITNIHILO.Personnage.Competences.Communes.Simples.Titre"}}</h2>
 
         <div class="competences-container">
             <!-- Colonne 1 -->
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "argumenter"
-            label = actor.system.competences.communes.argumenter.label
-            valeurCourante = actor.system.competences.communes.argumenter.value
+                id = "argumenter"
+                label = actor.system.competences.communes.argumenter.label
+                valeurCourante = actor.system.competences.communes.argumenter.value
+                extraCss = competenceVisibilite.argumenter
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "athletisme"
-            label = actor.system.competences.communes.athletisme.label
-            valeurCourante = actor.system.competences.communes.athletisme.value
+                id = "athletisme"
+                label = actor.system.competences.communes.athletisme.label
+                valeurCourante = actor.system.competences.communes.athletisme.value
+                extraCss = competenceVisibilite.athletisme
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "baratin"
-            label = actor.system.competences.communes.baratin.label
-            valeurCourante = actor.system.competences.communes.baratin.value
+                id = "baratin"
+                label = actor.system.competences.communes.baratin.label
+                valeurCourante = actor.system.competences.communes.baratin.value
+                extraCss = competenceVisibilite.baratin
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "bricolage"
-            label = actor.system.competences.communes.bricolage.label
-            valeurCourante = actor.system.competences.communes.bricolage.value
+                id = "bricolage"
+                label = actor.system.competences.communes.bricolage.label
+                valeurCourante = actor.system.competences.communes.bricolage.value
+                extraCss = competenceVisibilite.bricolage
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "chercher"
-            label = actor.system.competences.communes.chercher.label
-            valeurCourante = actor.system.competences.communes.chercher.value
+                id = "chercher"
+                label = actor.system.competences.communes.chercher.label
+                valeurCourante = actor.system.competences.communes.chercher.value
+                extraCss = competenceVisibilite.chercher
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "cuisine"
-            label = actor.system.competences.communes.cuisine.label
-            valeurCourante = actor.system.competences.communes.cuisine.value
+                id = "cuisine"
+                label = actor.system.competences.communes.cuisine.label
+                valeurCourante = actor.system.competences.communes.cuisine.value
+                extraCss = competenceVisibilite.cuisine
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "jardinage"
-            label = actor.system.competences.communes.jardinage.label
-            valeurCourante = actor.system.competences.communes.jardinage.value
+                id = "jardinage"
+                label = actor.system.competences.communes.jardinage.label
+                valeurCourante = actor.system.competences.communes.jardinage.value
+                extraCss = competenceVisibilite.jardinage
             }}
 
             <!-- Colonne 2 -->
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "discretion"
-            label = actor.system.competences.communes.discretion.label
-            valeurCourante = actor.system.competences.communes.discretion.value
+                id = "discretion"
+                label = actor.system.competences.communes.discretion.label
+                valeurCourante = actor.system.competences.communes.discretion.value
+                extraCss = competenceVisibilite.discretion
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "equitation"
-            label = actor.system.competences.communes.equitation.label
-            valeurCourante = actor.system.competences.communes.equitation.value
+                id = "equitation"
+                label = actor.system.competences.communes.equitation.label
+                valeurCourante = actor.system.competences.communes.equitation.value
+                extraCss = competenceVisibilite.equitation
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "esquiver"
-            label = actor.system.competences.communes.esquiver.label
-            valeurCourante = actor.system.competences.communes.esquiver.value
+                id = "esquiver"
+                label = actor.system.competences.communes.esquiver.label
+                valeurCourante = actor.system.competences.communes.esquiver.value
+                extraCss = competenceVisibilite.esquiver
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "imiter"
-            label = actor.system.competences.communes.imiter.label
-            valeurCourante = actor.system.competences.communes.imiter.value
+                id = "imiter"
+                label = actor.system.competences.communes.imiter.label
+                valeurCourante = actor.system.competences.communes.imiter.value
+                extraCss = competenceVisibilite.imiter
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "influencer"
-            label = actor.system.competences.communes.influencer.label
-            valeurCourante = actor.system.competences.communes.influencer.value
+                id = "influencer"
+                label = actor.system.competences.communes.influencer.label
+                valeurCourante = actor.system.competences.communes.influencer.value
+                extraCss = competenceVisibilite.influencer
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "lancer"
-            label = actor.system.competences.communes.lancer.label
-            valeurCourante = actor.system.competences.communes.lancer.value
+                id = "lancer"
+                label = actor.system.competences.communes.lancer.label
+                valeurCourante = actor.system.competences.communes.lancer.value
+                extraCss = competenceVisibilite.lancer
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "langues"
-            label = actor.system.competences.communes.langues.label
-            valeurCourante = actor.system.competences.communes.langues.value
+                id = "langues"
+                label = actor.system.competences.communes.langues.label
+                valeurCourante = actor.system.competences.communes.langues.value
+                extraCss = competenceVisibilite.langues
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "manipulation"
-            label = actor.system.competences.communes.manipulation.label
-            valeurCourante = actor.system.competences.communes.manipulation.value
+                id = "manipulation"
+                label = actor.system.competences.communes.manipulation.label
+                valeurCourante = actor.system.competences.communes.manipulation.value
+                extraCss = competenceVisibilite.manipulation
             }}
 
             <!-- Colonne 3 -->
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "nager"
-            label = actor.system.competences.communes.nager.label
-            valeurCourante = actor.system.competences.communes.nager.value
+                id = "nager"
+                label = actor.system.competences.communes.nager.label
+                valeurCourante = actor.system.competences.communes.nager.value
+                extraCss = competenceVisibilite.nager
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "perception"
-            label = actor.system.competences.communes.perception.label
-            valeurCourante = actor.system.competences.communes.perception.value
+                id = "perception"
+                label = actor.system.competences.communes.perception.label
+                valeurCourante = actor.system.competences.communes.perception.value
+                extraCss = competenceVisibilite.perception
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "psychologie"
-            label = actor.system.competences.communes.psychologie.label
-            valeurCourante = actor.system.competences.communes.psychologie.value
+                id = "psychologie"
+                label = actor.system.competences.communes.psychologie.label
+                valeurCourante = actor.system.competences.communes.psychologie.value
+                extraCss = competenceVisibilite.psychologie
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "secourisme"
-            label = actor.system.competences.communes.secourisme.label
-            valeurCourante = actor.system.competences.communes.secourisme.value
+                id = "secourisme"
+                label = actor.system.competences.communes.secourisme.label
+                valeurCourante = actor.system.competences.communes.secourisme.value
+                extraCss = competenceVisibilite.secourisme
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "survie"
-            label = actor.system.competences.communes.survie.label
-            valeurCourante = actor.system.competences.communes.survie.value
+                id = "survie"
+                label = actor.system.competences.communes.survie.label
+                valeurCourante = actor.system.competences.communes.survie.value
+                extraCss = competenceVisibilite.survie
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-composant.hbs"
-            id = "technologie"
-            label = actor.system.competences.communes.technologie.label
-            valeurCourante = actor.system.competences.communes.technologie.value
+                id = "technologie"
+                label = actor.system.competences.communes.technologie.label
+                valeurCourante = actor.system.competences.communes.technologie.value
+                extraCss = competenceVisibilite.technologie
             }}
         </div>
     </section>
@@ -139,46 +163,46 @@
         <h2>{{localize "EXITNIHILO.Personnage.Competences.Communes.Complexes.Titre"}}</h2>
         <div class="competences-container">
             {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.hbs"
-            idContainer = "arts"
-            labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Arts.Titre"
-            id1 = "art1"
-            id2 = "art2"
-            placeholder = "EXITNIHILO.Personnage.Competences.Communes.Arts.Placeholder"
-            referenceLabel1 = "system.competences.communes.art1.label"
-            referenceLabel2 = "system.competences.communes.art2.label"
-            valeurLabel1 = actor.system.competences.communes.art1.label
-            valeurLabel2 = actor.system.competences.communes.art2.label
-            valeurCompetence1 = actor.system.competences.communes.art1.value
-            valeurCompetence2 = actor.system.competences.communes.art2.value
+                idContainer = "arts"
+                labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Arts.Titre"
+                id1 = "art1"
+                id2 = "art2"
+                placeholder = "EXITNIHILO.Personnage.Competences.Communes.Arts.Placeholder"
+                referenceLabel1 = "system.competences.communes.art1.label"
+                referenceLabel2 = "system.competences.communes.art2.label"
+                valeurLabel1 = actor.system.competences.communes.art1.label
+                valeurLabel2 = actor.system.competences.communes.art2.label
+                valeurCompetence1 = actor.system.competences.communes.art1.value
+                valeurCompetence2 = actor.system.competences.communes.art2.value
             }}
 
 
             {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.hbs"
-            idContainer = "pilotages"
-            labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Titre"
-            id1 = "pilotage1"
-            id2 = "pilotage2"
-            placeholder = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Placeholder"
-            referenceLabel1 = "system.competences.communes.pilotage1.label"
-            referenceLabel2 = "system.competences.communes.pilotage2.label"
-            valeurLabel1 = actor.system.competences.communes.pilotage1.label
-            valeurLabel2 = actor.system.competences.communes.pilotage2.label
-            valeurCompetence1 = actor.system.competences.communes.pilotage1.value
-            valeurCompetence2 = actor.system.competences.communes.pilotage2.value
+                idContainer = "pilotages"
+                labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Titre"
+                id1 = "pilotage1"
+                id2 = "pilotage2"
+                placeholder = "EXITNIHILO.Personnage.Competences.Communes.Pilotages.Placeholder"
+                referenceLabel1 = "system.competences.communes.pilotage1.label"
+                referenceLabel2 = "system.competences.communes.pilotage2.label"
+                valeurLabel1 = actor.system.competences.communes.pilotage1.label
+                valeurLabel2 = actor.system.competences.communes.pilotage2.label
+                valeurCompetence1 = actor.system.competences.communes.pilotage1.value
+                valeurCompetence2 = actor.system.competences.communes.pilotage2.value
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.hbs"
-            idContainer = "professions"
-            labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Professions.Titre"
-            id1 = "profession1"
-            id2 = "profession2"
-            placeholder = "EXITNIHILO.Personnage.Competences.Communes.Professions.Placeholder"
-            referenceLabel1 = "system.competences.communes.profession1.label"
-            referenceLabel2 = "system.competences.communes.profession2.label"
-            valeurLabel1 = actor.system.competences.communes.profession1.label
-            valeurLabel2 = actor.system.competences.communes.profession2.label
-            valeurCompetence1 = actor.system.competences.communes.profession1.value
-            valeurCompetence2 = actor.system.competences.communes.profession2.value
+                idContainer = "professions"
+                labelContainer = "EXITNIHILO.Personnage.Competences.Communes.Professions.Titre"
+                id1 = "profession1"
+                id2 = "profession2"
+                placeholder = "EXITNIHILO.Personnage.Competences.Communes.Professions.Placeholder"
+                referenceLabel1 = "system.competences.communes.profession1.label"
+                referenceLabel2 = "system.competences.communes.profession2.label"
+                valeurLabel1 = actor.system.competences.communes.profession1.label
+                valeurLabel2 = actor.system.competences.communes.profession2.label
+                valeurCompetence1 = actor.system.competences.communes.profession1.value
+                valeurCompetence2 = actor.system.competences.communes.profession2.value
             }}
         </div>
     </section>
