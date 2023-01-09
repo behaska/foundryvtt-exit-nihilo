@@ -67,6 +67,14 @@ export const COMPETENCES = [
     "psychologie",
     "survie",
     "technologie",
+    "corpsACorps",
+    "corpsACorpsArme",
+    "armeAProjectile",
+    "armeDePoing",
+    "fusil",
+    "fusilDAssaut",
+    "fusilDePrecision",
+    "explosif",
 ];
 
 export const COMPETENCES_ENFANCE = [
@@ -106,6 +114,10 @@ export const COMPETENCES_ADOLESCENCE = [
     "premiers-soins",
     "survie",
     "technologie",
+    "corpsACorps",
+    "corpsACorpsArme",
+    "armeAProjectile",
+    "fusil",
 ] as const;
 
 export const COMPETENCES_ADULTE = [
@@ -135,6 +147,14 @@ export const COMPETENCES_ADULTE = [
     "psychologie",
     "survie",
     "technologie",
+    "corpsACorps",
+    "corpsACorpsArme",
+    "armeAProjectile",
+    "fusil",
+    "armeDePoing",
+    "fusilDAssaut",
+    "fusilDePrecision",
+    "explosif",
 ] as const;
 
 export const SKILL_LONG_FORMS = new Set(Object.values(SKILL_DICTIONARY));

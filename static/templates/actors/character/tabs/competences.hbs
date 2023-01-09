@@ -1,6 +1,3 @@
-{{log "competenceVisibilite.argumenter:" this}}
-{{log "competenceVisibilite.argumenter:" competenceVisibilite.argumenter}}
-{{log "competenceVisibilite.athletisme:" competenceVisibilite.athletisme}}
 <div class="tab competences item-container" data-container-type="actorCompetences" data-group="primary"
      data-tab="competences">
     <section class="personnage-competences-communes">
@@ -174,6 +171,8 @@
                 valeurLabel2 = actor.system.competences.communes.art2.label
                 valeurCompetence1 = actor.system.competences.communes.art1.value
                 valeurCompetence2 = actor.system.competences.communes.art2.value
+                extraCss1 = competenceVisibilite.art1
+                extraCss2 = competenceVisibilite.art2
             }}
 
 
@@ -189,6 +188,8 @@
                 valeurLabel2 = actor.system.competences.communes.pilotage2.label
                 valeurCompetence1 = actor.system.competences.communes.pilotage1.value
                 valeurCompetence2 = actor.system.competences.communes.pilotage2.value
+                extraCss1 = competenceVisibilite.pilotage1
+                extraCss2 = competenceVisibilite.pilotage2
             }}
 
             {{> "systems/exit-nihilo/templates/partials/competence-complexe-composant.hbs"
@@ -203,6 +204,8 @@
                 valeurLabel2 = actor.system.competences.communes.profession2.label
                 valeurCompetence1 = actor.system.competences.communes.profession1.value
                 valeurCompetence2 = actor.system.competences.communes.profession2.value
+                extraCss1 = competenceVisibilite.profession1
+                extraCss2 = competenceVisibilite.profession2
             }}
         </div>
     </section>
