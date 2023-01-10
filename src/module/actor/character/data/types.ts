@@ -203,7 +203,7 @@ interface CaracteristiquesDuPersonnage {
     raisonnement: number;
     apprentissage: number;
     volonte: number;
-    intuition: number;
+    conscience: number;
     communication: number;
     empathie: number;
 }
@@ -227,7 +227,7 @@ class CaracteristiquesDuPersonnage {
             coordination,
             raisonnement,
             apprentissage,
-            intuition,
+            conscience,
             volonte,
             communication,
             empathie;
@@ -257,10 +257,10 @@ class CaracteristiquesDuPersonnage {
 
         if (JSON.parse(caractere.premierEstPrincipal)) {
             volonte = caractere.value + 1;
-            intuition = caractere.value;
+            conscience = caractere.value;
         } else {
             volonte = caractere.value;
-            intuition = caractere.value + 1;
+            conscience = caractere.value + 1;
         }
 
         if (JSON.parse(social.premierEstPrincipal)) {
@@ -279,7 +279,7 @@ class CaracteristiquesDuPersonnage {
             raisonnement,
             apprentissage,
             volonte,
-            intuition,
+            conscience,
             communication,
             empathie,
         };

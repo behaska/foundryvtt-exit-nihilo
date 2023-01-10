@@ -103,17 +103,17 @@
                 </label>
             </div>
             <div class="caracteristique">
-                <input type="radio" id="intuition" name="caracteristique" value="intuition">
-                <label for="intuition">
+                <input type="radio" id="conscience" name="caracteristique" value="conscience">
+                <label for="conscience">
                     <div class="header">
                         {{> "systems/exit-nihilo/templates/partials/pentagon-composant.hbs"
-                            imgSrc = "systems/exit-nihilo/assets/icons/caracteristiques/intuition.svg"
+                            imgSrc = "systems/exit-nihilo/assets/icons/caracteristiques/conscience.svg"
                             title = "EXITNIHILO.SideBar.Caracteristiques.Title"
                             alt = "EXITNIHILO.SideBar.Caracteristiques.Alt"
                             extraCss= "up small" }}
-                        <p class="titre">{{localize "EXITNIHILO.SideBar.Caracteristiques.IntuitionTitle"}}: </p>
+                        <p class="titre">{{localize "EXITNIHILO.SideBar.Caracteristiques.ConscienceTitle"}}: </p>
                     </div>
-                    <p class="valeur">{{actor.system.attributs.caracteristiquesCalculees.intuition}}</p>
+                    <p class="valeur">{{actor.system.attributs.caracteristiquesCalculees.conscience}}</p>
                 </label>
             </div>
             <div class="caracteristique">

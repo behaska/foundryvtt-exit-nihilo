@@ -170,7 +170,7 @@
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Attributs.Caractere",
                         "labelPremiere": "EXITNIHILO.Personnage.Attributs.Caractere.Volonte.Titre",
-                        "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Caractere.Intuition.Titre",
+                        "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Caractere.Conscience.Titre",
                         "premierEstPrincipal": "true"
                     },
                     "social": {

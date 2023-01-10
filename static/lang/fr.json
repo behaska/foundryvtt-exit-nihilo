@@ -109,9 +109,9 @@
                         "PlaceHolder": "Caractéristique Volonté du Personnage",
                         "Titre": "Volonté"
                     },
-                    "Intuition": {
-                        "PlaceHolder": "Caractéristique Intuition du Personnage",
-                        "Titre": "Intuition"
+                    "Conscience": {
+                        "PlaceHolder": "Caractéristique Conscience du Personnage",
+                        "Titre": "Conscience"
                     }
                 },
                 "Social": {
@@ -407,7 +407,7 @@
                 "RaisonnementTitle": "Raisonnnement",
                 "ApprentissageTitle": "Apprentissage",
                 "VolonteTitle": "Volonté",
-                "IntuitionTitle": "Intuition",
+                "ConscienceTitle": "Conscience",
                 "CommunicationTitle": "Communication",
                 "EmpathieTitle": "Empathie"
             },
