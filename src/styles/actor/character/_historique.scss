@@ -240,7 +240,7 @@
 .personnage-attributs {
     display: grid;
     grid:
-        "physique physique . agilite agilite" 95px ". pentagon pentagon pentagon ." 55px "intellect pentagon pentagon pentagon caractere" 100px "intellect pentagon pentagon pentagon caractere" 70px ". social social social ." auto/140px 70px 70px 70px 140px;
+        "physique physique . agilite agilite" 95px ". pentagon pentagon pentagon ." 55px "esprit pentagon pentagon pentagon caractere" 100px "esprit pentagon pentagon pentagon caractere" 70px ". social social social ." auto/140px 70px 70px 70px 140px;
 
 
     .physique-container {
@@ -257,13 +257,13 @@
         right: 5px;
     }
 
-    .intellect-container {
-        grid-area: intellect;
+    .esprit-container {
+        grid-area: esprit;
         position: relative;
         top: 4px;
         right: -20px;
 
-        .intellect {
+        .esprit {
             display: flex;
             flex-direction: row;
             align-items: center;

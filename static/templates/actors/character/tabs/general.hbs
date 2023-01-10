@@ -142,31 +142,31 @@
                 </div>
             </div>
         </div>
-        <div class="attribut-container intellect-container gauche">
-            <div class="attribut intellect">
-                <label>{{localize "EXITNIHILO.Personnage.Attributs.Intellect.Titre"}}</label>
-                <div class="intellect-input">
-                    <input name="system.attributs.caracteristiques.intellect.value" type="number"
-                        data-dtype="{{actor.system.attributs.caracteristiques.intellect.type}}"
-                        value="{{actor.system.attributs.caracteristiques.intellect.value}}" size="2"
+        <div class="attribut-container esprit-container gauche">
+            <div class="attribut esprit">
+                <label>{{localize "EXITNIHILO.Personnage.Attributs.Esprit.Titre"}}</label>
+                <div class="esprit-input">
+                    <input name="system.attributs.caracteristiques.esprit.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.esprit.type}}"
+                        value="{{actor.system.attributs.caracteristiques.esprit.value}}" size="2"
                         {{#isLocked}}{{/isLocked}} />
                 </div>
             </div>
             <fieldset class="radio-principal" {{#isLocked}}{{/isLocked}}>
                 <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
                 <div class="valeur">
-                    <input type="radio" id="system.attributs.caracteristiques.intellect.valeur1"
-                        name="system.attributs.caracteristiques.intellect.premierEstPrincipal" value="true" {{#isTrue
-                        actor.system.attributs.caracteristiques.intellect.premierEstPrincipal}}{{/isTrue}} />
-                    <label for="system.attributs.caracteristiques.intellect.valeur1">{{localize
-                        actor.system.attributs.caracteristiques.intellect.labelPremiere}}</label>
+                    <input type="radio" id="system.attributs.caracteristiques.esprit.valeur1"
+                        name="system.attributs.caracteristiques.esprit.premierEstPrincipal" value="true" {{#isTrue
+                        actor.system.attributs.caracteristiques.esprit.premierEstPrincipal}}{{/isTrue}} />
+                    <label for="system.attributs.caracteristiques.esprit.valeur1">{{localize
+                        actor.system.attributs.caracteristiques.esprit.labelPremiere}}</label>
                 </div>
                 <div class="valeur">
-                    <input type="radio" id="system.attributs.caracteristiques.intellect.valeur2"
-                        name="system.attributs.caracteristiques.intellect.premierEstPrincipal" value="false" {{#isFalse
-                        actor.system.attributs.caracteristiques.intellect.premierEstPrincipal}}{{/isFalse}} />
-                    <label for="system.attributs.caracteristiques.intellect.valeur2">{{localize
-                        actor.system.attributs.caracteristiques.intellect.labelDeuxieme}}</label>
+                    <input type="radio" id="system.attributs.caracteristiques.esprit.valeur2"
+                        name="system.attributs.caracteristiques.esprit.premierEstPrincipal" value="false" {{#isFalse
+                        actor.system.attributs.caracteristiques.esprit.premierEstPrincipal}}{{/isFalse}} />
+                    <label for="system.attributs.caracteristiques.esprit.valeur2">{{localize
+                        actor.system.attributs.caracteristiques.esprit.labelDeuxieme}}</label>
                 </div>
             </fieldset>
         </div>

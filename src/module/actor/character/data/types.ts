@@ -182,7 +182,7 @@ interface Caracteristiques {
     physique: Caracteristique;
     agilite: Caracteristique;
     social: Caracteristique;
-    intellect: Caracteristique;
+    esprit: Caracteristique;
     caractere: Caracteristique;
 }
 
@@ -215,7 +215,7 @@ class CaracteristiquesDuPersonnage {
         const caracteristiques = systemData.attributs.caracteristiques;
         const physique = caracteristiques.physique;
         const agilite = caracteristiques.agilite;
-        const intellect = caracteristiques.intellect;
+        const esprit = caracteristiques.esprit;
         const caractere = caracteristiques.caractere;
         const social = caracteristiques.social;
 
@@ -247,12 +247,12 @@ class CaracteristiquesDuPersonnage {
             coordination = agilite.value;
         }
 
-        if (JSON.parse(intellect.premierEstPrincipal)) {
-            raisonnement = intellect.value + 1;
-            apprentissage = intellect.value;
+        if (JSON.parse(esprit.premierEstPrincipal)) {
+            raisonnement = esprit.value + 1;
+            apprentissage = esprit.value;
         } else {
-            raisonnement = intellect.value;
-            apprentissage = intellect.value + 1;
+            raisonnement = esprit.value;
+            apprentissage = esprit.value + 1;
         }
 
         if (JSON.parse(caractere.premierEstPrincipal)) {

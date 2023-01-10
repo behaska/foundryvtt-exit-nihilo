@@ -157,12 +157,12 @@
                         "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Agilite.Adresse.Titre",
                         "premierEstPrincipal": "true"
                     },
-                    "intellect": {
+                    "esprit": {
                         "value": 0,
                         "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Attributs.Intellect",
-                        "labelPremiere": "EXITNIHILO.Personnage.Attributs.Intellect.Raisonnement.Titre",
-                        "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Intellect.Apprentissage.Titre",
+                        "label": "EXITNIHILO.Personnage.Attributs.Esprit",
+                        "labelPremiere": "EXITNIHILO.Personnage.Attributs.Esprit.Raisonnement.Titre",
+                        "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Esprit.Apprentissage.Titre",
                         "premierEstPrincipal": "true"
                     },
                     "caractere": {

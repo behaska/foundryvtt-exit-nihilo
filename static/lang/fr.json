@@ -90,9 +90,9 @@
                         "Titre": "Adresse"
                     }
                 },
-                "Intellect": {
-                    "PlaceHolder": "Attribut Intellect du Personnage",
-                    "Titre": "Intellect",
+                "Esprit": {
+                    "PlaceHolder": "Attribut Esprit du Personnage",
+                    "Titre": "Esprit",
                     "Raisonnement": {
                         "PlaceHolder": "Caractéristique Raisonnement du Personnage",
                         "Titre": "Raisonnement"
@@ -391,7 +391,7 @@
             "AttributsHeader": "Attributs",
             "Attributs": {
                 "AgiliteTitle": "Agilité",
-                "IntellectTitle": "Intellect",
+                "EspritTitle": "Esprit",
                 "PhysiqueTitle": "Physique",
                 "CaractereTitle": "Caractère",
                 "SocialTitle": "Social"
