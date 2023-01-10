@@ -78,16 +78,16 @@
                         "Titre": "Vitalité"
                     }
                 },
-                "Adresse": {
-                    "PlaceHolder": "Attribut Adresse du Personnage",
-                    "Titre": "Adresse",
-                    "Agilite": {
-                        "PlaceHolder": "Caractéristique Agilité du Personnage",
-                        "Titre": "Agilité"
+                "Agilite": {
+                    "PlaceHolder": "Attribut Agilité du Personnage",
+                    "Titre": "Agilité",
+                    "Coordination": {
+                        "PlaceHolder": "Caractéristique Coordination du Personnage",
+                        "Titre": "Coordination"
                     },
-                    "Dexterite": {
-                        "PlaceHolder": "Caractéristique Dextérité du Personnage",
-                        "Titre": "Dextérité"
+                    "Adresse": {
+                        "PlaceHolder": "Caractéristique Adresse du Personnage",
+                        "Titre": "Adresse"
                     }
                 },
                 "Intellect": {
@@ -390,7 +390,7 @@
         "SideBar": {
             "AttributsHeader": "Attributs",
             "Attributs": {
-                "AdresseTitle": "Adresse",
+                "AgiliteTitle": "Agilité",
                 "IntellectTitle": "Intellect",
                 "PhysiqueTitle": "Physique",
                 "CaractereTitle": "Caractère",
@@ -402,8 +402,8 @@
                 "Title": "Logo de la Caractéristique",
                 "PuissanceTitle": "Puissance",
                 "VitaliteTitle": "Vitalité",
-                "AgiliteTitle": "Agilité",
-                "DexteriteTitle": "Dexterité",
+                "CoordinationTitle": "Coordination",
+                "AdresseTitle": "Adresse",
                 "RaisonnementTitle": "Raisonnnement",
                 "ApprentissageTitle": "Apprentissage",
                 "VolonteTitle": "Volonté",

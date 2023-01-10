@@ -113,31 +113,31 @@
                 </div>
             </div>
         </div>
-        <div class="attribut-container adresse-container top droite">
+        <div class="attribut-container agilite-container top droite">
             <fieldset class="radio-principal" {{#isLocked}}{{/isLocked}}>
                 <legend>{{localize "EXITNIHILO.Personnage.Attributs.Choix.Titre"}}</legend>
                 <div class="valeur">
-                    <input type="radio" id="system.attributs.caracteristiques.adresse.valeur1"
-                        name="system.attributs.caracteristiques.adresse.premierEstPrincipal" value="true" {{#isTrue
-                        actor.system.attributs.caracteristiques.adresse.premierEstPrincipal}}{{/isTrue}} />
-                    <label for="system.attributs.caracteristiques.adresse.valeur1">{{localize
-                        actor.system.attributs.caracteristiques.adresse.labelPremiere}}</label>
+                    <input type="radio" id="system.attributs.caracteristiques.agilite.valeur1"
+                        name="system.attributs.caracteristiques.agilite.premierEstPrincipal" value="true" {{#isTrue
+                        actor.system.attributs.caracteristiques.agilite.premierEstPrincipal}}{{/isTrue}} />
+                    <label for="system.attributs.caracteristiques.agilite.valeur1">{{localize
+                        actor.system.attributs.caracteristiques.agilite.labelPremiere}}</label>
                 </div>
 
                 <div class="valeur">
-                    <input type="radio" id="system.attributs.caracteristiques.adresse.valeur2"
-                        name="system.attributs.caracteristiques.adresse.premierEstPrincipal" value="false" {{#isFalse
-                        actor.system.attributs.caracteristiques.adresse.premierEstPrincipal}}{{/isFalse}} />
-                    <label for="system.attributs.caracteristiques.adresse.valeur2">{{localize
-                        actor.system.attributs.caracteristiques.adresse.labelDeuxieme}}</label>
+                    <input type="radio" id="system.attributs.caracteristiques.agilite.valeur2"
+                        name="system.attributs.caracteristiques.agilite.premierEstPrincipal" value="false" {{#isFalse
+                        actor.system.attributs.caracteristiques.agilite.premierEstPrincipal}}{{/isFalse}} />
+                    <label for="system.attributs.caracteristiques.agilite.valeur2">{{localize
+                        actor.system.attributs.caracteristiques.agilite.labelDeuxieme}}</label>
                 </div>
             </fieldset>
-            <div class="attribut adresse">
-                <label>{{localize "EXITNIHILO.Personnage.Attributs.Adresse.Titre"}}</label>
-                <div class="adresse-input">
-                    <input name="system.attributs.caracteristiques.adresse.value" type="number"
-                        data-dtype="{{actor.system.attributs.caracteristiques.adresse.type}}"
-                        value="{{actor.system.attributs.caracteristiques.adresse.value}}" size="2"
+            <div class="attribut agilite">
+                <label>{{localize "EXITNIHILO.Personnage.Attributs.Agilite.Titre"}}</label>
+                <div class="agilite-input">
+                    <input name="system.attributs.caracteristiques.agilite.value" type="number"
+                        data-dtype="{{actor.system.attributs.caracteristiques.agilite.type}}"
+                        value="{{actor.system.attributs.caracteristiques.agilite.value}}" size="2"
                         {{#isLocked}}{{/isLocked}} />
                 </div>
             </div>

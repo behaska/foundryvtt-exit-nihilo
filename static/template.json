@@ -149,12 +149,12 @@
                         "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Physique.Vitalite.Titre",
                         "premierEstPrincipal": "true"
                     },
-                    "adresse": {
+                    "agilite": {
                         "value": 0,
                         "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Attributs.Adresse",
-                        "labelPremiere": "EXITNIHILO.Personnage.Attributs.Adresse.Agilite.Titre",
-                        "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Adresse.Dexterite.Titre",
+                        "label": "EXITNIHILO.Personnage.Attributs.Agilite",
+                        "labelPremiere": "EXITNIHILO.Personnage.Attributs.Agilite.Coordination.Titre",
+                        "labelDeuxieme": "EXITNIHILO.Personnage.Attributs.Agilite.Adresse.Titre",
                         "premierEstPrincipal": "true"
                     },
                     "intellect": {

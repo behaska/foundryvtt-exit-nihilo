@@ -180,7 +180,7 @@ interface AttributsDuPersonnage extends CreatureAttributes {
 
 interface Caracteristiques {
     physique: Caracteristique;
-    adresse: Caracteristique;
+    agilite: Caracteristique;
     social: Caracteristique;
     intellect: Caracteristique;
     caractere: Caracteristique;
@@ -198,8 +198,8 @@ interface Caracteristique {
 interface CaracteristiquesDuPersonnage {
     puissance: number;
     vitalite: number;
-    dexterite: number;
-    agilite: number;
+    adresse: number;
+    coordination: number;
     raisonnement: number;
     apprentissage: number;
     volonte: number;
@@ -214,7 +214,7 @@ class CaracteristiquesDuPersonnage {
     static from(systemData: CharacterSystemData): CaracteristiquesDuPersonnage {
         const caracteristiques = systemData.attributs.caracteristiques;
         const physique = caracteristiques.physique;
-        const adresse = caracteristiques.adresse;
+        const agilite = caracteristiques.agilite;
         const intellect = caracteristiques.intellect;
         const caractere = caracteristiques.caractere;
         const social = caracteristiques.social;
@@ -223,8 +223,8 @@ class CaracteristiquesDuPersonnage {
 
         let vitalite,
             puissance,
-            dexterite,
-            agilite,
+            adresse,
+            coordination,
             raisonnement,
             apprentissage,
             intuition,
@@ -239,12 +239,12 @@ class CaracteristiquesDuPersonnage {
             vitalite = physique.value + 1;
         }
 
-        if (JSON.parse(adresse.premierEstPrincipal)) {
-            dexterite = adresse.value;
-            agilite = adresse.value + 1;
+        if (JSON.parse(agilite.premierEstPrincipal)) {
+            adresse = agilite.value;
+            coordination = agilite.value + 1;
         } else {
-            dexterite = adresse.value + 1;
-            agilite = adresse.value;
+            adresse = agilite.value + 1;
+            coordination = agilite.value;
         }
 
         if (JSON.parse(intellect.premierEstPrincipal)) {
@@ -274,8 +274,8 @@ class CaracteristiquesDuPersonnage {
         const result = {
             puissance,
             vitalite,
-            dexterite,
-            agilite,
+            adresse,
+            coordination,
             raisonnement,
             apprentissage,
             volonte,

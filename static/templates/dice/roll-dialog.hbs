@@ -33,31 +33,31 @@
                 </label>
             </div>
             <div class="caracteristique">
-                <input type="radio" id="dexterite" name="caracteristique" value="dexterite">
-                <label for="dexterite">
+                <input type="radio" id="adresse" name="caracteristique" value="adresse">
+                <label for="adresse">
                     <div class="header">
                         {{> "systems/exit-nihilo/templates/partials/pentagon-composant.hbs"
-                            imgSrc = "systems/exit-nihilo/assets/icons/caracteristiques/dexterite.svg"
+                            imgSrc = "systems/exit-nihilo/assets/icons/caracteristiques/adresse.svg"
                             title = "EXITNIHILO.SideBar.Caracteristiques.Title"
                             alt = "EXITNIHILO.SideBar.Caracteristiques.Alt"
                             extraCss= "up small" }}
-                        <p class="titre">{{localize "EXITNIHILO.SideBar.Caracteristiques.DexteriteTitle"}}: </p>
+                        <p class="titre">{{localize "EXITNIHILO.SideBar.Caracteristiques.AdresseTitle"}}: </p>
                     </div>
-                    <p class="valeur">{{actor.system.attributs.caracteristiquesCalculees.dexterite}}</p>
+                    <p class="valeur">{{actor.system.attributs.caracteristiquesCalculees.adresse}}</p>
                 </label>
             </div>
             <div class="caracteristique">
-                <input type="radio" id="agilite" name="caracteristique" value="agilite">
-                <label for="agilite">
+                <input type="radio" id="coordination" name="caracteristique" value="coordination">
+                <label for="coordination">
                     <div class="header">
                         {{> "systems/exit-nihilo/templates/partials/pentagon-composant.hbs"
-                            imgSrc = "systems/exit-nihilo/assets/icons/caracteristiques/agilite.svg"
+                            imgSrc = "systems/exit-nihilo/assets/icons/caracteristiques/coordination.svg"
                             title = "EXITNIHILO.SideBar.Caracteristiques.Title"
                             alt = "EXITNIHILO.SideBar.Caracteristiques.Alt"
                             extraCss= "up small" }}
-                        <p class="titre">{{localize "EXITNIHILO.SideBar.Caracteristiques.AgiliteTitle"}}: </p>
+                        <p class="titre">{{localize "EXITNIHILO.SideBar.Caracteristiques.CoordinationTitle"}}: </p>
                     </div>
-                    <p class="valeur">{{actor.system.attributs.caracteristiquesCalculees.agilite}}</p>
+                    <p class="valeur">{{actor.system.attributs.caracteristiquesCalculees.coordination}}</p>
                 </label>
             </div>
             <div class="caracteristique">

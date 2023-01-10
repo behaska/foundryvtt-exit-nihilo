@@ -233,14 +233,14 @@
 }
 
 .physique-input,
-.adresse-input {
+.agilite-input {
     margin-top: 5px; // fix un pb avec le margin-bottom sur les éléments top.
 }
 
 .personnage-attributs {
     display: grid;
     grid:
-        "physique physique . adresse adresse" 95px ". pentagon pentagon pentagon ." 55px "intellect pentagon pentagon pentagon caractere" 100px "intellect pentagon pentagon pentagon caractere" 70px ". social social social ." auto/140px 70px 70px 70px 140px;
+        "physique physique . agilite agilite" 95px ". pentagon pentagon pentagon ." 55px "intellect pentagon pentagon pentagon caractere" 100px "intellect pentagon pentagon pentagon caractere" 70px ". social social social ." auto/140px 70px 70px 70px 140px;
 
 
     .physique-container {
@@ -250,8 +250,8 @@
         right: -10px;
     }
 
-    .adresse-container {
-        grid-area: adresse;
+    .agilite-container {
+        grid-area: agilite;
         position: relative;
         top: 0px;
         right: 5px;
