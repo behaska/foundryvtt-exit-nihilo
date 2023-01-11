@@ -230,11 +230,6 @@
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Discretion.Titre"
                     },
-                    "dressage": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Dressage.Titre"
-                    },
                     "equitation": {
                         "value": 0,
                         "type": "Number",
@@ -244,26 +239,6 @@
                         "value": 0,
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Esquiver.Titre"
-                    },
-                    "grimper": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Grimper.Titre"
-                    },
-                    "imiter": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Imiter.Titre"
-                    },
-                    "influencer": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Influencer.Titre"
-                    },
-                    "lancer": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Lancer.Titre"
                     },
                     "jardinage": {
                         "value": 0,
@@ -275,10 +250,10 @@
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Langues.Titre"
                     },
-                    "manipulation": {
+                    "filouterie": {
                         "value": 0,
                         "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Manipulation.Titre"
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Filouterie.Titre"
                     },
                     "nager": {
                         "value": 0,
