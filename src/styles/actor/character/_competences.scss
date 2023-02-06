@@ -75,7 +75,12 @@
     .competences-container {
         display: grid;
         grid:
-            "argumenter discretion manipulation" 25px "athletisme equitation nager" 25px "baratin esquiver perception" 25px "bricolage imiter secourisme" 25px "chercher influencer psychologie" 25px "cuisine lancer survie" 25px "jardinage langues technologie" 25px;
+            "argumenter discretion nager" 25px
+            "athletisme equitation perception" 25px
+            "baratin esquiver psychologie" 25px
+            "bricolage filouterie secourisme" 25px
+            "chercher jardinage survie" 25px
+            "cuisine langues technologie" 25px;
         margin-top: 4px;
         margin-bottom: 15px;
         flex-wrap: wrap;
@@ -123,8 +128,8 @@
             grid-area: esquiver;
         }
 
-        .imiter-container {
-            grid-area: imiter;
+        .filouterie-container {
+            grid-area: filouterie;
         }
 
         .influencer-container {

@@ -230,11 +230,6 @@
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Discretion.Titre"
                     },
-                    "dressage": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Dressage.Titre"
-                    },
                     "equitation": {
                         "value": 0,
                         "type": "Number",
@@ -245,25 +240,10 @@
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Esquiver.Titre"
                     },
-                    "grimper": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Grimper.Titre"
-                    },
-                    "imiter": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Imiter.Titre"
-                    },
-                    "influencer": {
+                    "filouterie": {
                         "value": 0,
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Influencer.Titre"
-                    },
-                    "lancer": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Lancer.Titre"
                     },
                     "jardinage": {
                         "value": 0,
@@ -274,11 +254,6 @@
                         "value": 0,
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Langues.Titre"
-                    },
-                    "manipulation": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Manipulation.Titre"
                     },
                     "nager": {
                         "value": 0,
@@ -300,11 +275,6 @@
                         "type": "Number",
                         "label": ""
                     },
-                    "secourisme": {
-                        "value": 0,
-                        "type": "Number",
-                        "label": "EXITNIHILO.Personnage.Competences.Communes.Secourisme.Titre"
-                    },
                     "profession1": {
                         "value": 0,
                         "type": "Number",
@@ -319,6 +289,11 @@
                         "value": 0,
                         "type": "Number",
                         "label": "EXITNIHILO.Personnage.Competences.Communes.Psychologie.Titre"
+                    },
+                    "secourisme": {
+                        "value": 0,
+                        "type": "Number",
+                        "label": "EXITNIHILO.Personnage.Competences.Communes.Secourisme.Titre"
                     },
                     "survie": {
                         "value": 0,

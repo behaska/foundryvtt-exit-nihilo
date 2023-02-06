@@ -1,17 +1,17 @@
 export function registerHandlebarsHelpers(): void {
     Handlebars.registerHelper("isLocked", function (context) {
-        return context.data.root.actor.system.configuration.verrou ? " Locked" : "";
+        return context.data.root.actor.system.configuration.verrou ? " Disabled" : "";
     });
 
-    Handlebars.registerHelper("isTrue", function (arg1: string) {
+    Handlebars.registerHelper("isTrue", function(arg1: string) {
         return arg1.toLocaleLowerCase() === "true" ? "Checked" : "";
     });
 
-    Handlebars.registerHelper("isFalse", function (arg1: string) {
+    Handlebars.registerHelper("isFalse", function(arg1: string) {
         return arg1.toLocaleLowerCase() === "false" ? "Checked" : "";
     });
 
-    Handlebars.registerHelper("developMode", function (this: unknown, body: Handlebars.HelperOptions) {
+    Handlebars.registerHelper("developMode", function(this: unknown, body: Handlebars.HelperOptions) {
         if (BUILD_MODE === "development") {
             return body.fn(this);
         }
@@ -75,11 +75,11 @@ export function registerHandlebarsHelpers(): void {
     });
 
     // From https://github.com/leapfrogtechnology/just-handlebars-helpers/
-    Handlebars.registerHelper("concat", function (...params): string {
+    Handlebars.registerHelper("concat", function(...params): string {
         return params.slice(0, -1).join("");
     });
 
-    Handlebars.registerHelper("times", function (count, block) {
+    Handlebars.registerHelper("times", function(count, block) {
         const results = new Array<string>();
         for (let i = 0; i < count; i++) {
             results.push(block.fn(i));
@@ -87,22 +87,22 @@ export function registerHandlebarsHelpers(): void {
         return results.join("");
     });
 
-    Handlebars.registerHelper("skill-dots", function (n, max) {
+    Handlebars.registerHelper("skill-dots", function(n, max) {
         let accum = "";
         for (let i = 1; i <= max; ++i)
             if (i <= n) {
-                accum += '<div class="skill-display-element-full"></div>';
+                accum += "<div class=\"skill-display-element-full\"></div>";
             } else {
-                accum += '<div class="skill-display-element"></div>';
+                accum += "<div class=\"skill-display-element\"></div>";
             }
         return accum;
     });
 
-    Handlebars.registerHelper("isNullish", function (value: unknown) {
+    Handlebars.registerHelper("isNullish", function(value: unknown) {
         return value === null || value === undefined;
     });
 
-    Handlebars.registerHelper("contains", function (arr: object[], element: object) {
+    Handlebars.registerHelper("contains", function(arr: object[], element: object) {
         return Array.isArray(arr) && arr.includes(element);
     });
 }

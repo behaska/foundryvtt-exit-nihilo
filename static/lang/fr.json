@@ -190,9 +190,6 @@
                     "Cuisine": {
                         "Titre": "Cuisine"
                     },
-                    "Jardinage": {
-                        "Titre": "Jardinage"
-                    },
                     "Discretion": {
                         "Titre": "Discrétion"
                     },
@@ -202,20 +199,14 @@
                     "Esquiver": {
                         "Titre": "Esquiver"
                     },
-                    "Imiter": {
-                        "Titre": "Imiter"
+                    "Filouterie": {
+                        "Titre": "Filouterie"
                     },
-                    "Influencer": {
-                        "Titre": "Influencer"
-                    },
-                    "Lancer": {
-                        "Titre": "Lancer"
+                    "Jardinage": {
+                        "Titre": "Jardinage"
                     },
                     "Langues": {
                         "Titre": "Langues"
-                    },
-                    "Manipulation": {
-                        "Titre": "Manipulation"
                     },
                     "Nager": {
                         "Titre": "Nager"
